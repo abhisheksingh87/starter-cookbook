@@ -1,14 +1,15 @@
 +++
 categories = ["recipes"]
 tags = ["starter","spring-boot-app","microservice"]
-summary = "How to use the greenfield starter to create a microservice"
-title = "How to use the greenfield starter"
+summary = "How to use the greenfield starter to create a microservice deployable in the cloud"
+title = "Step 1: Clone app starter"
 date = 2020-12-09T14:02:27-05:00
 
 +++
 
 ## Context
-This is the first recipe in the series, that is used to develop a modern microservice deployable in the cloud using the **greenfield-app-starter**.
+This is the first recipe in the series, for developing a modern _cloud ready_ microservice using the **greenfield-app-starter**.  
+The microservice uses Oracle for persistence, Redis for caching, Kafka for messaging and Prometheus for metrics. 
 
 ### Prerequisite
 
@@ -29,7 +30,7 @@ This is the first recipe in the series, that is used to develop a modern microse
    - `http://localhost:8080/actuator/info`  
 
 ## Next Step
-Configure the Persistence (database) module
+Configure the Persistence module
 
 ## Notes and References
 

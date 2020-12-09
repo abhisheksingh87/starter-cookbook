@@ -2,7 +2,7 @@
 categories = ["recipes"]
 tags = ["create recipe", "new recipe"]
 summary = "Steps to create a blank recipe page is outlined in this recipe"
-title = "How to Create a Recipe"
+title = "Step 2: Configure persistence module"
 date = 2020-09-01T10:55:46-05:00
 
 +++
