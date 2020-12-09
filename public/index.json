@@ -1,0 +1,106 @@
+[
+{
+	"uri": "/recipes/",
+	"title": "Recipes",
+	"tags": [],
+	"description": "",
+	"content": "Recipes created during the Pivotal FedEx GSI Modernization engagement\n"
+},
+{
+	"uri": "/tags/app-template/",
+	"title": "app template",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/recipes/create-spring-boot-service/",
+	"title": "Create Spring Boot Service",
+	"tags": ["spring boot app", "app template"],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/categories/recipes/",
+	"title": "recipes",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/tags/spring-boot-app/",
+	"title": "spring boot app",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/tags/deploy-cookbook/",
+	"title": "deploy cookbook",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/recipes/deploy-cookbook-to-pcf/",
+	"title": "Deploy Cookbook to Pcf",
+	"tags": ["deploy cookbook", "pcf"],
+	"description": "",
+	"content": "Prerequisite  cf CLI Hugo  Install instructions cf CLI  Install cf CLI from https://docs.cloudfoundry.org/cf-cli/install-go-cli.html  Hugo   Install Hugo on your laptop from https://github.com/gohugoio/hugo/releases/download/v0.74.3/hugo_0.74.3_Windows-64bit.zip\n  Update PATH to include the path to hugo executable\n  Steps   Clone the FedEx GSI cookbook from Gitlab repo\ngit clone \u0026lt;cookbook repo\u0026gt;\n  Open a command window and navigate to the cookbook directory\n  Start Hugo server locally\n./localserver.bat\n  Check if recipes are displayed in the browser (http://localhost:1313)\n  Add a new recipe or update an existing recipe(s)\n  Publish the cookbook with updated recipes:\n./publish\n  cd \u0026lt;cookbook dir\u0026gt;/public\n  Deploy the cookbook to PCF using CF cli\ncf push\n  Verify the cookbook with recipes is accessible at https://\u0026lt;pcf API endpoint\u0026gt;/cookbook\n  "
+},
+{
+	"uri": "/tags/pcf/",
+	"title": "pcf",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/tags/create-recipe/",
+	"title": "create recipe",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/recipes/how-to-create-a-recipe/",
+	"title": "How to Create a Recipe",
+	"tags": ["create recipe", "new recipe"],
+	"description": "",
+	"content": "Prerequisite  cf CLI Hugo  Install instructions cf CLI  Install cf CLI from https://docs.cloudfoundry.org/cf-cli/install-go-cli.html  Hugo  Hugo is one of the most popular open-source static site generators, that enables user content in markdown format to be rendered in HTML and other formats.\n   Install Hugo on your laptop from https://github.com/gohugoio/hugo/releases/download/v0.74.3/hugo_0.74.3_Windows-64bit.zip\n  Update PATH to include the path to hugo executable\n  Steps   Open a command/shell window and navigate to the cookbook directory\n  Create a new recipe\n​\thugo new recipes/a-new-recipe.md\n  always specify *.md extension for the recipe file.\n  a-new-recipe.md is created in content/recipes/\n    Edit recipe using any IDE or text editor\n  avoid putting title of the recipe in its body as Hugo generates one from the title tag.\n  to add images to a recipe, put them in static/images directory of the cookbook.\n  review the header in the generated recipe to adjust the tags, summary and title.\ncategories = [\u0026quot;recipes\u0026quot;] tags = [\u0026quot;some meaningful tag1\u0026quot;, \u0026quot;some meaningful tag2\u0026quot;] summary = \u0026quot;multi line summary should come here\u0026quot; title = \u0026quot;A New Recipe\u0026quot; date = 2020-09-01T10:55:46-05:00   be consistent with tagging. Less is more. Check existing tags by opening See All Tags link from the sidebar.\n    Preview the recipe\n start the local Hugo server using ./localserver.bat access http://localhost:1313 using the browser the recipe should appear on the left under Recipes    "
+},
+{
+	"uri": "/tags/new-recipe/",
+	"title": "new recipe",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/",
+	"title": "Home",
+	"tags": [],
+	"description": "Cookbook Home Page",
+	"content": "Cookbook with recipes for application modernization using cloud native foundation principles\n"
+},
+{
+	"uri": "/_header/",
+	"title": "",
+	"tags": [],
+	"description": "",
+	"content": "  Application Modernization Cookbook\n"
+}]

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on FedEx GSI Modernization Cookbook</title>
+    <link>/tags/</link>
+    <description>Recent content in Tags on FedEx GSI Modernization Cookbook</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright> Wells Fargo, All rights Reserved, Confidential</copyright>
+    <lastBuildDate>Tue, 01 Sep 2020 14:11:54 -0500</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>app template</title>
+      <link>/tags/app-template/</link>
+      <pubDate>Tue, 01 Sep 2020 14:11:54 -0500</pubDate>
+      
+      <guid>/tags/app-template/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>spring boot app</title>
+      <link>/tags/spring-boot-app/</link>
+      <pubDate>Tue, 01 Sep 2020 14:11:54 -0500</pubDate>
+      
+      <guid>/tags/spring-boot-app/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>deploy cookbook</title>
+      <link>/tags/deploy-cookbook/</link>
+      <pubDate>Tue, 01 Sep 2020 14:02:27 -0500</pubDate>
+      
+      <guid>/tags/deploy-cookbook/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pcf</title>
+      <link>/tags/pcf/</link>
+      <pubDate>Tue, 01 Sep 2020 14:02:27 -0500</pubDate>
+      
+      <guid>/tags/pcf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>create recipe</title>
+      <link>/tags/create-recipe/</link>
+      <pubDate>Tue, 01 Sep 2020 10:55:46 -0500</pubDate>
+      
+      <guid>/tags/create-recipe/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>new recipe</title>
+      <link>/tags/new-recipe/</link>
+      <pubDate>Tue, 01 Sep 2020 10:55:46 -0500</pubDate>
+      
+      <guid>/tags/new-recipe/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

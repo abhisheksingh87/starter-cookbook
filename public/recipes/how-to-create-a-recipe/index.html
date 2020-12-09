@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FedEx GSI Modernization Cookbook</title>
+    
+      <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="revised" content="2020-12-02T17:55:26 CST">
+<title>How to Create a Recipe :: FedEx GSI Modernization Cookbook</title>
+<link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+<link href="/css/nucleus.css" rel="stylesheet">
+<link href="/css/font-awesome.min.css" rel="stylesheet">
+<link href="/css/hybrid.css" rel="stylesheet">
+<link href="/css/featherlight.min.css" rel="stylesheet">
+<link href="/css/auto-complete.css" rel="stylesheet">
+<link href="/theme-original/style.css" rel="stylesheet">
+
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<script src="/js/jquery-2.x.min.js"></script>
+<style type="text/css">
+  :root #header + #content > #left > #rlblock_left {
+    display:none !important;
+  }
+</style>
+<link href="/css/custom.css" rel="stylesheet">
+<script language="javascript" src="/js/localforage.nopromises.min.js"></script>
+    
+  </head>
+  <body data-url="/recipes/how-to-create-a-recipe/">
+    
+      <div id="headermain"></div>
+<nav id="sidebar" class="">
+
+
+
+<div class="highlightable">
+  <div id="header-wrapper">
+    <div id="header">
+      
+	
+  
+    <p><figure><a href="/">
+    <img src="/images/wellsfargo.png"/> </a>
+</figure>
+
+Application Modernization Cookbook</p>
+
+  
+
+
+    </div>
+        <div class="searchbox">
+		    <label for="search-by"><i class="fa fa-search"></i></label>
+		    <input data-search-input id="search-by" type="text" placeholder="Search...">
+		    <span data-search-clear=""><i class="fa fa-close"></i></span>
+		</div>
+		<script type="text/javascript" src="/js/lunr.min.js"></script>
+		<script type="text/javascript" src="/js/auto-complete.js"></script>
+		<script type="text/javascript">
+        
+            var baseurl = "\/";
+        
+		</script>
+		<script type="text/javascript" src="/js/search.js"></script>
+  </div>
+
+      <ul class="topics">
+    <li data-nav-id="/recipes/" class="dd-item parent haschildren
+        ">
+      <div>
+      <a href="/recipes/"><i class='fa fa-cutlery'></i>&nbsp;&nbsp;Recipes</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/recipes/create-spring-boot-service/" class="dd-item">
+        <div>
+          <a href="/recipes/create-spring-boot-service/">
+            Create Spring Boot Service
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/recipes/deploy-cookbook-to-pcf/" class="dd-item">
+        <div>
+          <a href="/recipes/deploy-cookbook-to-pcf/">
+            Deploy Cookbook to Pcf
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/recipes/how-to-create-a-recipe/" class="dd-item active">
+        <div>
+          <a href="/recipes/how-to-create-a-recipe/">
+            How to Create a Recipe
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+
+
+
+        <section id="shortcuts">
+                <li class="" role=""><h5>&nbsp;</h5><a href="/tags/"  rel="noopener"><i class='fa fa-tag'></i>&nbsp;&nbsp;All Tags</a></li>
+        </section>
+
+    <hr />
+    <li></li>
+    
+    </ul>
+
+ <section id="footer">
+    </section>
+  </div>
+</nav>
+
+
+
+<section id="body">
+<div id="overlay"></div>
+<div class="padding highlightable">
+
+  <div id="top-bar">
+    <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+        <span id="sidebar-toggle-span">
+          <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+            <i class="fa fa-bars"></i>
+          </a>
+        </span>
+        <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+        <span class="links">
+        
+
+
+
+
+
+
+
+ <a href='/'>Home</a> > <a href='/recipes/'>Recipes</a> > How to Create a Recipe
+
+ 
+
+ 
+
+   
+        </span>
+    </div>
+    
+    
+    <div class="progress">
+        <div class="wrapper">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#prerequisite">Prerequisite</a></li>
+        <li><a href="#install-instructions">Install instructions</a></li>
+      </ul>
+    </li>
+    <li><a href="#steps">Steps</a></li>
+  </ul>
+</nav>
+        </div>
+    </div>
+    
+
+  </div>
+
+
+  <div id="tags">
+    
+      <a class="label label-default" href="/tags/create-recipe">create recipe</a>
+    
+      <a class="label label-default" href="/tags/new-recipe">new recipe</a>
+    
+  </div>
+  <br/>
+
+<div id="body-inner">
+  
+    <h1>How to Create a Recipe</h1>
+  
+
+
+    
+    
+    
+    <h3 id="prerequisite">Prerequisite</h3>
+<ul>
+<li><code>cf CLI</code></li>
+<li><code>Hugo</code></li>
+</ul>
+<h3 id="install-instructions">Install instructions</h3>
+<h4 id="cf-cli">cf CLI</h4>
+<ul>
+<li>Install cf CLI from <a href="https://docs.cloudfoundry.org/cf-cli/install-go-cli.html">https://docs.cloudfoundry.org/cf-cli/install-go-cli.html</a></li>
+</ul>
+<h4 id="hugo">Hugo</h4>
+<blockquote>
+<p>Hugo is one of the most popular open-source static site generators, that enables user content in markdown format to be rendered in HTML and other formats.</p>
+</blockquote>
+<ul>
+<li>
+<p>Install <code>Hugo</code> on your laptop from <a href="https://github.com/gohugoio/hugo/releases/download/v0.74.3/hugo_0.74.3_Windows-64bit.zip">https://github.com/gohugoio/hugo/releases/download/v0.74.3/hugo_0.74.3_Windows-64bit.zip</a></p>
+</li>
+<li>
+<p>Update <code>PATH</code> to include the path to <code>hugo</code> executable</p>
+</li>
+</ul>
+<h2 id="steps">Steps</h2>
+<ol>
+<li>
+<p>Open a command/shell window and navigate to the <code>cookbook</code> directory</p>
+</li>
+<li>
+<p>Create a new recipe</p>
+<p>​	<code>hugo new recipes/a-new-recipe.md</code></p>
+<ul>
+<li>
+<p>always specify <code>*.md</code> extension for the recipe file.</p>
+</li>
+<li>
+<p><code>a-new-recipe.md</code> is created in <code>content/recipes/</code></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Edit recipe using any IDE or text editor</p>
+<ul>
+<li>
+<p>avoid putting <em>title</em> of the recipe in its body as Hugo generates one from the <em>title</em> tag.</p>
+</li>
+<li>
+<p>to add images to a recipe, put them in <code>static/images</code> directory of the cookbook.</p>
+</li>
+<li>
+<p>review the header in the generated recipe to adjust the tags, summary and title.</p>
+<pre><code>categories = [&quot;recipes&quot;]
+tags = [&quot;some meaningful tag1&quot;, &quot;some meaningful tag2&quot;]
+summary = &quot;multi line summary should come here&quot;
+title = &quot;A New Recipe&quot;
+date = 2020-09-01T10:55:46-05:00
+</code></pre></li>
+<li>
+<p>be consistent with tagging. <em>Less is more</em>. Check existing tags by opening <code>See All Tags</code> link from the sidebar.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Preview the recipe</p>
+<ul>
+<li>start the local Hugo server using <code>./localserver.bat</code></li>
+<li>access <code>http://localhost:1313</code> using the browser</li>
+<li>the recipe should appear on the left under <strong>Recipes</strong></li>
+</ul>
+</li>
+</ol>
+
+
+    
+    
+      
+<aside class="admonition">
+	<div class="admonition-content last-updated">
+		<p class="alignleft">"<a href="/recipes/how-to-create-a-recipe/" class="hide-child link primary-color">How to Create a Recipe</a>" was last updated on September 2, 2020</p>
+	</div>
+</aside>
+
+<footer class=" footline" >
+	
+</footer>
+
+<div id="navigation">
+</div>
+
+</section>
+
+<div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+<div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+</div>
+
+<script src="/js/clipboard.min.js"></script>
+<script src="/js/featherlight.min.js"></script>
+<script src="/js/html5shiv-printshiv.min.js"></script>
+
+<script src="/js/modernizr.custom.71422.js"></script>
+<script src="/js/docdock.js"></script>
+<script src="/theme-original/script.js"></script>
+
+    
+
+    
+    
+
+    
+  </body>
+</html>

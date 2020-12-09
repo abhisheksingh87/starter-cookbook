@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>/recipes/</loc>
+    <lastmod>2020-09-02T09:58:30-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/app-template/</loc>
+    <lastmod>2020-09-02T09:58:30-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/</loc>
+    <lastmod>2020-09-02T09:58:30-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/recipes/create-spring-boot-service/</loc>
+    <lastmod>2020-09-02T09:58:30-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/recipes/</loc>
+    <lastmod>2020-09-02T09:58:30-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/spring-boot-app/</loc>
+    <lastmod>2020-09-02T09:58:30-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2020-09-02T09:58:30-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/deploy-cookbook/</loc>
+    <lastmod>2020-09-02T09:58:30-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/recipes/deploy-cookbook-to-pcf/</loc>
+    <lastmod>2020-09-02T09:58:30-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/pcf/</loc>
+    <lastmod>2020-09-02T09:58:30-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/create-recipe/</loc>
+    <lastmod>2020-09-02T09:58:30-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/recipes/how-to-create-a-recipe/</loc>
+    <lastmod>2020-09-02T09:58:30-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/new-recipe/</loc>
+    <lastmod>2020-09-02T09:58:30-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2020-09-02T09:58:30-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/_header/</loc>
+    <lastmod>2020-09-02T09:58:30-05:00</lastmod>
+  </url>
+  
+</urlset>

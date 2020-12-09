@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>pcf on FedEx GSI Modernization Cookbook</title>
+    <link>/tags/pcf/</link>
+    <description>Recent content in pcf on FedEx GSI Modernization Cookbook</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright> Wells Fargo, All rights Reserved, Confidential</copyright>
+    <lastBuildDate>Tue, 01 Sep 2020 14:02:27 -0500</lastBuildDate><atom:link href="/tags/pcf/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Deploy Cookbook to Pcf</title>
+      <link>/recipes/deploy-cookbook-to-pcf/</link>
+      <pubDate>Tue, 01 Sep 2020 14:02:27 -0500</pubDate>
+      
+      <guid>/recipes/deploy-cookbook-to-pcf/</guid>
+      <description>Deploy cookbook as a app in PCF</description>
+    </item>
+    
+  </channel>
+</rss>
