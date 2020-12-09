@@ -1,8 +1,8 @@
 +++
 categories = ["recipes"]
 tags = ["starter","spring-boot-app","microservice"]
-summary = "How to use the greenfield starter to create a microservice deployable in the cloud"
-title = "Step 1: Clone app starter"
+summary = "How to create a microservice using the greenfield-app-starter"
+title = "Step 1: Create application using the starter"
 date = 2020-12-09T14:02:27-05:00
 
 +++
@@ -30,7 +30,7 @@ The microservice uses Oracle for persistence, Redis for caching, Kafka for messa
    - `http://localhost:8080/actuator/info`  
 
 ## Next Step
-Configure the Persistence module
+Configure the Persistence
 
 ## Notes and References
 
