@@ -10,6 +10,8 @@ date = 2020-12-09T14:02:27-05:00
 ## Context
 This is the second recipe in the series, for developing a modern _cloud ready_ microservice using the **greenfield-app-starter**.  
 This recipe deals with configuring persistence in the microservice.
+The persistence by default uses Hikari connection pooling.
+
 ### Prerequisite
 
 - **STEP 1: CREATE APPLICATION USING THE STARTER** is completed.
