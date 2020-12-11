@@ -18,11 +18,11 @@ The `HikariDatasource` bean with preconfigured connection pool is used to fulfil
 
 ## Solution
 
-1. Determine and record the following **oracle database connection details** for the new microservice
+1. Determine and record the following **oracle database connection details** 
 
    | Property        | Details  |
       | :---          |    :----   | 
-   | jdbc url  |  `jdbc:oracle:thin:@<host>:<port>:<schema>` OR `jdbc:oracle:oci:@<host>:<port>:<schema>` |
+   | jdbc url  |  `jdbc:oracle:thin:@<host>:<port>:<schema>` [thin] OR `jdbc:oracle:oci:@<host>:<port>:<schema>` [oci] |
    | driver classname | `oracle.jdbc.OracleDriver`    |
    | schema     | database schema name  | 
    | dialect    | Hibernate dialect based on the Oracle database version `org.hibernate.dialect.Oracle12cDialect` | 
@@ -31,15 +31,13 @@ The `HikariDatasource` bean with preconfigured connection pool is used to fulfil
 
 1. Determine and record the **database connection pool requirements** for the new microservice
 
-   | Property        | Details  |
+   | Property        | Suggested Values  |
          | :---          |    :----   | 
-   | jdbc url  |  `jdbc:oracle:thin:@<host>:<port>:<schema>` OR `jdbc:oracle:oci:@<host>:<port>:<schema>` |
-   | driver classname | `oracle.jdbc.OracleDriver`    |
-   | schema     | database schema name  | 
-   | dialect    | Hibernate dialect based on the Oracle database version `org.hibernate.dialect.Oracle12cDialect` | 
-   | username | schema username | 
-   | password | schema password | 
-
+   | maximumPoolSize  |  10  |
+   | idlePoolSize | 2 | 
+   | connectionTimeout | 250ms  |
+   | idleTimeout     | 800ms  | 
+   | maxLifetime    | 3000ms | 
 
  
 1. Navigate to the `<microservice>` directory
@@ -60,7 +58,6 @@ The `HikariDatasource` bean with preconfigured connection pool is used to fulfil
                schema:
                dialect: <hibernate oracle dialect>
                connection-pool:
-                 name: <<user friendly pool name>
                  maximumPoolSize: <less than 10>
                  connectionTimeout: <in millisecs>
                  idleTimeout: <in millisecs>
@@ -69,9 +66,24 @@ The `HikariDatasource` bean with preconfigured connection pool is used to fulfil
 
 ### Validation
 
-1. Step 1
+1. Open a command window in the `<microservice-name>` directory
 
-1. Step 2
+
+1. Validate the new microservice can be built locally: `gradlew bootJar`
+
+
+1. Validate the new microservice runs locally: `gradlew bootRun`
+
+
+1. Verify microservice health and info in the browser
+
+   - `http://localhost:8080/actuator/info`
+     
+   - `http://localhost:8080/actuator/health`  
+      the _datasource details_ and _uptime status_ should be displayed in the browser.
+   
+   - `http://localhost:8080/actuator/beans`  
+     search for _HikariDataSource_ in the browser.
 
 ## Next Step
 Configure the Cache
@@ -79,9 +91,10 @@ Configure the Cache
 
 ## Notes and References
 
+- https://github.com/pbelathur/spring-boot-performance-analysis
+
 ### Anti Patterns
 1. Oversizing the `maximumPoolSize`
 1. Having too many _idle_ connections
 1. Setting high `maxLifetime`
 
-#### Hikari Connection Pool configuration
