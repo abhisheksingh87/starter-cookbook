@@ -10,8 +10,6 @@ draft = false
 
 ## Context
 This is the first recipe in the series, for developing a modern _cloud ready_ microservice using the **greenfield-app-starter**.  
-The microservice uses Oracle for persistence, Redis for caching, Kafka for messaging and Prometheus for metrics.
-
 Upon completion of this recipe you will have a working spring boot microservice with health, info and  metrics endpoints enabled.
 
 ### Prerequisite
