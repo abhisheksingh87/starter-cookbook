@@ -4,4 +4,6 @@ title = "Home"
 description = "Cookbook Home Page"
 +++
 
-Cookbook with recipes for developing modern cloud native application created by VMWare Pivotal Labs engagement during the Enterprise Architecture Consulting engagement.
+# Greenfield Microservice Starter
+
+Cookbook with recipes for developing modern cloud native microservice created by VMWare Pivotal Labs during the WellsFargo Enterprise Architecture Consulting engagement.
