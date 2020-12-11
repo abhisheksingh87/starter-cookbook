@@ -1,8 +1,8 @@
 +++
 categories = ["recipes"]
-tags = ["starter","spring-boot-app","microservice", "common"]
+tags = ["starter","microservice", "barebone microservice"]
 summary = "How to create a microservice using the greenfield-app-starter"
-title = "Create barebone microservice using the starter"
+title = "Create barebone microservice using greenfield-app-starter"
 date = 2020-12-09
 weight = 10
 draft = false
@@ -25,49 +25,77 @@ Upon completion of this recipe you will have a working spring boot microservice 
 
 1. Collect or record the following details for the new microservice
 
-   | Syntax        | Description | Example |
+   | Property        | Description | Example |
    | :---          |    :----   |  :----   |
-   | lob  | line of business | **cto** |
-   | business-group | business group within the lob | **eai** |
-   | application-group  | application category or grouping | **starter** |
-   | application-name      | kasbah or camel cased application name  | **greenfield-starter**
-   | application-version    | application version in `major.minor.patch` format; start with `0.1.0` | **0.1.0**
-   | description    | short phrase describing the purpose of the application | **_cloud ready_ microservice starter using spring boot 2.3.6**
+   | lob  | line of business | **consumer** |
+   | business-group | business group within the lob | **lending** |
+   | application-group  | application category or grouping | **loan** |
+   | microservice-name      | camelCased name  | **AutoLoanCalculator**
+   | microservice-version    | in `major.minor.patch` format; start with `0.1.0` | **0.1.0**
+   | description    | short phrase describing the purpose of the microservice | **consumer auto loan calculator for period less than 36 months**
    | JDK-version  |Java 8 or above; one of `1.8`, `1.11`, `1.12`, `1.13` or `1.14`| **1.12**
-   | project-group  | `com.wellsfargo.<lob>.<business-group>.<application-group>` |  **`com.wellsfargo.cto.eai.starter`**
+   | project-group  | `com.wellsfargo.<lob>.<business-group>.<application-group>` |  **`com.wellsfargo.consumer.lending.loan`**
 
 1. Clone the **greenfield-app-starter** from Gitlab repo `git clone <repo url>`
 
-1. Rename folder: `greenfield-app-starter` to `<application-name>`
+1. Rename folder: `greenfield-app-starter` to `<microservice-name>`  
+   (example: **AutoLoanCalculator**)
 
-1. Update the application name in `settings.gradle`
+1. Update the microservice name in `settings.gradle`
 
    ```gradle
-   rootProject.name = "<application-name>"
+   rootProject.name = "<microservice-name>"
    ```
+
+   ```gradle
+   # EXAMPLE
+   
+   rootProject.name = "AutoLoanCalculator"
+   ```   
+
 
 1. Update project details in `build.gradle`
    
    ```gradle
    description = "<description>"
    group = "<project-group>"
-   version = "<application-version>"
+   version = "<microservice-version>"
    sourceCompatibility = "<JDK-version>"
    ```
-   
-1. Rename package from `com.wellsfargo.cto.eai.starter.greenfield` to `<project-group>.<application-name>`
 
-1. Rename main application classname from `GreenfieldApplication` to `<application-name>Application`
+    ```gradle
+   # EXAMPLE
+   
+   description = "consumer auto loan calculator for period less than 36 months"
+   group = "com.wellsfargo.consumer.lending.loan"
+   version = "0.1.0"
+   sourceCompatibility = "1.12"
+   ```
+   
+1. Rename _package_ from `com.wellsfargo.cto.eai.starter` to `<project-group>`  
+   (example: **`com.wellsfargo.consumer.lending.loan`**)
+
+1. Rename _main application classname_ from `GreenfieldMicroservice` to `<microservice-name>`  
+   (example: **`AutoLoanCalculator`**)
+
+1. As an example, the _barebone_ microservice will have the following:
+   
+   * folder: `AutoLoanCalculator` containing
+      * `com.wellsfargo.consumer.lending.loan.AutoLoanCalculator.java`
+      * `src/main/resources/application.yml`
+      * `build.gradle`
+      * `settings.gradle`
+   
 
 ### Validation
 
-1. Open a command window in the `<application-name>` directory
+1. Open a command window in the `<microservice-name>` directory
 
 1. Validate the new microservice can be built locally: `gradlew bootJar`
 
 1. Validate the new microservice runs locally: `gradlew bootRun`
 
-1. Verify app health and info in the browser
+1. Verify microservice health and info in the browser
 
     - `http://localhost:8080/actuator/health`
     - `http://localhost:8080/actuator/info`
