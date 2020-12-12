@@ -1,8 +1,8 @@
 +++
 categories = ["recipes"]
 tags = ["starter","spring-boot-app","microservice"]
-summary = "Configure Cache in microservice"
-title = "Step 3: Configure Cache in microservice"
+summary = "Configure Redis Cache in microservice"
+title = "Configure Redis"
 date = 2020-12-09T14:02:27-05:00
 
 +++

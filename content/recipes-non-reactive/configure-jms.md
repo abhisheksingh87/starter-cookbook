@@ -1,8 +1,8 @@
 +++
 categories = ["recipes"]
 tags = ["persistence","hikari","database connection pool","anti patterns"]
-summary = "Configure persistence in microservice"
-title = "Step 2: Configure Persistence in microservice"
+summary = "Configure JMS in microservice"
+title = "Configure JMS"
 date = 2020-12-09T14:02:27-05:00
 
 +++
