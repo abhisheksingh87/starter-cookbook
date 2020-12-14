@@ -85,6 +85,8 @@ Upon completion of this recipe you will have a working spring boot microservice 
       * `settings.gradle`
    
 
+1. Create the codebase folder structure based on the\<recipe\> in ***Best Practices***
+
 ### Validation
 
 1. Open a command window in the `<microservice-name>` directory
