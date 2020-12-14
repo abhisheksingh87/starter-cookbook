@@ -88,17 +88,45 @@ a:hover {
     color: #00b5a3;
 }
 
+body {
+    /* font-family: "Lato", "Work Sans", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif; */
+    font-family: sans-serif;
+}
+
 body strong {
-    font-family: "Lato", "Work Sans", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+    /* font-family: "Lato", "Work Sans", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif; */
+    font-family: sans-serif;
 }
 
 .footline {
-  margin-top: 3rem;
-  border-top: 4px solid #F0F2F4;
-  font-size: smaller; }
+  margin-top: 2rem;
+  font-size: smaller; 
+  border: 1px solid black;
+}
 
 body #body-inner {
     margin-bottom: 1rem;
+}
+
+body #body-inner h1 {
+    font-size: 28pt;
+    font-weight: bold;
+    margin-bottom: -1rem;
+}
+
+body #body-inner h2 {
+    font-size: 24pt;
+    font-weight: normal;
+}
+
+body #body-inner h3 {
+    font-size: 22pt;
+    font-weight: normal;
+}
+
+body #body-inner h4 {
+    font-size: 20pt;
+    font-weight: normal;
 }
 
 /* Note shortcodes */
@@ -118,6 +146,7 @@ body #body-inner {
   margin-bottom: 2em;
   overflow-x: auto;
   background-color: #E0E0E0;
+  font-size: 9pt;
 }
 
 body #sidebar hr {
@@ -135,3 +164,4 @@ body #sidebar hr {
 .alignright {
 	float: right;
 }
+

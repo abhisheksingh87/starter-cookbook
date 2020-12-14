@@ -1,12 +1,12 @@
 +++
 categories = ["recipes"]
-tags = ["best practices","practices"]
+tags = ["practices"]
 summary = "Best practices for spring boot applications"
 title = "Best Practices"
 date = 2020-12-09
 weight = 300
 draft = false
-authors = ["Prashanth 'PB' Belathur"]
+authors = ["Prashanth 'PB' Belathur", "Rohan Mukesh"]
 pre ="<i class='fa fa-cutlery'></i>&nbsp;&nbsp;"
 +++
 
