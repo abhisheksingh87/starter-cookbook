@@ -135,7 +135,7 @@ Endpoint URL: localhost:8080/v1/validate
   ```json    
       {
        "locationId":"123",
-       "city": "Delhi",
+       "city": "Frisco",
        "countryCode":"2",
        "postCode":"000000"
      }
