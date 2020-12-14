@@ -7,7 +7,7 @@ date = 2020-12-09
 weight = 300
 draft = false
 authors = ["Prashanth 'PB' Belathur", "Rohan Mukesh"]
-pre ="<i class='fa fa-cutlery'></i>&nbsp;&nbsp;"
+pre ="<i class='fa fa-book fa-fw'></i>&nbsp;&nbsp;"
 +++
 
 ## Context

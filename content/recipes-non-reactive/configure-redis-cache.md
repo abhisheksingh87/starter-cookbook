@@ -5,7 +5,7 @@ summary = "Configure Redis Cache in microservice"
 title = "Configure Redis"
 date = 2020-12-09T14:02:27-05:00
 
-+++
++++                     
 
 ## Context
 This is the third recipe in the series, for developing a modern _cloud ready_ microservice using the **greenfield-app-starter**.  

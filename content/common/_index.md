@@ -7,6 +7,7 @@ date = 2020-12-09
 weight = 10
 draft = false
 authors = ["Prashanth 'PB' Belathur"]
+pre ="<i class='fa fa-spinner fa-pulse fa-1x fa-fw'></i>&nbsp;&nbsp;"
 +++
 
 ## Context
