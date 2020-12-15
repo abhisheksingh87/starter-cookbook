@@ -26,9 +26,8 @@ The `HikariDatasource` bean with preconfigured connection pool is used to fulfil
    | driver classname | `oracle.jdbc.OracleDriver`    |
    | schema     | database schema name  | 
    | dialect    | Hibernate dialect based on the Oracle database version `org.hibernate.dialect.Oracle12cDialect` | 
-   | username | username  | 
-   | password | encrypted password based on existing security requirements| 
-
+   | username | schema username | 
+   | password | schema password | 
 
 1. Determine and record the **database connection pool requirements** for the new microservice
 
