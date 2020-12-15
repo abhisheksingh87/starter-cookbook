@@ -86,28 +86,24 @@ The validation class (CustomerLocationValidator) implements the _ConstraintValid
 It's in this method we will define our validation rules.
 
    ```java
-      public class CustomerLocationValidator implements ConstraintValidator<ValidCustomerLocation, CustomerLocation> {
-      
-      @Autowired
-      Validator validator;
+      public class CustomerLocationValidator implements ConstraintValidator<CustomerLocationConstraint, CustomerLocation> {
     
-      @Override
-      public boolean isValid(CustomerLocation customerLocation, ConstraintValidatorContext constraintValidatorContext) {
-          boolean isValid = true;
-          Set<ConstraintViolation<CustomerLocation>> constraintViolations = new HashSet();
-          constraintViolations =
-                  validator.validate(customerLocation);
-          if (!CollectionUtils.isEmpty(constraintViolations)) {
-              constraintValidatorContext.disableDefaultConstraintViolation();
-              for (ConstraintViolation<CustomerLocation> violation : constraintViolations) {
-                  constraintValidatorContext
-                          .buildConstraintViolationWithTemplate(violation.getMessageTemplate())
-                          .addConstraintViolation();
-              }
-              isValid = false;
-          }
-          return isValid;
-      }
+        @Autowired
+        Validator validator;
+    
+        @Override
+        public boolean isValid(com.wellsfargo.cto.eai.customvalidator.model.CustomerLocation customerLocation, ConstraintValidatorContext constraintValidatorContext) {
+            Set<ConstraintViolation<com.wellsfargo.cto.eai.customvalidator.model.CustomerLocation>> constraintViolations = validator.validate(customerLocation);
+            if (!CollectionUtils.isEmpty(constraintViolations)) {
+                constraintValidatorContext.disableDefaultConstraintViolation();
+                constraintViolations.forEach(customerLocationConstraintViolation -> constraintValidatorContext
+                        .buildConstraintViolationWithTemplate(
+                                customerLocationConstraintViolation.getMessageTemplate())
+                        .addConstraintViolation());
+                return false;
+            }
+            return true;
+        }
     }
    ```
 Attributes with @NumericString annotation would be validated by NumericStringValidator class as shown below:
