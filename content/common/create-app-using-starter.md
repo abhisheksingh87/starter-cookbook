@@ -2,14 +2,15 @@
 categories = ["recipes"]
 tags = ["starter","microservice", "barebone microservice"]
 summary = "How to create a microservice using the greenfield-app-starter"
-title = "Create microservice using the starter"
+title = "Create barebone microservice using the starter"
 date = 2020-12-09
 weight = 10
 draft = false
 +++
 
 ## Context
-This recipe is part of a cookbook for developing a modern _cloud ready_ microservice using the **greenfield-app-starter**. Upon completion of this recipe you will have a _working_ spring boot microservice with health, info and  metrics endpoints enabled.
+This recipe is part of a cookbook for developing a modern _cloud ready_ microservice using the **greenfield-app-starter**.  
+Upon completion of this recipe you will have a _working_ spring boot microservice with health, info and  metrics endpoints enabled.
 
 ### Prerequisite
 
