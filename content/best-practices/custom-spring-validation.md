@@ -47,6 +47,7 @@ Lets see the REST endpoint which validates the incoming request:
 
    ```java
       @RestController
+      @Validated  
       public class ValidatorController {
           @PostMapping(value="/v1/validate", produces = "application/json")
           public ResponseEntity<String> validateCustomerLocation(@ValidCustomerLocation @RequestBody CustomerLocation customerLocation){
@@ -54,8 +55,12 @@ Lets see the REST endpoint which validates the incoming request:
           }
       }
    ```
-## Custom validators:
+Note that we have to add Spring’s @Validated annotation to the controller at class level to tell Spring to evaluate the constraint annotations on method parameters.
+The @Validated annotation is only evaluated on class level in this case, even though it’s allowed to be used on methods.
 
+## New Custom Annotation:
+
+Creating a custom validator entails us rolling out our own annotation and using it in our model to enforce the validation rules.
 ValidCustomerLocation is a custom validator annotation for which the constraints would be validated by CustomerLocationValidator class as shown below:
 
    ```java
@@ -69,10 +74,17 @@ ValidCustomerLocation is a custom validator annotation for which the constraints
           Class<? extends Payload>[] payload() default {};
       }
    ```
-The implementation of CustomerLocationValidator would override the isValid() method and check if the input is valid or not.
+The @Constraint annotation defined in the class is going to validate our field and message() is the error message that is returned to the client.
+The additional code is boilerplate code that conforms to Spring standards.
+
+## Custom Validator:
+
+The validation class (CustomerLocationValidator) implements the _ConstraintValidator_ interface and must implement the isValid() method.
+It's in this method we will define our validation rules.
 
    ```java
       public class CustomerLocationValidator implements ConstraintValidator<ValidCustomerLocation, CustomerLocation> {
+      
       @Autowired
       Validator validator;
     
@@ -121,7 +133,11 @@ The implementation of NumericStringValidator would override the isValid() method
         }
     }
 ```
-## Time to test:
+## Unit Testing:
+
+
+
+## Test:
 
 Complete code base is present at the below git location:
 
@@ -134,11 +150,10 @@ Clone the codebase, build and run the CustomvalidatorApplication class. The appl
 Endpoint URL: localhost:8080/v1/validate
   ```json    
       {
-       "locationId":"123",
-       "city": "Frisco",
-       "countryCode":"2",
-       "postCode":"000000"
-     }
+        "locationId":"aa",
+        "countryCode":"sns",
+        "postCode":"ss"
+      }
  ```
 **Response**:
 
@@ -161,33 +176,45 @@ Endpoint URL: localhost:8080/v1/validate
 Status: HTTP response code 400 Bad Request
  ```json
     {
-     "errorCode": "400 BAD_REQUEST",
-     "errorMessage": "Validation Errors",
-     "subErrors": [
-     {
-     "object": "customerLocation",
-     "field": "city",
-     "rejectedValue": "city",
-     "message": "city cannot not be empty"
-     },
-     {
-     "object": "customerLocation",
-     "field": "countryCode",
-     "rejectedValue": "countryCode",
-     "message": "countryCode should be numeric"
-     },
-     {
-     "object": "customerLocation",
-     "field": "postCode",
-     "rejectedValue": "postCode",
-     "message": "postCode should be numeric"
-     },
-     {
-     "object": "customerLocation",
-     "field": "locationId",
-     "rejectedValue": "locationId",
-     "message": "locationId should be numeric"
-     }
-     ]
+      "errorCode": "400 BAD_REQUEST",
+      "errorMessage": "Validation Errors",
+      "errors": [
+        {
+          "rejectedValue": {
+            "locationId": "aa",
+            "city": null,
+            "countryCode": "sns",
+            "postCode": "ss"
+          },
+          "message": "postCode should be numeric"
+        },
+        {
+          "rejectedValue": {
+            "locationId": "aa",
+            "city": null,
+            "countryCode": "sns",
+            "postCode": "ss"
+          },
+          "message": "city cannot not be empty"
+        },
+        {
+          "rejectedValue": {
+            "locationId": "aa",
+            "city": null,
+            "countryCode": "sns",
+            "postCode": "ss"
+          },
+          "message": "locationId should be numeric"
+        },
+        {
+          "rejectedValue": {
+            "locationId": "aa",
+            "city": null,
+            "countryCode": "sns",
+            "postCode": "ss"
+          },
+          "message": "countryCode should be numeric"
+        }
+      ]
     }
 ```
