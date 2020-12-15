@@ -140,7 +140,7 @@ The implementation of NumericStringValidator would override the isValid() method
 
 Complete code base is present at the below git location:
 
-[https://github.com/rohanmukesh/spring-boot-custom-validator.git](https://github.com/rohanmukesh/spring-custom-validator.git)
+[https://github.com/rohanmukesh/spring-boot-custom-validator.git](https://github.com/rohanmukesh/spring-boot-custom-validator.git)
 
 Clone the codebase, build and run the CustomvalidatorApplication class. The application runs on default port 8080. Once it is up and running perform the below two tests:
 
