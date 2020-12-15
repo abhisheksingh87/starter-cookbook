@@ -39,7 +39,10 @@ Add below dependency to build.gradle. The latest dependency can be checked [here
  ```
     compile group: 'org.hibernate', name: 'hibernate-validator', version: '4.2.0.Final'
  ```
-If we're using Spring Boot, then we can add only the _spring-boot-starter-web_, which will bring in the hibernate-validator dependency also.
+If we're using Spring Boot, then we need below dependency to be added, which will bring in the hibernate-validator dependency also.
+ ```
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-validation', version: '2.4.1'
+ ```
 
 ## **Controller:**
 
