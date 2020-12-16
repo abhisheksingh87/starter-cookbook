@@ -9,8 +9,9 @@ weight = 10
 +++
 
 ## Context
-This recipe is part of a cookbook for developing a modern _cloud ready_ microservice using the **greenfield-app-starter**. This recipe deals with configuring persistence in the microservice.  
-The `HikariDatasource` bean with preconfigured connection pool is used to fulfill persistence needs in the microservice.
+This recipe is part of a cookbook for developing a modern _cloud ready_ microservice using the **greenfield-app-starter**.   
+This recipe deals with configuring persistence in the microservice.  
+The datasource bean with preconfigured _Hikari_ connection pool is used to fulfill persistence needs in the microservice.
 
 ### Prerequisite
 

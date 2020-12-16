@@ -10,7 +10,7 @@ draft = false
 
 ## Context
 This recipe is part of a cookbook for developing a modern _cloud ready_ microservice using the **greenfield-app-starter**.  
-Upon completion of this recipe you will have a _working_ spring boot microservice with health, info and  metrics endpoints enabled.
+Upon completion of this recipe, you'll have a _working_ spring boot microservice with enabled actuator (_info,health and metrics_) endpoints.
 
 ### Prerequisite
 
