@@ -35,8 +35,8 @@ Upon completion of this recipe you will have a _working_ spring boot microservic
    | project-group  | `com.wellsfargo.<lob>.<business-group>.<application-group>` |  **`com.wellsfargo.consumer.lending.loan`**
 
 1. Clone the **greenfield-app-starter** from Gitlab repo `git clone <repo url>`
-   
-![starter app folder structure](/images/resized.jpg "microservice folder structure")
+![starter app folder structure](/images/resized.jpg)
+
 1. Rename folder: `greenfield-app-starter` to `<microservice-name>`  
    (example: **AutoLoanCalculator**)
 
