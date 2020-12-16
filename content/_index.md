@@ -6,4 +6,4 @@ description = "Cookbook Home Page"
 
 # Greenfield Microservice Starter
 
-Cookbook with recipes for developing modern cloud native microservice created by VMWare Pivotal Labs during the WellsFargo Enterprise Architecture Consulting engagement.
+Cookbook with recipes for developing modern cloud native microservice, created by VMWare Tanzu Labs during the WellsFargo Enterprise Architecture Consulting engagement.

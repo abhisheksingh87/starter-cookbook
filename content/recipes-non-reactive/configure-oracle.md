@@ -4,13 +4,12 @@ tags = ["persistence","hikari","database connection pool","anti patterns"]
 summary = "Configure Oracle datasource in microservice"
 title = "Configure Oracle"
 date = 2020-12-09T14:02:27-05:00
-weight = 1
+weight = 10
 
 +++
 
 ## Context
-This is the second recipe in the series, for developing a modern _cloud ready_ microservice using the **greenfield-app-starter**.  
-This recipe deals with configuring persistence in the microservice.  
+This recipe is part of a cookbook for developing a modern _cloud ready_ microservice using the **greenfield-app-starter**. This recipe deals with configuring persistence in the microservice.  
 The `HikariDatasource` bean with preconfigured connection pool is used to fulfill persistence needs in the microservice.
 
 ### Prerequisite
@@ -27,8 +26,9 @@ The `HikariDatasource` bean with preconfigured connection pool is used to fulfil
    | driver classname | `oracle.jdbc.OracleDriver`    |
    | schema     | database schema name  | 
    | dialect    | Hibernate dialect based on the Oracle database version `org.hibernate.dialect.Oracle12cDialect` | 
-   | username | schema username | 
-   | password | schema password | 
+   | username | username  | 
+   | password | encrypted password based on existing security requirements| 
+
 
 1. Determine and record the **database connection pool requirements** for the new microservice
 

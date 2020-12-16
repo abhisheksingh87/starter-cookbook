@@ -2,15 +2,15 @@
 categories = ["recipes"]
 tags = ["starter","microservice", "barebone microservice"]
 summary = "How to create a microservice using the greenfield-app-starter"
-title = "Create microservice using starter"
+title = "Create barebone microservice using the starter"
 date = 2020-12-09
 weight = 10
 draft = false
 +++
 
 ## Context
-This is the first recipe in the series, for developing a modern _cloud ready_ microservice using the **greenfield-app-starter**.  
-Upon completion of this recipe you will have a working spring boot microservice with health, info and  metrics endpoints enabled.
+This recipe is part of a cookbook for developing a modern _cloud ready_ microservice using the **greenfield-app-starter**.  
+Upon completion of this recipe you will have a _working_ spring boot microservice with health, info and  metrics endpoints enabled.
 
 ### Prerequisite
 
@@ -29,12 +29,13 @@ Upon completion of this recipe you will have a working spring boot microservice 
    | business-group | business group within the lob | **lending** |
    | application-group  | application category or grouping | **loan** |
    | microservice-name      | camelCased name  | **AutoLoanCalculator**
-   | microservice-version    | in `major.minor.patch` format; start with `0.1.0` | **0.1.0**
+   | microservice-version    | in `major.minor.patch` format; [Versioning Basics](https://medium.com/fiverr-engineering/major-minor-patch-a5298e2e1798) | **0.1.0**
    | description    | short phrase describing the purpose of the microservice | **consumer auto loan calculator for period less than 36 months**
    | JDK-version  |Java 8 or above; one of `1.8`, `1.11`, `1.12`, `1.13` or `1.14`| **1.12**
    | project-group  | `com.wellsfargo.<lob>.<business-group>.<application-group>` |  **`com.wellsfargo.consumer.lending.loan`**
 
 1. Clone the **greenfield-app-starter** from Gitlab repo `git clone <repo url>`
+![starter app folder structure](/images/resized.jpg)
 
 1. Rename folder: `greenfield-app-starter` to `<microservice-name>`  
    (example: **AutoLoanCalculator**)
@@ -104,3 +105,4 @@ Upon completion of this recipe you will have a working spring boot microservice 
 Follow the **Reactive** or **Non-Reactive** recipes depending on your microservice needs. 
 
 ## Notes and References
+[How to version software ?](https://semver.org/)
