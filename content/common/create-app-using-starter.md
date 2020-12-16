@@ -29,7 +29,7 @@ Upon completion of this recipe you will have a _working_ spring boot microservic
    | business-group | business group within the lob | **lending** |
    | application-group  | application category or grouping | **loan** |
    | microservice-name      | camelCased name  | **AutoLoanCalculator**
-   | microservice-version    | in `major.minor.patch` format; start with `0.1.0` | **0.1.0**
+   | microservice-version    | in `major.minor.patch` format; [Versioning Basics](https://medium.com/fiverr-engineering/major-minor-patch-a5298e2e1798) | **0.1.0**
    | description    | short phrase describing the purpose of the microservice | **consumer auto loan calculator for period less than 36 months**
    | JDK-version  |Java 8 or above; one of `1.8`, `1.11`, `1.12`, `1.13` or `1.14`| **1.12**
    | project-group  | `com.wellsfargo.<lob>.<business-group>.<application-group>` |  **`com.wellsfargo.consumer.lending.loan`**
@@ -105,3 +105,4 @@ Upon completion of this recipe you will have a _working_ spring boot microservic
 Follow the **Reactive** or **Non-Reactive** recipes depending on your microservice needs. 
 
 ## Notes and References
+[How to version software ?](https://semver.org/)
