@@ -8,7 +8,7 @@ weight = 10
 draft = false
 +++
 
-## Context
+## CONTEXT
 This recipe is part of a cookbook for developing a modern _cloud ready_ microservice using the **greenfield-app-starter**.  
 Upon completion of this recipe, you'll have a _working_  [Spring Boot](https://medium.com/stuff-about-cloud-native-development/my-spring-boot-101-journal-getting-started-5183f68606cb) microservice with enabled actuator (_info,health and metrics_) endpoints.
 
@@ -19,7 +19,7 @@ Upon completion of this recipe, you'll have a _working_  [Spring Boot](https://m
 - GIT client
 - Access to **greenfield-app-starter** Github repo
 
-## Solution
+## SOLUTION
 
 1. Collect or record the following details for the new microservice
 
@@ -104,6 +104,6 @@ Upon completion of this recipe, you'll have a _working_  [Spring Boot](https://m
 ## Next Step
 Follow the **Reactive** or **Non-Reactive** recipes depending on your microservice needs. 
 
-## Notes and References
+## NOTES
 * [Why use Spring Boot ?](https://medium.com/stuff-about-cloud-native-development/my-spring-boot-101-journal-getting-started-5183f68606cb)
 * [How to version software ?](https://semver.org/)

@@ -8,7 +8,7 @@ weight = 10
 
 +++
 
-## Context
+## CONTEXT
 This recipe is part of a cookbook for developing a modern _cloud ready_ microservice using the **greenfield-app-starter**.   
 This recipe deals with configuring persistence in the microservice.  
 The datasource bean with preconfigured _Hikari_ connection pool is used to fulfill persistence needs in the microservice.
@@ -17,7 +17,7 @@ The datasource bean with preconfigured _Hikari_ connection pool is used to fulfi
 
 - **STEP 1: CREATE APPLICATION USING THE STARTER** is completed.
 
-## Solution
+## SOLUTION
 
 1. Determine and record the following **oracle database connection details** 
 
@@ -28,18 +28,18 @@ The datasource bean with preconfigured _Hikari_ connection pool is used to fulfi
    | schema     | database schema name  | 
    | dialect    | Hibernate dialect based on the Oracle database version `org.hibernate.dialect.Oracle12cDialect` | 
    | username | username  | 
-   | password | encrypted password based on existing security requirements| 
+   | password | encrypted password| 
 
 
 1. Determine and record the **database connection pool requirements** for the new microservice
 
    | Property        | Suggested Values  |
          | :---          |    :----   | 
-   | maximumPoolSize  |  10  |
-   | idlePoolSize | 2 | 
-   | connectionTimeout | 250ms  |
-   | idleTimeout     | 800ms  | 
-   | maxLifetime    | 3000ms | 
+   | max-pool-size  |  10  |
+   | idle-pool-size | 2 | 
+   | connection-timeout | 250ms  |
+   | idle-timeout     | 800ms  | 
+   | max-lifetime    | 3000ms | 
 
  
 1. Navigate to the `<microservice>` directory
@@ -56,14 +56,15 @@ The datasource bean with preconfigured _Hikari_ connection pool is used to fulfi
                name: <user friendly database name>
                url: <jdbc url format>
                username:
-               password:
-               schema:
+               password: <encrypted password>
+               schema: 
                dialect: <hibernate oracle dialect>
                connection-pool:
-                 maximumPoolSize: <less than 10>
-                 connectionTimeout: <in millisecs>
-                 idleTimeout: <in millisecs>
-                 maxLifetime: <in millisecs>
+                 max-pool-size: <less than 10>
+                 idle-pool-size: <max-pool-size/5>
+                 connection-timeout: <in millisecs>
+                 idle-timeout: <in millisecs>
+                 max-lifetime: <in millisecs>
    ```
 
 ### Validation
@@ -88,15 +89,7 @@ The datasource bean with preconfigured _Hikari_ connection pool is used to fulfi
      search for _HikariDataSource_ in the browser.
 
 ## Next Step
-Configure the Cache
+Configure MongoDB
 
-
-## Notes and References
-
-- https://github.com/pbelathur/spring-boot-performance-analysis
-
-### Anti Patterns
-1. Oversizing the `maximumPoolSize`
-1. Having too many _idle_ connections
-1. Setting high `maxLifetime`
-
+## NOTES
+- [database connection pool **anti-patterns**](https://github.com/pbelathur/spring-boot-performance-analysis)
