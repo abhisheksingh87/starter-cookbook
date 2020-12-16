@@ -20,3 +20,4 @@ This **greenfield-app-starter** allows you to develop a spring boot microservice
 
 ## Notes and References
 - [What is Reactive Programming ?](https://blog.redelastic.com/what-is-reactive-programming-bc9fa7f4a7fc)
+- [Essence of Reactive Programming](https://www.scnsoft.com/blog/java-reactive-programming)
