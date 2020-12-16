@@ -14,7 +14,7 @@ Upon completion of this recipe, you'll have a _working_  [Spring Boot](https://m
 
 ### Prerequisite
 
-- JDK 8 or greater
+- JDK 8 or higher
 - IntelliJ or Eclipse IDE
 - GIT client
 - Access to **greenfield-app-starter** Github repo
@@ -86,24 +86,23 @@ Upon completion of this recipe, you'll have a _working_  [Spring Boot](https://m
       * `settings.gradle`
    
 
-1. Create the codebase folder structure based on the\<recipe\> in ***Best Practices***
+1. Create the codebase folder/package structure based on the recipe in ***Best Practices***
 
 ### Validation
 
 1. Open a command window in the `<microservice-name>` directory
 
-1. Validate the new microservice can be built locally: `gradlew bootJar`
+1. Validate the new microservice
+   - can be built locally: `gradlew bootJar`
+   - runs locally: `gradlew bootRun`
 
-1. Validate the new microservice runs locally: `gradlew bootRun`
-
-1. Verify microservice health and info in the browser
-
+1. Verify microservice health in the browser
    - `http://localhost:8080/actuator/info`
    - `http://localhost:8080/actuator/health`
 
 
 ## Next Step
-Follow the **Reactive** or **Non-Reactive** recipes depending on your microservice needs. 
+Follow the **Reactive** or **Non-Reactive** path depending on your microservice needs. 
 
 ## NOTES
 * [Why use Spring Boot ?](https://medium.com/stuff-about-cloud-native-development/my-spring-boot-101-journal-getting-started-5183f68606cb)

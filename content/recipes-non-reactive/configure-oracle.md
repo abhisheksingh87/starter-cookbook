@@ -4,8 +4,7 @@ tags = ["persistence","hikari","database connection pool","anti patterns"]
 summary = "Configure Oracle datasource in microservice"
 title = "Configure Oracle"
 date = 2020-12-09T14:02:27-05:00
-weight = 10
-
+weight = 2
 +++
 
 ## CONTEXT
@@ -31,7 +30,8 @@ The datasource bean with preconfigured _Hikari_ connection pool is used to fulfi
    | password | encrypted password| 
 
 
-1. Determine and record the **database connection pool requirements** for the new microservice
+1. Determine and record the **database connection pool requirements** for the new microservice.  
+  The pool configuration can be tailored to your microservice needs after reviewing the  [**anti-patterns**](https://github.com/pbelathur/spring-boot-performance-analysis).
 
    | Property        | Suggested Values  |
          | :---          |    :----   | 
@@ -41,6 +41,7 @@ The datasource bean with preconfigured _Hikari_ connection pool is used to fulfi
    | idle-timeout     | 800ms  | 
    | max-lifetime    | 3000ms | 
 
+ 
  
 1. Navigate to the `<microservice>` directory
    
@@ -71,14 +72,11 @@ The datasource bean with preconfigured _Hikari_ connection pool is used to fulfi
 
 1. Open a command window in the `<microservice-name>` directory
 
+1. Validate the new microservice
+   - can be built locally: `gradlew bootJar`
+   - runs locally: `gradlew bootRun`
 
-1. Validate the new microservice can be built locally: `gradlew bootJar`
-
-
-1. Validate the new microservice runs locally: `gradlew bootRun`
-
-
-1. Verify microservice health and info in the browser
+1. Verify microservice health  in the browser
 
    - `http://localhost:8080/actuator/info`
      
@@ -87,9 +85,6 @@ The datasource bean with preconfigured _Hikari_ connection pool is used to fulfi
    
    - `http://localhost:8080/actuator/beans`  
      search for _HikariDataSource_ in the browser.
-
-## Next Step
-Configure MongoDB
-
+     
 ## NOTES
 - [database connection pool **anti-patterns**](https://github.com/pbelathur/spring-boot-performance-analysis)

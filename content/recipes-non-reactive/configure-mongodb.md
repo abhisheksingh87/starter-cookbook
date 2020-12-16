@@ -1,11 +1,10 @@
 +++
 categories = ["recipes"]
 tags = ["persistence","mongodb","spring boot"]
-summary = "Configure mongodb datasource in microservice"
-title = "Configure mongodb"
+summary = "Configure mongoDB datasource in microservice"
+title = "Configure MongoDB"
 date = 2020-12-09T14:02:27-05:00
-weight = 1
-
+weight = 3
 +++
 
 ## Context
@@ -51,14 +50,11 @@ This recipe deals with configuring persistence in the microservice.
 
 1. Open a command window in the `<microservice-name>` directory
 
+1. Validate the new microservice
+   - can be built locally: `gradlew bootJar`
+   - runs locally: `gradlew bootRun`
 
-1. Validate the new microservice can be built locally: `gradlew bootJar`
-
-
-1. Validate the new microservice runs locally: `gradlew bootRun`
-
-
-1. Verify microservice health and info in the browser
+1. Verify microservice health in the browser
 
    - `http://localhost:8080/actuator/info`
      
@@ -66,7 +62,7 @@ This recipe deals with configuring persistence in the microservice.
       the _datasource details_ and _uptime status_ should be displayed in the browser.
    
    - `http://localhost:8080/actuator/beans`  
-     search for _mongo_ in the browser and you should see below
+     search for _mongo_ in the browser and you should see the following
      ```json
       "mongo": {
          "status": "UP",
