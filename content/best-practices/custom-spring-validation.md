@@ -4,7 +4,7 @@ tags = ["practices", "spring boot", "microservice", "custom spring bean validati
 title = "Custom Spring Bean Validation"
 description = "A guide to use custom validation"
 date = 2020-12-09
-weight = 10
+weight = 20
 draft = false
 authors = ["Rohan Mukesh"]
 +++

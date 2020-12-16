@@ -5,6 +5,6 @@ weight = 60
 title = "Reactive Recipes"
 pre ="<i class='fa fa-cutlery'></i>&nbsp;&nbsp;"
 
-+++
-REACTIVE Recipes
-Cookbook with recipes for developing modern cloud native application created by VMWare Pivotal Labs engagement during the Enterprise Architecture Consulting engagement.
++++ 
+
+Recipes for developing microservice using Spring Reactive framework.

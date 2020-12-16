@@ -98,8 +98,9 @@ Upon completion of this recipe, you'll have a _working_  [Spring Boot](https://m
 
 1. Verify microservice health and info in the browser
 
-    - `http://localhost:8080/actuator/health`
-    - `http://localhost:8080/actuator/info`
+   - `http://localhost:8080/actuator/info`
+   - `http://localhost:8080/actuator/health`
+
 
 ## Next Step
 Follow the **Reactive** or **Non-Reactive** recipes depending on your microservice needs. 

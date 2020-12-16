@@ -1,21 +1,23 @@
 +++
 categories = ["recipes"]
 tags = ["practices", "spring boot", "microservice", "application development"]
-title = "Structuring Spring Boot"
-description = "A simple guide to organizing Spring Boot apps"
+title = "Organize codebase"
+description = "A simple guide to organize codebase in a microservice"
 date = 2020-12-09
 weight = 10
 draft = false
 authors = ["Rohan Mukesh"]
 +++
 
-## Context
-This guide presents one possible way to structure a spring boot app. It is only a starting point for deciding a structure which best suits your team, requirements, company, time, and app complexity.
+## CONTEXT
+This recipe provides details for organizing codebase in a typical spring boot microservice.
 
-## Layers
+## SOLUTION
+
+### Layers
 
 #### Why even have layers today? What year is this?
-*"Most of the examples I see have one Spring bean which does config & endpoints & data & security & validation & pancakes."*
+> *Most of the examples I see have one Spring bean which does configuration, endpoints, data, security, validation and pancakes...*
 
 An argument can be made that trivial services (especially focused examples) have no need for the overhead of multiple layers, packages, separation of duties, abstraction, and even basic organization.  
 
@@ -29,26 +31,29 @@ Yes, but we are looking for a balance here between overhead and chaos.
 - Other developers have to make sense of our code (convention & organization)
 - Our code has to be easily testable (isolation & separation of duties).
 
-> Another big one: Annotation based frameworks commonly utilize [dynamic proxies](https://docs.oracle.com/javase/8/docs/technotes/guides/reflection/proxy.html) which only works on public method calls to spring-injected beans (i.e. hystrix, JPA, transactions etc.)
+- Another big one: Annotation based frameworks commonly utilize [dynamic proxies](https://docs.oracle.com/javase/8/docs/technotes/guides/reflection/proxy.html) which only works on public method calls to spring-injected beans (i.e. hystrix, JPA, transactions etc.)
 
-*"But even the Spring Initializr only gives me dependencies, and a single Application class"*
+> *But even the Spring Initializr only gives me dependencies, and a single Application class*
 
 The rest is left to you simply because there are so many options. 
 
-Still here? Let's look at one possible strategy.  
+Still here? Let's look at a possible strategy.  
 
 ### API Based Services
 
 Most http/api Spring Boot applications consist of 3 primary layer types.
 
-
 ```
        Controller (API Front End - Integration with external consumers)
-           |
-           v
+       
+                                   |
+                                   v
+       
        Services (POJO Capabilities i.e. the valuable stuff)
-           |
-           v
+       
+                                   |
+                                   v
+      
       Integration (Integration with external producers)
 ```
 
@@ -215,35 +220,38 @@ Again, there are many ways to do this just keep in mind that consistency across 
 ```
 com.wellsfargo.cto.eai/
                    TrackingApplication.java
+                   
 com.wellsfargo.cto.eai.config/
                    SecurityConfig.java
                    RedisConfig.java
+                   
 com.wellsfargo.cto.eai.controller/
                    AccountController.java
                    AccountControllerAdvice.java
                    AccountInputValidator.java
+                   
 com.wellsfargo.cto.eai.controller.model/
                    AccountRequest.java
                    AccountResponse.java
                    ...
+                   
 com.wellsfargo.cto.eai.model/
                    AccountStatus.java
                    Customer.java
                    ...
+                   
 com.wellsfargo.cto.eai.service/
                    AccountService.java
                    CustomerService.java
+                   
 com.wellsfargo.cto.eai.repo/
                    AccountRepo.java
                    JDBCAcountRepo.java
                    CustomerRepo.java
                    CDSCustomerRepo.java
+                   
 com.wellsfargo.cto.eai.repo.model/
                    Customer.java							
 ```
 
 ### Package by Feature Example
-
-```
-							
-```

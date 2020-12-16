@@ -7,4 +7,4 @@ pre ="<i class='fa fa-cutlery'></i>&nbsp;&nbsp;"
 
 +++
 
-Cookbook with recipes for developing modern cloud native application created by VMWare Pivotal Labs engagement during the Enterprise Architecture Consulting engagement.
+Recipes for developing microservice using traditional non-reactive techniques.
