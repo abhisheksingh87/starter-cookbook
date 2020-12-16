@@ -52,7 +52,7 @@ The `HikariDatasource` bean with preconfigured connection pool is used to fulfil
         id: <wells fargo distributed-id>
         persistence:
            oracle:
-             name: <user friendly database name>
+               name: <user friendly database name>
                url: <jdbc url format>
                username:
                password:
