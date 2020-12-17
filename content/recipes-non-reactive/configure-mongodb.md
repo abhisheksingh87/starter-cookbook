@@ -20,13 +20,11 @@ This recipe deals with configuring persistence in the microservice.
 1. Determine and record the following **mongodb database connection details** 
 
    | Property        | Details  |
-      | :---          |    :----   | 
-   | host  |  `[host]`  # Mongo server host |
-   | port | `[port]` #Mongo server port   |
+   | :---            |    :----   | 
+   | uri | mondogb://localhost/test #Mongo database URI. when set, host and port are ignored.
    | database | localhost #database  name  |
    | username | Login user of the mongo server - WellsFargo standard 
    | password | Login password of the mongo server - - WellsFargo standard
-   | uri | mondogb://localhost/test #Mongo database URI. when set, host and port are ignored.
  
 1. Navigate to the `<microservice>` directory
    
@@ -78,8 +76,6 @@ This recipe deals with configuring persistence in the microservice.
   ```yaml
      spring:
         mongodb:
-          host:  
-          port:    
           uri:    
           database:   
           username:
