@@ -2,7 +2,7 @@
 categories = ["recipes"]
 tags = ["persistence","hikari","database connection pool","anti patterns"]
 summary = "Configure Oracle datasource in microservice"
-title = "Configure Oracle"
+title = "3. Configure Oracle"
 date = 2020-12-09T14:02:27-05:00
 weight = 2
 +++

@@ -2,7 +2,7 @@
 categories = ["recipes"]
 tags = ["starter","microservice", "barebone microservice"]
 summary = "How to create a microservice using the greenfield-app-starter"
-title = "Create barebone microservice using the starter"
+title = "1. Create barebone microservice using the starter"
 date = 2020-12-09
 weight = 10
 draft = false

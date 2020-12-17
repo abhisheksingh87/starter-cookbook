@@ -2,7 +2,7 @@
 categories = ["recipes"]
 tags = ["persistence","mongodb","spring boot"]
 summary = "Configure mongoDB datasource in microservice"
-title = "Configure MongoDB"
+title = "4. Configure MongoDB"
 date = 2020-12-09T14:02:27-05:00
 weight = 3
 +++

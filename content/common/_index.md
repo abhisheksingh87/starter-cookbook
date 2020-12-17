@@ -10,11 +10,7 @@ authors = ["Prashanth 'PB' Belathur"]
 pre ="<i class='fa fa-spinner fa-pulse fa-1x fa-fw'></i>&nbsp;&nbsp;"
 +++
 
-# WellsFargo Application Starter Cookbook
-
 Cookbook with recipes for developing modern cloud native microservice, created by VMWare Tanzu Labs during the WellsFargo Enterprise Architecture Consulting engagement.
-
-
 
 ## CONTEXT
 

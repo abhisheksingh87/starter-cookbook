@@ -4,6 +4,6 @@ title = "Home"
 description = "Cookbook Home Page"
 +++
 
-# Greenfield Microservice Starter
+# Application Starter Cookbook
 
-Cookbook with recipes for developing modern cloud native microservice, created by VMWare Tanzu Labs during the WellsFargo Enterprise Architecture Consulting engagement.
+Cookbook with recipes for developing modern cloud native microservice created by VMWare Tanzu Labs during the WellsFargo Enterprise Architecture Consulting engagement.

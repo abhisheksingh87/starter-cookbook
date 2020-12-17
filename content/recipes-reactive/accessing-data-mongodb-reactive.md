@@ -2,7 +2,7 @@
 categories = ["recipes"]
 tags = ["persistence","data-repository", "mongodb","spring boot"]
 summary = "Accessing mongodb data reactively"
-title = "Accessing MongoDB Data Reactive"
+title = "3. Accessing data in MongoDB"
 date = 2020-12-09T14:02:27-05:00
 weight = 1
 +++

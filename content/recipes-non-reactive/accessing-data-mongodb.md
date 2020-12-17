@@ -1,8 +1,8 @@
 +++
 categories = ["recipes"]
 tags = ["persistence","data-repository", "mongodb","spring boot"]
-summary = "Accessing mongodb data "
-title = "Accessing mongodb data"
+summary = "Accessing data in MongoDB"
+title = "5. Accessing data in MongoDB"
 date = 2020-12-09T14:02:27-05:00
 weight = 1
 +++
