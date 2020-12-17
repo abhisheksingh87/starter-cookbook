@@ -2,16 +2,17 @@
 categories = ["recipes"]
 tags = ["persistence","data-repository", "mongodb","spring boot"]
 summary = "Accessing data in MongoDB"
-title = "5. Accessing data in MongoDB"
+title = "5. Access Data in MongoDB"
 date = 2020-12-09T14:02:27-05:00
 weight = 1
 +++
 
-## Context
+## CONTEXT
 This guide walks you through the process of using Spring Data MongoDB to build an
 application that stores data in and retrieves it from [MongoDB](https://www.mongodb.org/), a
 document-based database.
 
+## SOLUTION
 ## Define Entity
 MongoDB is a NoSQL document store. In this example, you store `Customer` objects. 
 
@@ -133,4 +134,4 @@ Using Junit5 and Spring's TestContext framework to create MongoDB repository Int
     }
 ```
 ---
-**NOTE**
+## NOTE

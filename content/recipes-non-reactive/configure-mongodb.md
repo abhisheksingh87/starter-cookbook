@@ -7,7 +7,7 @@ date = 2020-12-09T14:02:27-05:00
 weight = 3
 +++
 
-## Context
+## CONTEXT
 This is the second recipe in the series, for developing a modern _cloud ready_ microservice using the **greenfield-app-starter**.  
 This recipe deals with configuring persistence in the microservice.  
 
@@ -15,7 +15,7 @@ This recipe deals with configuring persistence in the microservice.
 
 - **STEP 1: CREATE APPLICATION USING THE STARTER** is completed.
 
-## Solution
+## SOLUTION
 
 1. Determine and record the following **mongodb database connection details** 
 
@@ -70,8 +70,7 @@ This recipe deals with configuring persistence in the microservice.
       },    
      ```
 
-## Notes and References
-
+## NOTES
   you can also use properties provided by **Spring** to configure mongodb
   ```yaml
      spring:
@@ -81,7 +80,5 @@ This recipe deals with configuring persistence in the microservice.
           username:
           password:
   ```
-
-### Anti Patterns
 
 

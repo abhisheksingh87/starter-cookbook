@@ -2,16 +2,16 @@
 categories = ["recipes"]
 tags = ["persistence","data-repository", "mongodb","spring boot"]
 summary = "Accessing mongodb data reactively"
-title = "3. Accessing data in MongoDB"
+title = "4. Access Data in MongoDB"
 date = 2020-12-09T14:02:27-05:00
 weight = 1
 +++
 
-## Context
+## CONTEXT
 This guide walks you through the process of how to configure and implement
-database operations using Reactive Programming through Spring data Reactive Repositories and Template
-with MongoDB.
+database operations using Reactive Programming through Spring data Reactive Repositories and Template with MongoDB.
 
+## SOLUTION
 ## Define Entity
 MongoDB is a NoSQL document store. In this example, you store `Customer` objects. 
 
@@ -219,4 +219,4 @@ Besides the repositories approach, there is also ReactiveMongoTemplate:
    }
 ```
 ---
-**NOTE**
+## NOTE

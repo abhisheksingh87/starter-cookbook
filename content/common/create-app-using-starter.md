@@ -101,7 +101,7 @@ Upon completion of this recipe, you'll have a _working_  [Spring Boot](https://m
    - `http://localhost:8080/actuator/health`
 
 
-## Next Step
+### Next Step
 Follow the **Reactive** or **Non-Reactive** path depending on your microservice needs. 
 
 ## NOTES

@@ -7,15 +7,14 @@ date = 2020-12-09T14:02:27-05:00
 weight = 1
 +++
 
-## Context
+## CONTEXT
 
 The Spring Boot Actuator provides production-ready features for our Spring Boot application.
 Actuators can be useful for providing diagnostics, information, metrics, and controls on your Spring Boot application running in dev,
 production, on-prem, or the cloud. It is highly recommended including and enabling Actuators if you are writing a Spring Boot application. 
 
-# Actuator Basics
-
-## Actuators
+## SOLUTION
+## Actuator Basics
 
 In essence, Actuator brings production-ready features to our application. It monitors app, gather metrics, determines the state of Database and much more.
 The main benefit of this library is that we can get production-grade tools without having to actually implement these features ourselves.
