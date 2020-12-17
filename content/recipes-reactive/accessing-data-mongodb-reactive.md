@@ -107,7 +107,13 @@ Besides the repositories approach, there is also ReactiveMongoTemplate:
 
 ## Testing
 
-Using Junit5 and Spring's TestContext framework to create MongoDB repository Integration tests
+1. Using **Junit5** and Spring Test Framework we can write Integration Tests for MongoDB
+   
+1. Project reactor provides library `io.projectreactor:reactor-test` which is used to test reactive streams. One of the key
+   elements in reactor test library is: **StepVerifier**.
+   
+1. StepVerifier provides a declarative way of creating verifiable steps for async publisher sequence by expressing expectations
+   about the set of events that will eventually happen upon subscription. Example below
 
 ```java
    @ExtendWith(SpringExtension.class)
