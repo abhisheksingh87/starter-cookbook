@@ -10,23 +10,32 @@ authors = ["Prashanth 'PB' Belathur"]
 pre ="<i class='fa fa-spinner fa-pulse fa-1x fa-fw'></i>&nbsp;&nbsp;"
 +++
 
+# WellsFargo Application Starter Cookbook
+
+Cookbook with recipes for developing modern cloud native microservice, created by VMWare Tanzu Labs during the WellsFargo Enterprise Architecture Consulting engagement.
+
+
+
 ## CONTEXT
-This **greenfield-app-starter** allows you to develop a spring boot microservice based on **Non-Reactive** or [**Reactive**](https://blog.redelastic.com/what-is-reactive-programming-bc9fa7f4a7fc#reactive) techniques.
-* you can use the **Non-Reactive** path for migrating a _legacy application_ to a cloud-ready microservice.
-  
-* we recommended the **Reactive** path for _greenfield applications_, to take advantage of the non-blocking behavior that improves application performance and resiliency.
+
+The following spring boot starters in Github will help developers to build microservices based on required business needs:
+- **greenfield-app-starter** for **Non-Reactive** microservices.
+- **greenfield-reactive-app-starter** for **Reactive** microservices.
+
+You can use the **Non-Reactive** starter for migrating a _legacy application_ to a cloud-ready microservice.  
+We recommended the **Reactive** starter for _greenfield applications_, to take advantage of the non-blocking behavior which improves application performance and resiliency.
 
 ## SOLUTION
 
-### [Non-Reactive Path](#non-reactive-path)
+### [Build Non-Reactive microservice](#non-reactive-path)
 
 Complete the recipes in following order:
 - **Create barebone microservice using the starter**
 - **Configure Actuators**
 - **Configure Oracle**
-- **Configure MongoDB**    
+- **Configure MongoDB**
 
-### [Reactive Path](#reactive-path)
+### [Build Reactive microservice](#reactive-path)
 
 Complete the recipes in following order:
 - **Create barebone microservice using the starter**
