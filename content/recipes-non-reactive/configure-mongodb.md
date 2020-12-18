@@ -1,7 +1,7 @@
 +++
 categories = ["recipes"]
 tags = ["persistence","mongodb","spring boot"]
-summary = "Configure mongoDB datasource in microservice"
+summary = "Configure MongoDB datasource in microservice"
 title = "4. Configure MongoDB"
 date = 2020-12-09T14:02:27-05:00
 weight = 3
@@ -21,10 +21,10 @@ This recipe deals with configuring persistence in the microservice.
 
    | Property        | Details  |
    | :---            |    :----   | 
-   | uri | mondogb://localhost/test #Mongo database URI. when set, host and port are ignored.
-   | database | localhost #database  name  |
-   | username | Login user of the mongo server - WellsFargo standard 
-   | password | Login password of the mongo server - - WellsFargo standard
+   | uri | mongodb://\<host>:\<port>/\<database name> 
+   | database-name | database  name  |
+   | username | username (plain text)
+   | password | password (encrypted)
  
 1. Navigate to the `<microservice>` directory
    
@@ -39,7 +39,7 @@ This recipe deals with configuring persistence in the microservice.
               mongodb:
                   host:
                   port:
-                  database:
+                  database-name:
                   username:
                   password:
     ```
