@@ -51,10 +51,10 @@ A _Hikari_ datasource bean with connection pooling is created after completing t
      persistence:
       oracle:
         name: <user friendly database name>
-        url: \${oracle.db.url}
-        username: \${oracle.username}
-        password: \${oracle.password}
-        schema: \${oracle.schema}
+        url: ${oracle.db.url}
+        username: ${oracle.username}
+        password: ${oracle.password}
+        schema: ${oracle.schema}
         dialect: org.hibernate.dialect.Oracle12cDialect
         driver: oracle.jdbc.OracleDriver
         connection-pool:
@@ -64,9 +64,9 @@ A _Hikari_ datasource bean with connection pooling is created after completing t
           idle-timeout: 800
           max-lifetime: 3000
    ```
-   - the `\${placeholder}` is used for _automatic environment variable expansion_ during Gradle build.
+   - the `${placeholder}` is used for _automatic environment variable expansion_ during Gradle build.
    - the `placeholder` property is defined as an **environment variable** in uDeploy.
-      - e.g.  environment variable: `ORACLE_DB_URL` corresponds to `\${oracle.db.url}` 
+      - e.g.  environment variable: `ORACLE_DB_URL` corresponds to `${oracle.db.url}` 
 
 ### Validation
 1. Open a command window in the `<microservice-name>` directory
