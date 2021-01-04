@@ -19,7 +19,7 @@ A _Hikari_ datasource bean with connection pooling is created after completing t
 ## SOLUTION
 
 1. Create **environment variables** for **oracle database connection properties**, 
-   these are defined in uDeploy and, are **never**   hardcoded in`application.yml`
+   these are typically defined in uDeploy and, are **never**   hardcoded in`application.yml`
 
    | Property      | Details  |
    | :---          |    :----   | 
@@ -31,13 +31,13 @@ A _Hikari_ datasource bean with connection pooling is created after completing t
 1. Configure the **database connection pool requirements** for the new microservice.  
   The pool configuration can be tailored to your microservice needs after reviewing the  [**anti-patterns**](https://github.com/pbelathur/spring-boot-performance-analysis).
 
-   | Property        | Suggested Values  |
-         | :---          |    :----   | 
-   | max-pool-size  |  10  |
-   | idle-pool-size | 2 | 
-   | connection-timeout | 250ms  |
-   | idle-timeout     | 800ms  | 
-   | max-lifetime    | 3000ms |
+   | Property        | Description | Normal  |
+   | :---          |    :----   |  :----   | 
+   | max-pool-size  |  | 10  |
+   | idle-pool-size | | 2 | 
+   | connection-timeout | | 250ms  |
+   | idle-timeout     | | 800ms  | 
+   | max-lifetime    | | 3000ms |
  
 1. Navigate to the `<microservice>` directory
 
@@ -64,10 +64,10 @@ A _Hikari_ datasource bean with connection pooling is created after completing t
           idle-timeout: 800
           max-lifetime: 3000
    ```
-   - the `${placeholder}` is used for _automatic environment variable expansion_ during Gradle build.
    - the `placeholder` property is defined as an **environment variable** in uDeploy.
-      - e.g.  environment variable: `ORACLE_DB_URL` corresponds to `${oracle.db.url}` 
-
+      - e.g.  environment variable: `ORACLE_DB_URL` corresponds to `${oracle.db.url}`
+   - the `${placeholder}` is used for _automatic environment variable expansion_ during microservice startup.
+  
 ### Validation
 1. Open a command window in the `<microservice-name>` directory
 
@@ -82,7 +82,7 @@ A _Hikari_ datasource bean with connection pooling is created after completing t
 
 3. Validate the new microservice ...
    - can be built locally: `gradlew bootJar`
-   - runs locally: `gradlew bootRun`
+   - runs locally: `java -jar build/<app>.jar`
  
   
 4. Verify microservice health in the browser
