@@ -50,6 +50,7 @@ A _Hikari_ datasource bean with connection pooling is created after completing t
    application:
      name:
      description:
+     version:
      id: <wells fargo distributed-id>
      persistence:
       oracle:
@@ -67,9 +68,12 @@ A _Hikari_ datasource bean with connection pooling is created after completing t
           idle-timeout: 800
           max-lifetime: 3000
    ```
-   - the `placeholder` property is defined as an **environment variable** in uDeploy.
+- replace `<wells fargo distributed-id>` with the **distributed ID**   
+- the `placeholder` property is defined as an **environment variable** in uDeploy.
       - e.g.  environment variable: `ORACLE_DB_URL` corresponds to `${oracle.db.url}`
-   - the `${placeholder}` is used for _automatic environment variable expansion_ during microservice startup.
+   - the `${placeholder}` is used for _automatic variable expansion_ during microservice startup.
+   
+   
   
 ### Validation
 1. Open a command window in the `<microservice-name>` directory
