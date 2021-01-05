@@ -18,8 +18,8 @@ A _Hikari_ datasource bean with connection pooling is created after completing t
 
 ## SOLUTION
 
-1. Create **environment variables** for **oracle database connection properties**, 
-   these are typically defined in uDeploy and, are **never**   hardcoded in`application.yml`
+1. Define **environment variables** for **oracle database connection properties**,
+   these are usually defined in uDeploy and **never**   hardcoded in`application.yml`
 
    | Property      | Details  |
    | :---          |    :----   | 
@@ -28,17 +28,20 @@ A _Hikari_ datasource bean with connection pooling is created after completing t
    | `ORACLE_USERNAME` | username  | 
    | `ORACLE_PASSWORD` | encrypted password|
    
-1. Configure the **database connection pool requirements** for the new microservice.  
-  The pool configuration can be tailored to your microservice needs after reviewing the  [**anti-patterns**](https://github.com/pbelathur/spring-boot-performance-analysis).
+1. Tweak (_if necessary_) the default **database connection pool settings** after reviewing the  [**anti-patterns**](https://github.com/pbelathur/spring-boot-performance-analysis).
 
-   | Property        | Description | Normal  |
+   | Property        | Description | Starter Default  |
    | :---          |    :----   |  :----   | 
-   | max-pool-size  |  | 10  |
-   | idle-pool-size | | 2 | 
-   | connection-timeout | | 250ms  |
-   | idle-timeout     | | 800ms  | 
-   | max-lifetime    | | 3000ms |
- 
+   | max-pool-size  | maximum size that the pool is allowed to reach, includes both idle and in-use connections | 10  |
+   | min-idle | minimum number of idle connections, for efficient performance keep this value at 50% of max-pool-size or less |5 | 
+   | connection-timeout | the maximum number of milliseconds that a client will wait for a connection from the pool. If this time is exceeded without a connection becoming available, a SQLException will be thrown. Minimum values is 250ms.   | 1000  |
+   | idle-timeout  | the maximum amount of time a connection is allowed to sit idle in the pool. This setting only applies when `minimumIdle` < `maximumPoolSize.` Minimum is 10000ms (10s). | 10000  | 
+   | max-lifetime    |the maximum lifetime of a connection in the pool. Minimum values allowed is 30000ms (30s) | 1800000 |
+
+   **NOTE**
+   - refrain from increasing the `max-pool-size` beyond 15
+   - the `connection-timeout`can be increased by small increments for networks with higher than normal latencies. 
+
 1. Navigate to the `<microservice>` directory
 
 1. Review the _database connection_ and _connection pool_ properties in `src/main/resources/application.yml`
@@ -50,7 +53,7 @@ A _Hikari_ datasource bean with connection pooling is created after completing t
      id: <wells fargo distributed-id>
      persistence:
       oracle:
-        name: <user friendly database name>
+        name: oracle-datasource
         url: ${oracle.db.url}
         username: ${oracle.username}
         password: ${oracle.password}
@@ -81,8 +84,9 @@ A _Hikari_ datasource bean with connection pooling is created after completing t
    ```
 
 3. Validate the new microservice ...
-   - can be built locally: `gradlew bootJar`
-   - runs locally: `java -jar build/<app>.jar`
+   
+   - can be built locally: `gradlew clean bootJar`
+   - runs locally: `java -jar build/libs/<app-name>-<version>.jar`
  
   
 4. Verify microservice health in the browser
