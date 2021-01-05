@@ -32,11 +32,11 @@ A _Hikari_ datasource bean with connection pooling is created after completing t
 
    | Property        | Description | Starter Default  |
    | :---          |    :----   |  :----   | 
-   | max-pool-size  | maximum size that the pool is allowed to reach, includes both idle and in-use connections | 10  |
-   | min-idle | minimum number of idle connections, for efficient performance keep this value at 50% of max-pool-size or less |5 | 
-   | connection-timeout | the maximum number of milliseconds that a client will wait for a connection from the pool. If this time is exceeded without a connection becoming available, a SQLException will be thrown. Minimum values is 250ms.   | 1000  |
-   | idle-timeout  | the maximum amount of time a connection is allowed to sit idle in the pool. This setting only applies when `minimumIdle` < `maximumPoolSize.` Minimum is 10000ms (10s). | 10000  | 
-   | max-lifetime    |the maximum lifetime of a connection in the pool. Minimum values allowed is 30000ms (30s) | 1800000 |
+   | `max-pool-size`  | maximum size that the pool is allowed to reach, includes both idle and in-use connections | 10  |
+   | `min-idle` | minimum number of idle connections, for efficient performance keep this value at 50% of max-pool-size or less |5 | 
+   | `connection-timeout` | the maximum number of milliseconds that a client will wait for a connection from the pool. If this time is exceeded without a connection becoming available, a SQLException will be thrown. Minimum values is 250ms.   | 1000  |
+   | `idle-timeout`  | the maximum amount of time a connection is allowed to sit idle in the pool. This setting only applies when `min-idle` < `max-pool-size.` Minimum is 10000ms (10s). | 10000  | 
+   | `max-lifetime`    |the maximum lifetime of a connection in the pool. Minimum values allowed is 30000ms (30s) | 1800000 |
 
    **NOTE**
    - refrain from increasing the `max-pool-size` beyond 15
@@ -48,9 +48,6 @@ A _Hikari_ datasource bean with connection pooling is created after completing t
    
    ```yml
    application:
-     name:
-     description:
-     version:
      id: <wells fargo distributed-id>
      persistence:
       oracle:
@@ -70,7 +67,7 @@ A _Hikari_ datasource bean with connection pooling is created after completing t
    ```
 - replace `<wells fargo distributed-id>` with the **distributed ID**   
 - the `placeholder` property is defined as an **environment variable** in uDeploy.
-      - e.g.  environment variable: `ORACLE_DB_URL` corresponds to `${oracle.db.url}`
+   - e.g.  environment variable: `ORACLE_DB_URL` corresponds to `${oracle.db.url}`
    - the `${placeholder}` is used for _automatic variable expansion_ during microservice startup.
    
    
