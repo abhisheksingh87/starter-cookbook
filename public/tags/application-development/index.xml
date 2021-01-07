@@ -1,52 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>application development on WellsFargo Application Modernization Cookbook</title>
-    <link>/tags/application-development/</link>
-    <description>Recent content in application development on WellsFargo Application Modernization Cookbook</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright> Wells Fargo, All Rights Reserved, Confidential</copyright>
-    <lastBuildDate>Tue, 05 Jan 2021 00:00:00 -0600</lastBuildDate><atom:link href="/tags/application-development/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>2. Configure Actuators</title>
-      <link>/recipes-non-reactive/configure-actuator/</link>
-      <pubDate>Wed, 09 Dec 2020 14:02:27 -0500</pubDate>
-      
-      <guid>/recipes-non-reactive/configure-actuator/</guid>
-      <description>Configure Actuators in microservice</description>
-    </item>
-    
-    <item>
-      <title>2. Configure Actuators</title>
-      <link>/recipes-reactive/configure-actuator/</link>
-      <pubDate>Wed, 09 Dec 2020 14:02:27 -0500</pubDate>
-      
-      <guid>/recipes-reactive/configure-actuator/</guid>
-      <description>Configure Actuators in microservice</description>
-    </item>
-    
-    <item>
-      <title>Git Commit Best Practices</title>
-      <link>/best-practices/git-commit-messages/</link>
-      <pubDate>Tue, 05 Jan 2021 00:00:00 -0600</pubDate>
-      
-      <guid>/best-practices/git-commit-messages/</guid>
-      <description>CONTEXT This recipe provides details of how to write good commit message.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>application development on WellsFargo Application Modernization Cookbook</title><link>/tags/application-development/</link><description>Recent content in application development on WellsFargo Application Modernization Cookbook</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright> Wells Fargo, All Rights Reserved, Confidential</copyright><lastBuildDate>Tue, 05 Jan 2021 00:00:00 -0600</lastBuildDate><atom:link href="/tags/application-development/index.xml" rel="self" type="application/rss+xml"/><item><title>2. Configure Actuators</title><link>/recipes-non-reactive/configure-actuator/</link><pubDate>Wed, 09 Dec 2020 14:02:27 -0500</pubDate><guid>/recipes-non-reactive/configure-actuator/</guid><description>Configure Actuators in microservice</description></item><item><title>2. Configure Actuators</title><link>/recipes-reactive/configure-actuator/</link><pubDate>Wed, 09 Dec 2020 14:02:27 -0500</pubDate><guid>/recipes-reactive/configure-actuator/</guid><description>Configure Actuators in microservice</description></item><item><title>Git Commit Best Practices</title><link>/best-practices/git-commit-messages/</link><pubDate>Tue, 05 Jan 2021 00:00:00 -0600</pubDate><guid>/best-practices/git-commit-messages/</guid><description>CONTEXT This recipe provides details of how to write good commit message.
 What is a commit message? The commit command is used to save changes to a local repository after staging in Git. However, before you can save changes in Git, you have to tell Git which changes you want to save. A great way to do that is by adding a commit message to identify your changes.
-Why commit messages are important?</description>
-    </item>
-    
-    <item>
-      <title>Organize codebase</title>
-      <link>/best-practices/spring-boot-structure/</link>
-      <pubDate>Wed, 09 Dec 2020 00:00:00 -0600</pubDate>
-      
-      <guid>/best-practices/spring-boot-structure/</guid>
-      <description>CONTEXT This recipe provides details for organizing codebase in a typical spring boot microservice.
-SOLUTION Layers Why even have layers today? What year is this?  Most of the examples I see have one Spring bean which does configuration, endpoints, data, security, validation and pancakes&amp;hellip;
- An argument can be made that trivial services (especially focused examples) have no need for the overhead of multiple layers, packages, separation of duties, abstraction, and even basic organization.</description>
-    </item>
-    
-  </channel>
-</rss>
+Why commit messages are important?</description></item><item><title>Organize codebase</title><link>/best-practices/spring-boot-structure/</link><pubDate>Wed, 09 Dec 2020 00:00:00 -0600</pubDate><guid>/best-practices/spring-boot-structure/</guid><description>CONTEXT This recipe provides details for organizing codebase in a typical spring boot microservice.
+SOLUTION Layers Why even have layers today? What year is this? Most of the examples I see have one Spring bean which does configuration, endpoints, data, security, validation and pancakes&amp;hellip;
+An argument can be made that trivial services (especially focused examples) have no need for the overhead of multiple layers, packages, separation of duties, abstraction, and even basic organization.</description></item></channel></rss>
