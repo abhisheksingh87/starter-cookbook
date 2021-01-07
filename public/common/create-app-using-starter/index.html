@@ -1,20 +1,466 @@
-<!doctype html><html><head><title>WellsFargo Application Modernization Cookbook</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><meta name=revised content="2020-12-18T10:08:17 CST"><title>1. Create barebone microservice using the starter :: WellsFargo Application Modernization Cookbook</title><link rel="shortcut icon" href=/images/favicon.png type=image/x-icon><link href=/css/nucleus.css rel=stylesheet><link href=/css/font-awesome.min.css rel=stylesheet><link href=/css/hybrid.css rel=stylesheet><link href=/css/featherlight.min.css rel=stylesheet><link href=/css/auto-complete.css rel=stylesheet><link href=/theme-original/style.css rel=stylesheet><link rel=stylesheet href=/css/bootstrap.min.css><script src=/js/jquery-2.x.min.js></script><style type=text/css>:root #header+#content>#left>#rlblock_left{display:none!important}</style><link href=/css/custom.css rel=stylesheet><script language=javascript src=/js/localforage.nopromises.min.js></script></head><body data-url=/common/create-app-using-starter/><div id=headermain></div><nav id=sidebar><div class=highlightable><div id=header-wrapper><div id=header><p><figure><a href=/><img src=/images/wellsfargo.png></a></figure>Application Starter Cookbook</p></div><div class=searchbox><label for=search-by><i class="fa fa-search"></i></label><input data-search-input id=search-by type=text placeholder=Search...>
-<span data-search-clear><i class="fa fa-close"></i></span></div><script type=text/javascript src=/js/lunr.min.js></script><script type=text/javascript src=/js/auto-complete.js></script><script type=text/javascript>var baseurl="\/";</script><script type=text/javascript src=/js/search.js></script></div><ul class=topics><li data-nav-id=/common/ class="dd-item parent haschildren"><div><a href=/common/><i class="fa fa-spinner fa-pulse fa-1x fa-fw"></i>&nbsp;&nbsp;Let's get started</a>
-<i class="fa fa-angle-down fa-lg category-icon"></i></div><ul><li data-nav-id=/common/create-app-using-starter/ class="dd-item active"><div><a href=/common/create-app-using-starter/>1. Create barebone microservice using the starter</a></div></li></ul></li><li data-nav-id=/recipes-non-reactive/ class="dd-item haschildren"><div><a href=/recipes-non-reactive/><i class="fa fa-cutlery"></i>&nbsp;&nbsp;Non-Reactive Recipes</a><i class="fa fa-angle-right fa-lg category-icon"></i></div><ul><li data-nav-id=/recipes-non-reactive/configure-actuator/ class=dd-item><div><a href=/recipes-non-reactive/configure-actuator/>2. Configure Actuators</a></div></li><li data-nav-id=/recipes-non-reactive/configure-oracle/ class=dd-item><div><a href=/recipes-non-reactive/configure-oracle/>3. Configure Oracle</a></div></li><li data-nav-id=/recipes-non-reactive/configure-mongodb/ class=dd-item><div><a href=/recipes-non-reactive/configure-mongodb/>4. Configure MongoDB</a></div></li><li data-nav-id=/recipes-non-reactive/accessing-data-mongodb/ class=dd-item><div><a href=/recipes-non-reactive/accessing-data-mongodb/>5. Access Data in MongoDB</a></div></li></ul></li><li data-nav-id=/recipes-reactive/ class="dd-item haschildren"><div><a href=/recipes-reactive/><i class="fa fa-cutlery"></i>&nbsp;&nbsp;Reactive Recipes</a><i class="fa fa-angle-right fa-lg category-icon"></i></div><ul><li data-nav-id=/recipes-reactive/configure-actuator/ class=dd-item><div><a href=/recipes-reactive/configure-actuator/>2. Configure Actuators</a></div></li><li data-nav-id=/recipes-reactive/configure-mongodb/ class=dd-item><div><a href=/recipes-reactive/configure-mongodb/>3. Configure MongoDB</a></div></li><li data-nav-id=/recipes-reactive/accessing-data-mongodb-reactive/ class=dd-item><div><a href=/recipes-reactive/accessing-data-mongodb-reactive/>4. Access Data in MongoDB</a></div></li></ul></li><li data-nav-id=/best-practices/ class="dd-item haschildren"><div><a href=/best-practices/><i class="fa fa-book fa-fw"></i>&nbsp;&nbsp;Best Practices</a><i class="fa fa-angle-right fa-lg category-icon"></i></div><ul><li data-nav-id=/best-practices/custom-spring-validation/ class=dd-item><div><a href=/best-practices/custom-spring-validation/>Custom Spring Bean Validation</a></div></li><li data-nav-id=/best-practices/spring-boot-structure/ class=dd-item><div><a href=/best-practices/spring-boot-structure/>Organize codebase</a></div></li></ul></li><section id=shortcuts><li role><h5>&nbsp;</h5><a href=/tags/ rel=noopener><i class="fa fa-tag"></i>&nbsp;&nbsp;All Tags</a></li></section><hr><li></li></ul><section id=footer></section></div></nav><section id=body><div id=overlay></div><div class="padding highlightable"><div id=top-bar><div id=breadcrumbs itemscope itemtype=http://data-vocabulary.org/Breadcrumb><span id=sidebar-toggle-span><a href=# id=sidebar-toggle data-sidebar-toggle><i class="fa fa-bars"></i></a></span><span id=toc-menu><i class="fa fa-list-alt"></i></span><span class=links><a href=/>Home</a> > <a href=/common/>Let's get started</a> > 1. Create barebone microservice using the starter</span></div><div class=progress><div class=wrapper><nav id=TableOfContents><ul><li><a href=#context>CONTEXT</a><ul><li><a href=#prerequisite>Prerequisite</a></li></ul></li><li><a href=#solution>SOLUTION</a><ul><li><a href=#validation>Validation</a></li><li><a href=#next-step>Next Step</a></li></ul></li><li><a href=#notes>NOTES</a></li></ul></nav></div></div></div><div id=tags><a class="label label-default" href=/tags/starter>starter</a>
-<a class="label label-default" href=/tags/microservice>microservice</a>
-<a class="label label-default" href=/tags/barebone-microservice>barebone microservice</a></div><br><div id=body-inner><h1>1. Create barebone microservice using the starter</h1><h2 id=context>CONTEXT</h2><p>This recipe is part of a cookbook for developing a modern <em>cloud ready</em> microservice using the <strong>greenfield-app-starter</strong>.<br>Upon completion of this recipe, you&rsquo;ll have a <em>working</em> <a href=https://medium.com/stuff-about-cloud-native-development/my-spring-boot-101-journal-getting-started-5183f68606cb>Spring Boot</a> microservice with enabled actuator (<em>info,health and metrics</em>) endpoints.</p><h3 id=prerequisite>Prerequisite</h3><ul><li>JDK 8 or higher</li><li>IntelliJ or Eclipse IDE</li><li>GIT client</li><li>Access to <strong>greenfield-app-starter</strong> Github repo</li></ul><h2 id=solution>SOLUTION</h2><ol><li><p>Collect or record the following details for the new microservice</p><table><thead><tr><th style=text-align:left>Property</th><th style=text-align:left>Description</th><th style=text-align:left>Example</th></tr></thead><tbody><tr><td style=text-align:left>lob</td><td style=text-align:left>line of business</td><td style=text-align:left><strong>consumer</strong></td></tr><tr><td style=text-align:left>business-group</td><td style=text-align:left>business group within the lob</td><td style=text-align:left><strong>lending</strong></td></tr><tr><td style=text-align:left>application-group</td><td style=text-align:left>application category or grouping</td><td style=text-align:left><strong>loan</strong></td></tr><tr><td style=text-align:left>microservice-name</td><td style=text-align:left>camelCased name</td><td style=text-align:left><strong>AutoLoanCalculator</strong></td></tr><tr><td style=text-align:left>microservice-version</td><td style=text-align:left>in <code>major.minor.patch</code> format; <a href=https://medium.com/fiverr-engineering/major-minor-patch-a5298e2e1798>Versioning Basics</a></td><td style=text-align:left><strong>0.1.0</strong></td></tr><tr><td style=text-align:left>description</td><td style=text-align:left>short phrase describing the purpose of the microservice</td><td style=text-align:left><strong>consumer auto loan calculator for period less than 36 months</strong></td></tr><tr><td style=text-align:left>JDK-version</td><td style=text-align:left>Java 8 or above; one of <code>1.8</code>, <code>1.11</code>, <code>1.12</code>, <code>1.13</code> or <code>1.14</code></td><td style=text-align:left><strong>1.12</strong></td></tr><tr><td style=text-align:left>project-group</td><td style=text-align:left><code>com.wellsfargo.&lt;lob>.&lt;business-group>.&lt;application-group></code></td><td style=text-align:left><strong><code>com.wellsfargo.consumer.lending.loan</code></strong></td></tr></tbody></table></li><li><p>Clone the <strong>greenfield-app-starter</strong> from Gitlab repo <code>git clone &lt;repo url></code>
-<img src=/images/resized.jpg alt="starter app folder structure"></p></li><li><p>Rename folder: <code>greenfield-app-starter</code> to <code>&lt;microservice-name></code><br>(example: <strong>AutoLoanCalculator</strong>)</p></li><li><p>Update the microservice name in <code>settings.gradle</code></p><div class=highlight><pre style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-gradle data-lang=gradle>rootProject<span style=color:#666>.</span><span style=color:#4070a0>name</span> <span style=color:#666>=</span> <span style=color:#4070a0>&#34;&lt;microservice-name&gt;&#34;</span>
-</code></pre></div><div class=highlight><pre style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-gradle data-lang=gradle><span>#</span> EXAMPLE
-   
-rootProject<span style=color:#666>.</span><span style=color:#4070a0>name</span> <span style=color:#666>=</span> <span style=color:#4070a0>&#34;AutoLoanCalculator&#34;</span>
-</code></pre></div></li><li><p>Update project details in <code>build.gradle</code></p><div class=highlight><pre style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-gradle data-lang=gradle>description <span style=color:#666>=</span> <span style=color:#4070a0>&#34;&lt;description&gt;&#34;</span>
-group <span style=color:#666>=</span> <span style=color:#4070a0>&#34;&lt;project-group&gt;&#34;</span>
-version <span style=color:#666>=</span> <span style=color:#4070a0>&#34;&lt;microservice-version&gt;&#34;</span>
-sourceCompatibility <span style=color:#666>=</span> <span style=color:#4070a0>&#34;&lt;JDK-version&gt;&#34;</span>
-</code></pre></div><div class=highlight><pre style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-gradle data-lang=gradle><span>#</span> EXAMPLE
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WellsFargo Application Modernization Cookbook</title>
+    
+      <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="revised" content="2021-01-06T19:57:49 CST">
+<title>1. Create barebone microservice using the starter :: WellsFargo Application Modernization Cookbook</title>
+<link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+<link href="/css/nucleus.css" rel="stylesheet">
+<link href="/css/font-awesome.min.css" rel="stylesheet">
+<link href="/css/hybrid.css" rel="stylesheet">
+<link href="/css/featherlight.min.css" rel="stylesheet">
+<link href="/css/auto-complete.css" rel="stylesheet">
+<link href="/theme-original/style.css" rel="stylesheet">
+
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<script src="/js/jquery-2.x.min.js"></script>
+<style type="text/css">
+  :root #header + #content > #left > #rlblock_left {
+    display:none !important;
+  }
+</style>
+<link href="/css/custom.css" rel="stylesheet">
+<script language="javascript" src="/js/localforage.nopromises.min.js"></script>
+    
+  </head>
+  <body data-url="/common/create-app-using-starter/">
+    
+      <div id="headermain"></div>
+<nav id="sidebar" class="">
+
+
+
+<div class="highlightable">
+  <div id="header-wrapper">
+    <div id="header">
+      
+	
   
-description <span style=color:#666>=</span> <span style=color:#4070a0>&#34;consumer auto loan calculator for period less than 36 months&#34;</span>
-group <span style=color:#666>=</span> <span style=color:#4070a0>&#34;com.wellsfargo.consumer.lending.loan&#34;</span>
-version <span style=color:#666>=</span> <span style=color:#4070a0>&#34;0.1.0&#34;</span>
-sourceCompatibility <span style=color:#666>=</span> <span style=color:#4070a0>&#34;1.12&#34;</span>
-</code></pre></div></li><li><p>Rename <em>package</em> from <code>com.wellsfargo.cto.eai.starter</code> to <code>&lt;project-group></code><br>(example: <strong><code>com.wellsfargo.consumer.lending.loan</code></strong>)</p></li><li><p>Rename <em>main application classname</em> from <code>GreenfieldMicroservice</code> to <code>&lt;microservice-name></code><br>(example: <strong><code>AutoLoanCalculator</code></strong>)</p></li><li><p>As an example, the <em>barebone</em> microservice will have the following:</p><ul><li>folder: <code>AutoLoanCalculator</code> containing<ul><li><code>com.wellsfargo.consumer.lending.loan.AutoLoanCalculator.java</code></li><li><code>src/main/resources/application.yml</code></li><li><code>build.gradle</code></li><li><code>settings.gradle</code></li></ul></li></ul></li><li><p>Create the codebase folder/package structure based on the recipe in <em><strong>Best Practices</strong></em></p></li></ol><h3 id=validation>Validation</h3><ol><li><p>Open a command window in the <code>&lt;microservice-name></code> directory</p></li><li><p>Validate the new microservice</p><ul><li>can be built locally: <code>gradlew bootJar</code></li><li>runs locally: <code>gradlew bootRun</code></li></ul></li><li><p>Verify microservice health in the browser</p><ul><li><code>http://localhost:8080/actuator/info</code></li><li><code>http://localhost:8080/actuator/health</code></li></ul></li></ol><h3 id=next-step>Next Step</h3><p>Follow the <strong>Reactive</strong> or <strong>Non-Reactive</strong> path depending on your microservice needs.</p><h2 id=notes>NOTES</h2><ul><li><a href=https://medium.com/stuff-about-cloud-native-development/my-spring-boot-101-journal-getting-started-5183f68606cb>Why use Spring Boot ?</a></li><li><a href=https://semver.org/>How to version software ?</a></li></ul><aside class=admonition><div class="admonition-content last-updated"><p class=alignleft><a href=/common/create-app-using-starter/ class="hide-child link primary-color">1. Create barebone microservice using the starter</a> was last updated on December 17, 2020</p></div></aside><footer class=footline></footer><div id=navigation></div></section><div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px><div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div></div><script src=/js/clipboard.min.js></script><script src=/js/featherlight.min.js></script><script src=/js/html5shiv-printshiv.min.js></script><script src=/js/modernizr.custom.71422.js></script><script src=/js/docdock.js></script><script src=/theme-original/script.js></script></body></html>
+    <p><figure><a href="/">
+    <img src="/images/wellsfargo.png"/> </a>
+</figure>
+
+Application Starter Cookbook</p>
+
+  
+
+
+    </div>
+        <div class="searchbox">
+		    <label for="search-by"><i class="fa fa-search"></i></label>
+		    <input data-search-input id="search-by" type="text" placeholder="Search...">
+		    <span data-search-clear=""><i class="fa fa-close"></i></span>
+		</div>
+		<script type="text/javascript" src="/js/lunr.min.js"></script>
+		<script type="text/javascript" src="/js/auto-complete.js"></script>
+		<script type="text/javascript">
+        
+            var baseurl = "\/";
+        
+		</script>
+		<script type="text/javascript" src="/js/search.js"></script>
+  </div>
+
+      <ul class="topics">
+    <li data-nav-id="/common/" class="dd-item parent haschildren
+        ">
+      <div>
+      <a href="/common/"><i class='fa fa-spinner fa-pulse fa-1x fa-fw'></i>&nbsp;&nbsp;Let&#39;s get started</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/common/create-app-using-starter/" class="dd-item active">
+        <div>
+          <a href="/common/create-app-using-starter/">
+            1. Create barebone microservice using the starter
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/recipes-non-reactive/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/recipes-non-reactive/"><i class='fa fa-cutlery'></i>&nbsp;&nbsp;Non-Reactive Recipes</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/recipes-non-reactive/configure-actuator/" class="dd-item">
+        <div>
+          <a href="/recipes-non-reactive/configure-actuator/">
+            2. Configure Actuators
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/recipes-non-reactive/configure-oracle/" class="dd-item">
+        <div>
+          <a href="/recipes-non-reactive/configure-oracle/">
+            3. Configure Oracle
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/recipes-non-reactive/configure-mongodb/" class="dd-item">
+        <div>
+          <a href="/recipes-non-reactive/configure-mongodb/">
+            4. Configure MongoDB
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/recipes-non-reactive/accessing-data-mongodb/" class="dd-item">
+        <div>
+          <a href="/recipes-non-reactive/accessing-data-mongodb/">
+            5. Access Data in MongoDB
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/recipes-reactive/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/recipes-reactive/"><i class='fa fa-cutlery'></i>&nbsp;&nbsp;Reactive Recipes</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/recipes-reactive/configure-actuator/" class="dd-item">
+        <div>
+          <a href="/recipes-reactive/configure-actuator/">
+            2. Configure Actuators
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/recipes-reactive/configure-mongodb/" class="dd-item">
+        <div>
+          <a href="/recipes-reactive/configure-mongodb/">
+            3. Configure MongoDB
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/recipes-reactive/accessing-data-mongodb-reactive/" class="dd-item">
+        <div>
+          <a href="/recipes-reactive/accessing-data-mongodb-reactive/">
+            4. Access Data in MongoDB
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/recipes-reactive/why-reactive-and-when-to-use/" class="dd-item">
+        <div>
+          <a href="/recipes-reactive/why-reactive-and-when-to-use/">
+            5. Why Reactive
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/best-practices/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/best-practices/"><i class='fa fa-book fa-fw'></i>&nbsp;&nbsp;Best Practices</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/best-practices/custom-spring-validation/" class="dd-item">
+        <div>
+          <a href="/best-practices/custom-spring-validation/">
+            Custom Spring Bean Validation
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/best-practices/git-commit-messages/" class="dd-item">
+        <div>
+          <a href="/best-practices/git-commit-messages/">
+            Git Commit Best Practices
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="/best-practices/spring-boot-structure/" class="dd-item">
+        <div>
+          <a href="/best-practices/spring-boot-structure/">
+            Organize codebase
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+
+
+
+        <section id="shortcuts">
+                <li class="" role=""><h5>&nbsp;</h5><a href="/tags/"  rel="noopener"><i class='fa fa-tag'></i>&nbsp;&nbsp;All Tags</a></li>
+        </section>
+
+    <hr />
+    <li></li>
+    
+    </ul>
+
+ <section id="footer">
+    </section>
+  </div>
+</nav>
+
+
+
+<section id="body">
+<div id="overlay"></div>
+<div class="padding highlightable">
+
+  <div id="top-bar">
+    <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+        <span id="sidebar-toggle-span">
+          <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+            <i class="fa fa-bars"></i>
+          </a>
+        </span>
+        <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+        <span class="links">
+        
+
+
+
+
+
+
+
+ <a href='/'>Home</a> > <a href='/common/'>Let's get started</a> > 1. Create barebone microservice using the starter
+
+ 
+
+ 
+
+   
+        </span>
+    </div>
+    
+    
+    <div class="progress">
+        <div class="wrapper">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#context">CONTEXT</a>
+      <ul>
+        <li><a href="#prerequisite">Prerequisite</a></li>
+      </ul>
+    </li>
+    <li><a href="#solution">SOLUTION</a>
+      <ul>
+        <li><a href="#validation">Validation</a></li>
+        <li><a href="#next-step">Next Step</a></li>
+      </ul>
+    </li>
+    <li><a href="#notes">NOTES</a></li>
+  </ul>
+</nav>
+        </div>
+    </div>
+    
+
+  </div>
+
+
+  <div id="tags">
+    
+      <a class="label label-default" href="/tags/starter">starter</a>
+    
+      <a class="label label-default" href="/tags/microservice">microservice</a>
+    
+      <a class="label label-default" href="/tags/barebone-microservice">barebone microservice</a>
+    
+  </div>
+  <br/>
+
+<div id="body-inner">
+  
+    <h1>1. Create barebone microservice using the starter</h1>
+  
+
+
+    
+    
+    
+    <h2 id="context">CONTEXT</h2>
+<p>This recipe is part of a cookbook for developing a modern <em>cloud ready</em> microservice using the <strong>greenfield-app-starter</strong>.<br>
+Upon completion of this recipe, you&rsquo;ll have a <em>working</em>  <a href="https://medium.com/stuff-about-cloud-native-development/my-spring-boot-101-journal-getting-started-5183f68606cb">Spring Boot</a> microservice with enabled actuator (<em>info,health and metrics</em>) endpoints.</p>
+<h3 id="prerequisite">Prerequisite</h3>
+<ul>
+<li>JDK 8 or higher</li>
+<li>IntelliJ or Eclipse IDE</li>
+<li>GIT client</li>
+<li>Access to <strong>greenfield-app-starter</strong> Github repo</li>
+</ul>
+<h2 id="solution">SOLUTION</h2>
+<ol>
+<li>
+<p>Collect or record the following details for the new microservice</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Property</th>
+<th style="text-align:left">Description</th>
+<th style="text-align:left">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">lob</td>
+<td style="text-align:left">line of business</td>
+<td style="text-align:left"><strong>consumer</strong></td>
+</tr>
+<tr>
+<td style="text-align:left">business-group</td>
+<td style="text-align:left">business group within the lob</td>
+<td style="text-align:left"><strong>lending</strong></td>
+</tr>
+<tr>
+<td style="text-align:left">application-group</td>
+<td style="text-align:left">application category or grouping</td>
+<td style="text-align:left"><strong>loan</strong></td>
+</tr>
+<tr>
+<td style="text-align:left">microservice-name</td>
+<td style="text-align:left">camelCased name</td>
+<td style="text-align:left"><strong>AutoLoanCalculator</strong></td>
+</tr>
+<tr>
+<td style="text-align:left">microservice-version</td>
+<td style="text-align:left">in <code>major.minor.patch</code> format; <a href="https://medium.com/fiverr-engineering/major-minor-patch-a5298e2e1798">Versioning Basics</a></td>
+<td style="text-align:left"><strong>0.1.0</strong></td>
+</tr>
+<tr>
+<td style="text-align:left">description</td>
+<td style="text-align:left">short phrase describing the purpose of the microservice</td>
+<td style="text-align:left"><strong>consumer auto loan calculator for period less than 36 months</strong></td>
+</tr>
+<tr>
+<td style="text-align:left">JDK-version</td>
+<td style="text-align:left">Java 8 or above; one of <code>1.8</code>, <code>1.11</code>, <code>1.12</code>, <code>1.13</code> or <code>1.14</code></td>
+<td style="text-align:left"><strong>1.12</strong></td>
+</tr>
+<tr>
+<td style="text-align:left">project-group</td>
+<td style="text-align:left"><code>com.wellsfargo.&lt;lob&gt;.&lt;business-group&gt;.&lt;application-group&gt;</code></td>
+<td style="text-align:left"><strong><code>com.wellsfargo.consumer.lending.loan</code></strong></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Clone the <strong>greenfield-app-starter</strong> from Gitlab repo <code>git clone &lt;repo url&gt;</code>
+<img src="/images/resized.jpg" alt="starter app folder structure"></p>
+</li>
+<li>
+<p>Rename folder: <code>greenfield-app-starter</code> to <code>&lt;microservice-name&gt;</code><br>
+(example: <strong>AutoLoanCalculator</strong>)</p>
+</li>
+<li>
+<p>Update the microservice name in <code>settings.gradle</code></p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gradle" data-lang="gradle">rootProject<span style="color:#666">.</span><span style="color:#4070a0">name</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#34;&lt;microservice-name&gt;&#34;</span>
+</code></pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gradle" data-lang="gradle"><span style="">#</span> EXAMPLE
+   
+rootProject<span style="color:#666">.</span><span style="color:#4070a0">name</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#34;AutoLoanCalculator&#34;</span>
+</code></pre></div></li>
+<li>
+<p>Update project details in <code>build.gradle</code></p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gradle" data-lang="gradle">description <span style="color:#666">=</span> <span style="color:#4070a0">&#34;&lt;description&gt;&#34;</span>
+group <span style="color:#666">=</span> <span style="color:#4070a0">&#34;&lt;project-group&gt;&#34;</span>
+version <span style="color:#666">=</span> <span style="color:#4070a0">&#34;&lt;microservice-version&gt;&#34;</span>
+sourceCompatibility <span style="color:#666">=</span> <span style="color:#4070a0">&#34;&lt;JDK-version&gt;&#34;</span>
+</code></pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gradle" data-lang="gradle"><span style="">#</span> EXAMPLE
+  
+description <span style="color:#666">=</span> <span style="color:#4070a0">&#34;consumer auto loan calculator for period less than 36 months&#34;</span>
+group <span style="color:#666">=</span> <span style="color:#4070a0">&#34;com.wellsfargo.consumer.lending.loan&#34;</span>
+version <span style="color:#666">=</span> <span style="color:#4070a0">&#34;0.1.0&#34;</span>
+sourceCompatibility <span style="color:#666">=</span> <span style="color:#4070a0">&#34;1.12&#34;</span>
+</code></pre></div></li>
+<li>
+<p>Rename <em>package</em> from <code>com.wellsfargo.cto.eai.starter</code> to <code>&lt;project-group&gt;</code><br>
+(example: <strong><code>com.wellsfargo.consumer.lending.loan</code></strong>)</p>
+</li>
+<li>
+<p>Rename <em>main application classname</em> from <code>GreenfieldMicroservice</code> to <code>&lt;microservice-name&gt;</code><br>
+(example: <strong><code>AutoLoanCalculator</code></strong>)</p>
+</li>
+<li>
+<p>As an example, the <em>barebone</em> microservice will have the following:</p>
+<ul>
+<li>folder: <code>AutoLoanCalculator</code> containing
+<ul>
+<li><code>com.wellsfargo.consumer.lending.loan.AutoLoanCalculator.java</code></li>
+<li><code>src/main/resources/application.yml</code></li>
+<li><code>build.gradle</code></li>
+<li><code>settings.gradle</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Create the codebase folder/package structure based on the recipe in <em><strong>Best Practices</strong></em></p>
+</li>
+</ol>
+<h3 id="validation">Validation</h3>
+<ol>
+<li>
+<p>Open a command window in the <code>&lt;microservice-name&gt;</code> directory</p>
+</li>
+<li>
+<p>Validate the new microservice</p>
+<ul>
+<li>can be built locally: <code>gradlew bootJar</code></li>
+<li>runs locally: <code>gradlew bootRun</code></li>
+</ul>
+</li>
+<li>
+<p>Verify microservice health in the browser</p>
+<ul>
+<li><code>http://localhost:8080/actuator/info</code></li>
+<li><code>http://localhost:8080/actuator/health</code></li>
+</ul>
+</li>
+</ol>
+<h3 id="next-step">Next Step</h3>
+<p>Follow the <strong>Reactive</strong> or <strong>Non-Reactive</strong> path depending on your microservice needs.</p>
+<h2 id="notes">NOTES</h2>
+<ul>
+<li><a href="https://medium.com/stuff-about-cloud-native-development/my-spring-boot-101-journal-getting-started-5183f68606cb">Why use Spring Boot ?</a></li>
+<li><a href="https://semver.org/">How to version software ?</a></li>
+</ul>
+
+
+    
+    
+      
+<aside class="admonition">
+	<div class="admonition-content last-updated">
+		<p class="alignleft"><a href="/common/create-app-using-starter/" class="hide-child link primary-color">1. Create barebone microservice using the starter</a> was last updated on December 17, 2020</p>
+	</div>
+</aside>
+
+<footer class=" footline" >
+	
+</footer>
+
+<div id="navigation">
+</div>
+
+</section>
+
+<div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+<div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+</div>
+
+<script src="/js/clipboard.min.js"></script>
+<script src="/js/featherlight.min.js"></script>
+<script src="/js/html5shiv-printshiv.min.js"></script>
+
+<script src="/js/modernizr.custom.71422.js"></script>
+<script src="/js/docdock.js"></script>
+<script src="/theme-original/script.js"></script>
+
+    
+
+    
+    
+
+    
+  </body>
+</html>
