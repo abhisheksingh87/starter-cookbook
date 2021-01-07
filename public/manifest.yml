@@ -2,6 +2,7 @@
 applications:
 - name: wf-app-modernization-cookbook
   memory: 64M
-  buildpack: staticfile-buildpack
+  buildpacks:
+  - staticfile_buildpack
   env:
     FORCE_HTTPS: true
