@@ -10,16 +10,19 @@ authors = ["Prashanth 'PB' Belathur"]
 pre ="<i class='fa fa-spinner fa-pulse fa-1x fa-fw'></i>&nbsp;&nbsp;"
 +++
 
-Cookbook with recipes for developing modern cloud native microservice created by VMWare Tanzu Labs during the WellsFargo Enterprise Architecture Consulting engagement.
+Cookbook with recipes for using the greenfield application starters to develop modern cloud native microservice in Wells Fargo.  
+The cookbook and starters were created by VMWare Tanzu (Pivotal) Labs during the WellsFargo Enterprise Architecture Consulting engagement in January 2021.
+
 
 ## CONTEXT
 
-The following spring boot starters in Github will help developers to build microservices based on required business needs:
-- **greenfield-app-starter** for **Non-Reactive** microservices.
-- **greenfield-reactive-app-starter** for **Reactive** microservices.
+The following spring boot starters in Github will help Wells Fargo developers to build _non-reactive_ or _reactive_ microservices based on the business need:
+- **greenfield-app-starter** for migrating a _legacy application_ to a cloud-ready microservice.
+- **greenfield-reactive-app-starter** for _greenfield applications_, to take advantage of the non-blocking behavior which improves application performance and resiliency.
 
-You can use the **Non-Reactive** starter for migrating a _legacy application_ to a cloud-ready microservice.  
-We recommended the **Reactive** starter for _greenfield applications_, to take advantage of the non-blocking behavior which improves application performance and resiliency.
+Both the application starters share a common **Application Tech Stack**, comprising of components approved for use within Wells Fargo.
+
+![Application Tech Stack](/images/tech-stack.jpg)
 
 ## SOLUTION
 
