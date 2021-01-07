@@ -1,2 +1,2 @@
 #!/bin/sh
-hugo server -wDs . 
+./binaries/hugo server -wDs .

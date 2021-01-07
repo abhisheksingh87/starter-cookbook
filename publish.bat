@@ -1,1 +1,1 @@
-hugo -Ds "" 
+./binaries/hugo -Ds ""

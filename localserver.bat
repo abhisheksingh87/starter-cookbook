@@ -1,1 +1,1 @@
-hugo server -wDs . 
+./binaries/hugo server -wDs .

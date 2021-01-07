@@ -1,2 +1,2 @@
 #!/bin/sh
-hugo -Ds '' --gc --minify
+./binaries/hugo -Ds '' --gc --minify
