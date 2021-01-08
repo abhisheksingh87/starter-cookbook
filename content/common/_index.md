@@ -22,7 +22,7 @@ The following spring boot starters in Github will help Wells Fargo developers to
 
 Both the application starters share a common **Application Tech Stack**, comprising of components approved for use within Wells Fargo.
 
-![Application Tech Stack](/images/tech-stack.png)
+![Application Tech Stack](../../static/images/tech-stack.png)
 
 ## SOLUTION
 
