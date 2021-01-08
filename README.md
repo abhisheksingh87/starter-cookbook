@@ -13,7 +13,7 @@ The application starters in Gitlab will help Wells Fargo developers to create _n
 
 Both the app starters share a common tech stack, comprising components approved for use within Wells Fargo.
 
-![Application Tech Stack](/static/images/tech-stack.png)
+![Application Tech Stack](.../../static/images/tech-stack.png)
 
 
 
