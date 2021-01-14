@@ -56,7 +56,6 @@ A _Hikari_ datasource bean with connection pooling is created after completing t
         username: ${oracle.username}
         password: ${oracle.password}
         schema: ${oracle.schema}
-        dialect: org.hibernate.dialect.Oracle12cDialect
         driver: oracle.jdbc.OracleDriver
         connection-pool:
           max-pool-size: 10
@@ -102,3 +101,5 @@ A _Hikari_ datasource bean with connection pooling is created after completing t
      
 ## NOTES
 - [database connection pool **anti-patterns**](https://github.com/pbelathur/spring-boot-performance-analysis)
+- We are using spring data jdbc *NOT* spring data JPA for Oracle;
+  use `spring-data-jpa-starter`
