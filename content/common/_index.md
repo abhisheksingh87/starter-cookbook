@@ -11,7 +11,7 @@ pre ="<i class='fa fa-spinner fa-pulse fa-1x fa-fw'></i>&nbsp;&nbsp;"
 +++
 
 Cookbook with recipes for using the greenfield application starters to develop modern cloud native microservice in Wells Fargo.  
-The cookbook and starters were created by VMWare Tanzu (Pivotal) Labs during the WellsFargo Enterprise Architecture Consulting engagement in January 2021.
+The cookbook and starters were created by VMware Tanzu Labs during the WellsFargo Enterprise Architecture Consulting engagement in January 2021.
 
 
 ## CONTEXT

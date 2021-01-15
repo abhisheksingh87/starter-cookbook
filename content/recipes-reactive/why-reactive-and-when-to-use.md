@@ -43,6 +43,33 @@ Another point to emphasize is that elasticity and resilience are tightly coupled
    * [Isolation](https://www.reactivemanifesto.org/glossary#Isolation)
    * [Component](https://www.reactivemanifesto.org/glossary#Component)
 
+
+## When: Use Cases
+
+#### When you may not want to Use Reactive
+
+* An app requires a significant amount of rework from Traditional MVC.
+* Your app is a traditional CRUD-style app.
+* You have a relational DB, but no reactive driver or abstraction .
+* App has low concurrency (< 1,000 concurrent users).
+* Using an older version of Servlet (3.1+ is required).
+* Your data sources are **blocking** on I/O and do not scale.
+* You depend on ORM features like caching, lazy loading, write-behind.
+
+#### When you may want to use Reactive
+
+* Relational Database with reactive driver or R2DBC abstraction (MS SQL, Postgres).
+* Non-relational reactive DB (Mongo, Cassandra, Redis).
+* Application with more than 1000 concurrent users.
+    * Web/Mobile apps.
+    * Remote apps requiring data refresh(ex- backpressure).
+* A large number of transaction-processing services.
+* Notification services.
+
+  > A banking example of application around Reactive principles could be online car shopping and financing.
+  > Customers can browse million cars from over thousand's of dealers and pre-qualify for financing in seconds, without impacting credit scores.
+
+
 ## Message-Driven Communication
 One of the widely asked question is how to connect components in the distributed system and preserve decoupling, isolation, and scalability at the same time.
 Let's deep dive into below code
@@ -119,10 +146,10 @@ The performance statistics below is between spring boot 2 webflux vs spring boot
 
 Based on the above performance numbers specially when having 3000 concurrent users you see the 
 reactive application numbers are really good and the classic way of doing things (**blocking threads**)
-starts to show its problems when we required performance and horizontal scalability.
+starts to show its problems when we require performance and horizontal scalability.
 
 One of the reasons why the Reactive Model is able to serve requests that fast is because it’s offloading the task of
-“checking if an operation has completed” to the Operating System, which has an optimized way of doing that (kqueue/epoll on Linux for example) 
+_checking if an operation has completed_ to the Operating System, which has an optimized way of doing that (kqueue/epoll on Linux for example) 
 and thus avoiding the overhead of syscalls and userspace/kernel switching.
 
 Resource contention is a real problem in the blocking model and it’s one of the reasons why even with more threads the throughput is significantly lower than the reactive model.
@@ -131,28 +158,3 @@ and simply ask the Operating System to be notified when a given task has been co
 
 Reactive Model, is performant and suited for a high-throughput application that wants to keep its resource
 consumption low(CPU, RAM).
-
-## When: Use Cases
-
-#### When you may not want to Use Reactive 
-
-* An app requires a significant amount of rework from Traditional MVC.
-* Your app is a traditional CRUD-style app.
-* You have a relational DB, but no reactive driver or abstraction .
-* App has low concurrency (< 1,000 concurrent users).
-* Using an older version of Servlet (3.1+ is required).
-* Your data sources are **blocking** on I/O and do not scale.
-* You depend on ORM features like caching, lazy loading, write-behind.
-
-#### When you may want to use Reactive
-
-* Relational Database with reactive driver or R2DBC abstraction (MS SQL, Postgres).
-* Non-relational reactive DB (Mongo, Cassandra, Redis).
-* Application with more than 1000 concurrent users.
-   * Web/Mobile apps.
-   * Remote apps requiring data refresh(ex- backpressure).
-* A large number of transaction-processing services.
-* Notification services.
-  
-   > A banking example of application around Reactive principles could be online car shopping and financing. 
-   > Customers can browse million cars from over thousand's of dealers and pre-qualify for financing in seconds, without impacting credit scores.

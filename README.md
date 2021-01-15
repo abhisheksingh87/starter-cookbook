@@ -3,7 +3,7 @@
 
 Cookbook contains recipes to help developers complete tasks required to build a fully functional spring boot microservice using the starters.  
 
-Cookbook was created by VMWare Tanzu (Pivotal) Labs - Solution Architects (Prashanth _PB_ Belathur and Rohan Mukesh) during the WellsFargo Enterprise Architecture Consulting engagement and, can be deployed to PCF as a web application.
+Cookbook was created by VMware Tanzu Labs - Solution Architects (Prashanth _PB_ Belathur and Rohan Mukesh) during the WellsFargo Enterprise Architecture Consulting engagement and, can be deployed to PCF as a web application.
 
 ## CONTEXT
 
