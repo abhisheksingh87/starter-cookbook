@@ -115,6 +115,23 @@ The performance statistics below is between spring boot 2 webflux vs spring boot
 | **Mean Response Time**  | 2506ms | 313ms |
 | **Mean Requests/Second**     | 596.026 | 1011.236
 
+### Resource Utilization
+
+Based on the above performance numbers specially when having 3000 concurrent users you see the 
+reactive application numbers are really good and the classic way of doing things (**blocking threads**)
+starts to show its problems when we required performance and horizontal scalability.
+
+One of the reasons why the Reactive Model is able to serve requests that fast is because it’s offloading the task of
+“checking if an operation has completed” to the Operating System, which has an optimized way of doing that (kqueue/epoll on Linux for example) 
+and thus avoiding the overhead of syscalls and userspace/kernel switching.
+
+Resource contention is a real problem in the blocking model and it’s one of the reasons why even with more threads the throughput is significantly lower than the reactive model.
+The non-blocking I/O used in the Reactive Model allows the CPU threads to keep running (so there’s no context switch for the paused->running or running->paused transition) 
+and simply ask the Operating System to be notified when a given task has been completed. This way of operating allows the CPU to keep a low number of worker threads always busy but with different units of work, in this case with different requests.
+
+Reactive Model, is performant and suited for a high-throughput application that wants to keep its resource
+consumption low(CPU, RAM).
+
 ## When: Use Cases
 
 #### When you may not want to Use Reactive 

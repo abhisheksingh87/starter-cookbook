@@ -1,1 +1,255 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tags on WellsFargo Application Modernization Cookbook</title><link>/tags/</link><description>Recent content in Tags on WellsFargo Application Modernization Cookbook</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright> Wells Fargo, All Rights Reserved, Confidential</copyright><lastBuildDate>Wed, 06 Jan 2021 14:02:27 -0500</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml"/><item><title>annotated controllers</title><link>/tags/annotated-controllers/</link><pubDate>Wed, 06 Jan 2021 14:02:27 -0500</pubDate><guid>/tags/annotated-controllers/</guid><description/></item><item><title>reactive</title><link>/tags/reactive/</link><pubDate>Wed, 06 Jan 2021 14:02:27 -0500</pubDate><guid>/tags/reactive/</guid><description/></item><item><title>reactor</title><link>/tags/reactor/</link><pubDate>Wed, 06 Jan 2021 14:02:27 -0500</pubDate><guid>/tags/reactor/</guid><description/></item><item><title>Spring</title><link>/tags/spring/</link><pubDate>Wed, 06 Jan 2021 14:02:27 -0500</pubDate><guid>/tags/spring/</guid><description/></item><item><title>spring webflux</title><link>/tags/spring-webflux/</link><pubDate>Wed, 06 Jan 2021 14:02:27 -0500</pubDate><guid>/tags/spring-webflux/</guid><description/></item><item><title>application development</title><link>/tags/application-development/</link><pubDate>Tue, 05 Jan 2021 00:00:00 -0600</pubDate><guid>/tags/application-development/</guid><description/></item><item><title>git</title><link>/tags/git/</link><pubDate>Tue, 05 Jan 2021 00:00:00 -0600</pubDate><guid>/tags/git/</guid><description/></item><item><title>microservice</title><link>/tags/microservice/</link><pubDate>Tue, 05 Jan 2021 00:00:00 -0600</pubDate><guid>/tags/microservice/</guid><description/></item><item><title>practices</title><link>/tags/practices/</link><pubDate>Tue, 05 Jan 2021 00:00:00 -0600</pubDate><guid>/tags/practices/</guid><description/></item><item><title>spring boot</title><link>/tags/spring-boot/</link><pubDate>Tue, 05 Jan 2021 00:00:00 -0600</pubDate><guid>/tags/spring-boot/</guid><description/></item><item><title>actuator</title><link>/tags/actuator/</link><pubDate>Wed, 09 Dec 2020 14:02:27 -0500</pubDate><guid>/tags/actuator/</guid><description/></item><item><title>anti patterns</title><link>/tags/anti-patterns/</link><pubDate>Wed, 09 Dec 2020 14:02:27 -0500</pubDate><guid>/tags/anti-patterns/</guid><description/></item><item><title>data-repository</title><link>/tags/data-repository/</link><pubDate>Wed, 09 Dec 2020 14:02:27 -0500</pubDate><guid>/tags/data-repository/</guid><description/></item><item><title>database connection pool</title><link>/tags/database-connection-pool/</link><pubDate>Wed, 09 Dec 2020 14:02:27 -0500</pubDate><guid>/tags/database-connection-pool/</guid><description/></item><item><title>endpoint</title><link>/tags/endpoint/</link><pubDate>Wed, 09 Dec 2020 14:02:27 -0500</pubDate><guid>/tags/endpoint/</guid><description/></item><item><title>health</title><link>/tags/health/</link><pubDate>Wed, 09 Dec 2020 14:02:27 -0500</pubDate><guid>/tags/health/</guid><description/></item><item><title>health check</title><link>/tags/health-check/</link><pubDate>Wed, 09 Dec 2020 14:02:27 -0500</pubDate><guid>/tags/health-check/</guid><description/></item><item><title>hikari</title><link>/tags/hikari/</link><pubDate>Wed, 09 Dec 2020 14:02:27 -0500</pubDate><guid>/tags/hikari/</guid><description/></item><item><title>mongodb</title><link>/tags/mongodb/</link><pubDate>Wed, 09 Dec 2020 14:02:27 -0500</pubDate><guid>/tags/mongodb/</guid><description/></item><item><title>persistence</title><link>/tags/persistence/</link><pubDate>Wed, 09 Dec 2020 14:02:27 -0500</pubDate><guid>/tags/persistence/</guid><description/></item><item><title>barebone microservice</title><link>/tags/barebone-microservice/</link><pubDate>Wed, 09 Dec 2020 00:00:00 -0600</pubDate><guid>/tags/barebone-microservice/</guid><description/></item><item><title>custom spring bean validation</title><link>/tags/custom-spring-bean-validation/</link><pubDate>Wed, 09 Dec 2020 00:00:00 -0600</pubDate><guid>/tags/custom-spring-bean-validation/</guid><description/></item><item><title>start</title><link>/tags/start/</link><pubDate>Wed, 09 Dec 2020 00:00:00 -0600</pubDate><guid>/tags/start/</guid><description/></item><item><title>starter</title><link>/tags/starter/</link><pubDate>Wed, 09 Dec 2020 00:00:00 -0600</pubDate><guid>/tags/starter/</guid><description/></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on WellsFargo Application Modernization Cookbook</title>
+    <link>/tags/</link>
+    <description>Recent content in Tags on WellsFargo Application Modernization Cookbook</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright> Wells Fargo, All Rights Reserved, Confidential</copyright>
+    <lastBuildDate>Wed, 06 Jan 2021 14:02:27 -0500</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>annotated controllers</title>
+      <link>/tags/annotated-controllers/</link>
+      <pubDate>Wed, 06 Jan 2021 14:02:27 -0500</pubDate>
+      
+      <guid>/tags/annotated-controllers/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>reactive</title>
+      <link>/tags/reactive/</link>
+      <pubDate>Wed, 06 Jan 2021 14:02:27 -0500</pubDate>
+      
+      <guid>/tags/reactive/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>reactor</title>
+      <link>/tags/reactor/</link>
+      <pubDate>Wed, 06 Jan 2021 14:02:27 -0500</pubDate>
+      
+      <guid>/tags/reactor/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Spring</title>
+      <link>/tags/spring/</link>
+      <pubDate>Wed, 06 Jan 2021 14:02:27 -0500</pubDate>
+      
+      <guid>/tags/spring/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>spring webflux</title>
+      <link>/tags/spring-webflux/</link>
+      <pubDate>Wed, 06 Jan 2021 14:02:27 -0500</pubDate>
+      
+      <guid>/tags/spring-webflux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>application development</title>
+      <link>/tags/application-development/</link>
+      <pubDate>Tue, 05 Jan 2021 00:00:00 -0600</pubDate>
+      
+      <guid>/tags/application-development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git</title>
+      <link>/tags/git/</link>
+      <pubDate>Tue, 05 Jan 2021 00:00:00 -0600</pubDate>
+      
+      <guid>/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>microservice</title>
+      <link>/tags/microservice/</link>
+      <pubDate>Tue, 05 Jan 2021 00:00:00 -0600</pubDate>
+      
+      <guid>/tags/microservice/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>practices</title>
+      <link>/tags/practices/</link>
+      <pubDate>Tue, 05 Jan 2021 00:00:00 -0600</pubDate>
+      
+      <guid>/tags/practices/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>spring boot</title>
+      <link>/tags/spring-boot/</link>
+      <pubDate>Tue, 05 Jan 2021 00:00:00 -0600</pubDate>
+      
+      <guid>/tags/spring-boot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>actuator</title>
+      <link>/tags/actuator/</link>
+      <pubDate>Wed, 09 Dec 2020 14:02:27 -0500</pubDate>
+      
+      <guid>/tags/actuator/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>anti patterns</title>
+      <link>/tags/anti-patterns/</link>
+      <pubDate>Wed, 09 Dec 2020 14:02:27 -0500</pubDate>
+      
+      <guid>/tags/anti-patterns/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>circuitbreaker</title>
+      <link>/tags/circuitbreaker/</link>
+      <pubDate>Wed, 09 Dec 2020 14:02:27 -0500</pubDate>
+      
+      <guid>/tags/circuitbreaker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>data-repository</title>
+      <link>/tags/data-repository/</link>
+      <pubDate>Wed, 09 Dec 2020 14:02:27 -0500</pubDate>
+      
+      <guid>/tags/data-repository/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>database connection pool</title>
+      <link>/tags/database-connection-pool/</link>
+      <pubDate>Wed, 09 Dec 2020 14:02:27 -0500</pubDate>
+      
+      <guid>/tags/database-connection-pool/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>endpoint</title>
+      <link>/tags/endpoint/</link>
+      <pubDate>Wed, 09 Dec 2020 14:02:27 -0500</pubDate>
+      
+      <guid>/tags/endpoint/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>health</title>
+      <link>/tags/health/</link>
+      <pubDate>Wed, 09 Dec 2020 14:02:27 -0500</pubDate>
+      
+      <guid>/tags/health/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>health check</title>
+      <link>/tags/health-check/</link>
+      <pubDate>Wed, 09 Dec 2020 14:02:27 -0500</pubDate>
+      
+      <guid>/tags/health-check/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hikari</title>
+      <link>/tags/hikari/</link>
+      <pubDate>Wed, 09 Dec 2020 14:02:27 -0500</pubDate>
+      
+      <guid>/tags/hikari/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mongodb</title>
+      <link>/tags/mongodb/</link>
+      <pubDate>Wed, 09 Dec 2020 14:02:27 -0500</pubDate>
+      
+      <guid>/tags/mongodb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>persistence</title>
+      <link>/tags/persistence/</link>
+      <pubDate>Wed, 09 Dec 2020 14:02:27 -0500</pubDate>
+      
+      <guid>/tags/persistence/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>resilience</title>
+      <link>/tags/resilience/</link>
+      <pubDate>Wed, 09 Dec 2020 14:02:27 -0500</pubDate>
+      
+      <guid>/tags/resilience/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>resilience4j</title>
+      <link>/tags/resilience4j/</link>
+      <pubDate>Wed, 09 Dec 2020 14:02:27 -0500</pubDate>
+      
+      <guid>/tags/resilience4j/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>barebone microservice</title>
+      <link>/tags/barebone-microservice/</link>
+      <pubDate>Wed, 09 Dec 2020 00:00:00 -0600</pubDate>
+      
+      <guid>/tags/barebone-microservice/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>custom spring bean validation</title>
+      <link>/tags/custom-spring-bean-validation/</link>
+      <pubDate>Wed, 09 Dec 2020 00:00:00 -0600</pubDate>
+      
+      <guid>/tags/custom-spring-bean-validation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>start</title>
+      <link>/tags/start/</link>
+      <pubDate>Wed, 09 Dec 2020 00:00:00 -0600</pubDate>
+      
+      <guid>/tags/start/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>starter</title>
+      <link>/tags/starter/</link>
+      <pubDate>Wed, 09 Dec 2020 00:00:00 -0600</pubDate>
+      
+      <guid>/tags/starter/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,3 +1,23 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>git on WellsFargo Application Modernization Cookbook</title><link>/tags/git/</link><description>Recent content in git on WellsFargo Application Modernization Cookbook</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright> Wells Fargo, All Rights Reserved, Confidential</copyright><lastBuildDate>Tue, 05 Jan 2021 00:00:00 -0600</lastBuildDate><atom:link href="/tags/git/index.xml" rel="self" type="application/rss+xml"/><item><title>Git Commit Best Practices</title><link>/best-practices/git-commit-messages/</link><pubDate>Tue, 05 Jan 2021 00:00:00 -0600</pubDate><guid>/best-practices/git-commit-messages/</guid><description>CONTEXT This recipe provides details of how to write good commit message.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>git on WellsFargo Application Modernization Cookbook</title>
+    <link>/tags/git/</link>
+    <description>Recent content in git on WellsFargo Application Modernization Cookbook</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright> Wells Fargo, All Rights Reserved, Confidential</copyright>
+    <lastBuildDate>Tue, 05 Jan 2021 00:00:00 -0600</lastBuildDate><atom:link href="/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Git Commit Best Practices</title>
+      <link>/best-practices/git-commit-messages/</link>
+      <pubDate>Tue, 05 Jan 2021 00:00:00 -0600</pubDate>
+      
+      <guid>/best-practices/git-commit-messages/</guid>
+      <description>CONTEXT This recipe provides details of how to write good commit message.
 What is a commit message? The commit command is used to save changes to a local repository after staging in Git. However, before you can save changes in Git, you have to tell Git which changes you want to save. A great way to do that is by adding a commit message to identify your changes.
-Why commit messages are important?</description></item></channel></rss>
+Why commit messages are important?</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -22,28 +22,67 @@ This recipe deals with configuring persistence in the microservice.
 
    | Property        | Details  |
       | :---            |    :----   | 
-   | uri | mongodb://\<host>:\<port>/\<database name>
+   | uri | \<host>:\<port>
    | database-name | database  name  |
-   | username | username (plain text)
-   | password | password (encrypted)
  
 1. Navigate to the `<microservice>` directory
    
-1. Update the _database connection_ and _connection pool requirements_ in `src/main/resources/application.yml`
+1. Update the _database connection_ in `src/main/resources/application.yml`
 
    ```yml
-   application:
-           name:
-           description:
-           id: <wells fargo distributed-id>
-           persistence:
-              mongodb:
-                  host:
-                  port:
-                  database-name:
-                  username:
-                  password:
+      mongodb:
+        host:
+        database-name:
     ```
+1. Create a new class `MongoProperties` . This class will load the MongoDB properties from `src/main/resources/application.yml`
+
+ ```java
+   @ConfigurationProperties("mongo")
+   @Component
+   @Data
+   public class MongoProperties {
+      private List<String> hosts;
+      private String database;
+ }
+ ```
+
+1. Create new class `MongoDBConfiguration`. This class will extend `AbstractReactiveMongoConfiguration`.
+   The purpose of this class is to load MongoDB connection url and database and configure `ReactiveMongoDBTemplate`
+   
+ ```java
+@Configuration
+@AllArgsConstructor
+public class MongoDBConfiguration extends AbstractReactiveMongoConfiguration {
+
+    private static final String CONNECTION_URL = "mongodb://%s/%s";
+
+    private final MongoProperties mongoProperties;
+
+    @Override
+    protected String getDatabaseName() {
+        return mongoProperties.getDatabase();
+    }
+
+    @Override
+    public MongoClient reactiveMongoClient() {
+        return MongoClients.create(getMongoDBConnectionUrl());
+    }
+
+    @Override
+    public Collection getMappingBasePackages() {
+        return Collections.singleton("com.wellsfargo.reactive.starter.greenfieldreactiveapplicationstarter");
+    }
+
+    private String getMongoDBConnectionUrl() {
+        return String.format(CONNECTION_URL, mongoProperties.getHosts().get(0), mongoProperties.getDatabase());
+    }
+
+    @Bean
+    public ReactiveMongoTemplate reactiveMongoTemplate() {
+        return new ReactiveMongoTemplate(reactiveMongoClient(), getDatabaseName());
+    }
+}
+```
 
 ### Validation
 
@@ -73,18 +112,4 @@ This recipe deals with configuring persistence in the microservice.
          }
       },    
      ```
-
-## NOTES
-
-  you can also use properties provided by **Spring** to configure mongodb
-  ```yaml
-     spring:
-        mongodb:
-          host:  
-          port:    
-          uri:    
-          database:   
-          username:
-          password:
-  ```
 

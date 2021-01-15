@@ -25,8 +25,8 @@ MongoDB is a NoSQL document store. In this example, you store `Customer` objects
 
     @Id
     private String id;
-    private Long accountNumber;
-    private Long routingNumber;
+    private String accountNumber;
+    private String routingNumber;
     private String accountOwner;
 }
 ```

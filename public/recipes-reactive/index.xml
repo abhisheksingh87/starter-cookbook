@@ -1,1 +1,84 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Reactive Recipes on WellsFargo Application Modernization Cookbook</title><link>/recipes-reactive/</link><description>Recent content in Reactive Recipes on WellsFargo Application Modernization Cookbook</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright> Wells Fargo, All Rights Reserved, Confidential</copyright><lastBuildDate>Fri, 21 Apr 2017 14:27:52 -0600</lastBuildDate><atom:link href="/recipes-reactive/index.xml" rel="self" type="application/rss+xml"/><item><title>5. Why Reactive</title><link>/recipes-reactive/why-reactive-and-when-to-use/</link><pubDate>Wed, 06 Jan 2021 14:02:27 -0500</pubDate><guid>/recipes-reactive/why-reactive-and-when-to-use/</guid><description>Why Reactive</description></item><item><title>6. Spring WebFlux lite reactive api</title><link>/recipes-reactive/spring-webflux-rx-api/</link><pubDate>Wed, 06 Jan 2021 14:02:27 -0500</pubDate><guid>/recipes-reactive/spring-webflux-rx-api/</guid><description>Spring WebFlux lite reactive api</description></item><item><title>7. Spring WebFlux Annotated Controllers</title><link>/recipes-reactive/spring-webflux-annotated-controllers/</link><pubDate>Wed, 06 Jan 2021 14:02:27 -0500</pubDate><guid>/recipes-reactive/spring-webflux-annotated-controllers/</guid><description>Spring WebFlux Annotated Controllers</description></item><item><title>8. Spring WebFlux Functional Endpoints</title><link>/recipes-reactive/spring-webflux-functional-endpoints/</link><pubDate>Wed, 06 Jan 2021 14:02:27 -0500</pubDate><guid>/recipes-reactive/spring-webflux-functional-endpoints/</guid><description>Spring WebFlux Functional Endpoints</description></item><item><title>9. Spring WebFlux Exception Handling</title><link>/recipes-reactive/spring-webflux-exception-handling/</link><pubDate>Wed, 06 Jan 2021 14:02:27 -0500</pubDate><guid>/recipes-reactive/spring-webflux-exception-handling/</guid><description>Spring WebFlux Exception Handling</description></item><item><title>2. Configure Actuators</title><link>/recipes-reactive/configure-actuator/</link><pubDate>Wed, 09 Dec 2020 14:02:27 -0500</pubDate><guid>/recipes-reactive/configure-actuator/</guid><description>Configure Actuators in microservice</description></item><item><title>3. Configure MongoDB</title><link>/recipes-reactive/configure-mongodb/</link><pubDate>Wed, 09 Dec 2020 14:02:27 -0500</pubDate><guid>/recipes-reactive/configure-mongodb/</guid><description>Configure mongodb datasource in microservice</description></item><item><title>4. Access Data in MongoDB</title><link>/recipes-reactive/accessing-data-mongodb-reactive/</link><pubDate>Wed, 09 Dec 2020 14:02:27 -0500</pubDate><guid>/recipes-reactive/accessing-data-mongodb-reactive/</guid><description>Accessing mongodb data reactively</description></item><item><title>Spring WebFlux WebClient</title><link>/recipes-reactive/spring-webflux-webclient/</link><pubDate>Wed, 06 Jan 2021 14:02:27 -0500</pubDate><guid>/recipes-reactive/spring-webflux-webclient/</guid><description>Spring WebFlux WebClient</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Reactive Recipes on WellsFargo Application Modernization Cookbook</title>
+    <link>/recipes-reactive/</link>
+    <description>Recent content in Reactive Recipes on WellsFargo Application Modernization Cookbook</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright> Wells Fargo, All Rights Reserved, Confidential</copyright>
+    <lastBuildDate>Fri, 21 Apr 2017 14:27:52 -0600</lastBuildDate><atom:link href="/recipes-reactive/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>5. Why Reactive</title>
+      <link>/recipes-reactive/why-reactive-and-when-to-use/</link>
+      <pubDate>Wed, 06 Jan 2021 14:02:27 -0500</pubDate>
+      
+      <guid>/recipes-reactive/why-reactive-and-when-to-use/</guid>
+      <description>Why Reactive</description>
+    </item>
+    
+    <item>
+      <title>7. Spring WebFlux Annotated Controllers</title>
+      <link>/recipes-reactive/spring-webflux-annotated-controllers/</link>
+      <pubDate>Wed, 06 Jan 2021 14:02:27 -0500</pubDate>
+      
+      <guid>/recipes-reactive/spring-webflux-annotated-controllers/</guid>
+      <description>Spring WebFlux Annotated Controllers</description>
+    </item>
+    
+    <item>
+      <title>8. Spring WebFlux Functional Endpoints</title>
+      <link>/recipes-reactive/spring-webflux-functional-endpoints/</link>
+      <pubDate>Wed, 06 Jan 2021 14:02:27 -0500</pubDate>
+      
+      <guid>/recipes-reactive/spring-webflux-functional-endpoints/</guid>
+      <description>Spring WebFlux Functional Endpoints</description>
+    </item>
+    
+    <item>
+      <title>9. Spring WebFlux Exception Handling</title>
+      <link>/recipes-reactive/spring-webflux-error-handling/</link>
+      <pubDate>Wed, 06 Jan 2021 14:02:27 -0500</pubDate>
+      
+      <guid>/recipes-reactive/spring-webflux-error-handling/</guid>
+      <description>Spring WebFlux Exception Handling</description>
+    </item>
+    
+    <item>
+      <title>2. Configure Actuators</title>
+      <link>/recipes-reactive/configure-actuator/</link>
+      <pubDate>Wed, 09 Dec 2020 14:02:27 -0500</pubDate>
+      
+      <guid>/recipes-reactive/configure-actuator/</guid>
+      <description>Configure Actuators in microservice</description>
+    </item>
+    
+    <item>
+      <title>3. Configure MongoDB</title>
+      <link>/recipes-reactive/configure-mongodb/</link>
+      <pubDate>Wed, 09 Dec 2020 14:02:27 -0500</pubDate>
+      
+      <guid>/recipes-reactive/configure-mongodb/</guid>
+      <description>Configure mongodb datasource in microservice</description>
+    </item>
+    
+    <item>
+      <title>4. Access Data in MongoDB</title>
+      <link>/recipes-reactive/accessing-data-mongodb-reactive/</link>
+      <pubDate>Wed, 09 Dec 2020 14:02:27 -0500</pubDate>
+      
+      <guid>/recipes-reactive/accessing-data-mongodb-reactive/</guid>
+      <description>Accessing mongodb data reactively</description>
+    </item>
+    
+    <item>
+      <title>Spring WebFlux WebClient</title>
+      <link>/recipes-reactive/spring-webflux-webclient/</link>
+      <pubDate>Wed, 06 Jan 2021 14:02:27 -0500</pubDate>
+      
+      <guid>/recipes-reactive/spring-webflux-webclient/</guid>
+      <description>Spring WebFlux WebClient</description>
+    </item>
+    
+  </channel>
+</rss>

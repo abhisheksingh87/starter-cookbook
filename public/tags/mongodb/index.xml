@@ -1,1 +1,48 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>mongodb on WellsFargo Application Modernization Cookbook</title><link>/tags/mongodb/</link><description>Recent content in mongodb on WellsFargo Application Modernization Cookbook</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright> Wells Fargo, All Rights Reserved, Confidential</copyright><lastBuildDate>Wed, 09 Dec 2020 14:02:27 -0500</lastBuildDate><atom:link href="/tags/mongodb/index.xml" rel="self" type="application/rss+xml"/><item><title>3. Configure MongoDB</title><link>/recipes-reactive/configure-mongodb/</link><pubDate>Wed, 09 Dec 2020 14:02:27 -0500</pubDate><guid>/recipes-reactive/configure-mongodb/</guid><description>Configure mongodb datasource in microservice</description></item><item><title>4. Access Data in MongoDB</title><link>/recipes-reactive/accessing-data-mongodb-reactive/</link><pubDate>Wed, 09 Dec 2020 14:02:27 -0500</pubDate><guid>/recipes-reactive/accessing-data-mongodb-reactive/</guid><description>Accessing mongodb data reactively</description></item><item><title>5. Access Data in MongoDB</title><link>/recipes-non-reactive/accessing-data-mongodb/</link><pubDate>Wed, 09 Dec 2020 14:02:27 -0500</pubDate><guid>/recipes-non-reactive/accessing-data-mongodb/</guid><description>Accessing data in MongoDB</description></item><item><title>4. Configure MongoDB</title><link>/recipes-non-reactive/configure-mongodb/</link><pubDate>Wed, 09 Dec 2020 14:02:27 -0500</pubDate><guid>/recipes-non-reactive/configure-mongodb/</guid><description>Configure MongoDB datasource in microservice</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mongodb on WellsFargo Application Modernization Cookbook</title>
+    <link>/tags/mongodb/</link>
+    <description>Recent content in mongodb on WellsFargo Application Modernization Cookbook</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright> Wells Fargo, All Rights Reserved, Confidential</copyright>
+    <lastBuildDate>Wed, 09 Dec 2020 14:02:27 -0500</lastBuildDate><atom:link href="/tags/mongodb/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>3. Configure MongoDB</title>
+      <link>/recipes-reactive/configure-mongodb/</link>
+      <pubDate>Wed, 09 Dec 2020 14:02:27 -0500</pubDate>
+      
+      <guid>/recipes-reactive/configure-mongodb/</guid>
+      <description>Configure mongodb datasource in microservice</description>
+    </item>
+    
+    <item>
+      <title>4. Access Data in MongoDB</title>
+      <link>/recipes-reactive/accessing-data-mongodb-reactive/</link>
+      <pubDate>Wed, 09 Dec 2020 14:02:27 -0500</pubDate>
+      
+      <guid>/recipes-reactive/accessing-data-mongodb-reactive/</guid>
+      <description>Accessing mongodb data reactively</description>
+    </item>
+    
+    <item>
+      <title>5. Access Data in MongoDB</title>
+      <link>/recipes-non-reactive/accessing-data-mongodb/</link>
+      <pubDate>Wed, 09 Dec 2020 14:02:27 -0500</pubDate>
+      
+      <guid>/recipes-non-reactive/accessing-data-mongodb/</guid>
+      <description>Accessing data in MongoDB</description>
+    </item>
+    
+    <item>
+      <title>4. Configure MongoDB</title>
+      <link>/recipes-non-reactive/configure-mongodb/</link>
+      <pubDate>Wed, 09 Dec 2020 14:02:27 -0500</pubDate>
+      
+      <guid>/recipes-non-reactive/configure-mongodb/</guid>
+      <description>Configure MongoDB datasource in microservice</description>
+    </item>
+    
+  </channel>
+</rss>
