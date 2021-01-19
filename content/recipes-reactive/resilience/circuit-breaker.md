@@ -35,6 +35,8 @@ Circuit Breaker has three states:
    implementation "io.github.resilience4j:resilience4j-reactor:${resilience4jVersion}"
 ```
 
+## Solution
+
 1. Determine and record the following **circuit breaker configuration**
 
    | Property        | Default Value  | Details
@@ -48,33 +50,32 @@ Circuit Breaker has three states:
    | recordExceptions | empty | A list of exceptions that are recorded as a failure and thus increase the failure rate. Any exception matching or inheriting from one of the list counts as a failure, unless explicitly ignored via ignoreExceptions. If you specify a list of exceptions, all other exceptions count as a success, unless they are explicitly ignored by ignoreExceptions.
    | ignoreExceptions | empty | A list of exceptions that are ignored and neither count as a failure nor success. Any exception matching or inheriting from one of the list will not count as a failure nor success, even if the exceptions is part of recordExceptions.
 
-1. Add _circuit_breaker_ configuration in `src/main/resources/application.yml`
-```yaml
-   resilience4j:
-   circuitbreaker:
-      configs:
-         default:
-            registerHealthIndicator: true
-            slidingWindowSize: 10
-            minimumNumberOfCalls: 6
-            permittedNumberOfCallsInHalfOpenState: 3
-            automaticTransitionFromOpenToHalfOpenEnabled: true
-            waitDurationInOpenState: 5s
-            failureRateThreshold: 50
-            eventConsumerBufferSize: 10
-            recordExceptions:
-               - org.springframework.web.client.HttpServerErrorException
-               - java.util.concurrent.TimeoutException
-               - java.io.IOException
-               - org.springframework.web.server.ResponseStatusException
-            ignoreExceptions:
-               - com.wellsfargo.reactive.starter.greenfieldreactiveapplicationstarter.error.BusinessException
-      instances:
-         customerService:
-            baseConfig: default
-```
-
-1. Add `@CircuitBreaker` annotation to service mentioned in `application.yml`
+2. Add _circuit_breaker_ configuration in `src/main/resources/application.yml`
+   ```yaml
+      resilience4j:
+      circuitbreaker:
+         configs:
+            default:
+               registerHealthIndicator: true
+               slidingWindowSize: 10
+               minimumNumberOfCalls: 6
+               permittedNumberOfCallsInHalfOpenState: 3
+               automaticTransitionFromOpenToHalfOpenEnabled: true
+               waitDurationInOpenState: 5s
+               failureRateThreshold: 50
+               eventConsumerBufferSize: 10
+               recordExceptions:
+                  - org.springframework.web.client.HttpServerErrorException
+                  - java.util.concurrent.TimeoutException
+                  - java.io.IOException
+                  - org.springframework.web.server.ResponseStatusException
+               ignoreExceptions:
+                  - com.wellsfargo.reactive.starter.greenfieldreactiveapplicationstarter.error.BusinessException
+         instances:
+            customerService:
+               baseConfig: default
+   ```
+3. Add `@CircuitBreaker` annotation to service mentioned in `src/main/resources/application.yml`
 
 ```java
     @CircuitBreaker(name = CUSTOMER_SERVICE)
