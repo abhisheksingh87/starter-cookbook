@@ -99,4 +99,62 @@ public Mono<ServerResponse> handleRequest(ServerRequest request) {
 
 ## Handling Errors at a Global Level
 
-All the above examples provide ways to handle errors at functional level. 
+The above examples provide ways to handle errors at functional level.
+Spring Boot provides a `WebExceptionHandler` that handles all errors in a sensible way. 
+Its position in the processing order is immediately before the handlers provided by WebFlux, which are considered last. 
+For machine clients, it produces a JSON response with details of the error, the HTTP status, and the exception message. 
+For browser clients, there is a “whitelabel” error handler that renders the same data in HTML format. 
+
+1. The first step to customizing this feature often involves using the existing mechanism but replacing or augmenting 
+the error contents. For that, you can add a bean of type `ErrorAttributes`.
+   
+  ```java
+  @Component
+  public class ErrorAttributes extends DefaultErrorAttributes {
+  
+    @Override
+    public Map<String, Object> getErrorAttributes(ServerRequest request, ErrorAttributeOptions options) {
+      Map<String, Object> errorAttributesMap = super.getErrorAttributes(request, options);
+      Throwable throwable = getError(request);
+      if (throwable instanceof  ResponseStatusException) {
+        ResponseStatusException responseStatusException = (ResponseStatusException) throwable;
+        errorAttributesMap.put("message", responseStatusException.getMessage());
+      }
+      return errorAttributesMap;
+    }
+  }
+  ```
+
+1. To change the error handling behavior, you can implement `ErrorWebExceptionHandler` and register a bean definition of that type. 
+Because a WebExceptionHandler is quite low-level, Spring Boot also provides a convenient `AbstractErrorWebExceptionHandler` 
+to let you handle errors in a WebFlux functional way, as shown in the following:
+   
+   
+  ```java
+  @Component
+  @Order(-2)
+  public class WebExceptionHandler extends AbstractErrorWebExceptionHandler {
+  
+    public WebExceptionHandler(ErrorAttributes errorAttributes, ResourceProperties resourceProperties,
+                               ApplicationContext applicationContext, ServerCodecConfigurer codeConfigurer) {
+      super(errorAttributes, resourceProperties, applicationContext);
+      this.setMessageWriters(codeConfigurer.getWriters());
+    }
+  
+    @Override
+    protected RouterFunction<ServerResponse> getRoutingFunction(ErrorAttributes errorAttributes) {
+      return RouterFunctions.route(RequestPredicates.all(),this::formatErrorResponse);
+    }
+  
+    private Mono<ServerResponse> formatErrorResponse(ServerRequest request) {
+      Map<String, Object> errorAttributesMap = getErrorAttributes(request, ErrorAttributeOptions.of(ErrorAttributeOptions.Include.STACK_TRACE));
+      int status = (int) Optional.ofNullable(errorAttributesMap.get("status")).orElse(500);
+  
+      return ServerResponse
+              .status(status)
+              .contentType(MediaType.APPLICATION_JSON)
+              .body((BodyInserters.fromValue(errorAttributesMap)));
+    }
+  }
+  ```
+We are setting the order of our error handler to -2. This is to give it a higher priority than the `DefaultErrorWebExceptionHandler` which is registered at `@Order(-1)`

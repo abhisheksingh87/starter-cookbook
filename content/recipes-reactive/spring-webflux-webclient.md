@@ -2,7 +2,7 @@
 categories = ["recipes"]
 tags = ["reactive","spring", "reactor","spring webflux"]
 summary = "Spring WebFlux WebClient"
-title = "Spring WebFlux WebClient"
+title = "9.Spring WebFlux WebClient"
 date = 2021-01-06T14:02:27-05:00
 weight = 100
 +++
