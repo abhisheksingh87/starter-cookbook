@@ -6,4 +6,4 @@ description = "Cookbook Home Page"
 
 # Application Starter Cookbook
 
-Cookbook with recipes for developing modern cloud native microservice created by VMWare Tanzu Labs during the WellsFargo Enterprise Architecture Consulting engagement.
+Cookbook with for developing modern cloud native microservice created by VMware Tanzu Labs during the WellsFargo Enterprise Architecture Consulting engagement.
