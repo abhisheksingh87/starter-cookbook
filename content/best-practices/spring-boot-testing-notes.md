@@ -33,7 +33,7 @@ This recipe consolidates general recommendations to keep in mind while writing s
         private CustomerService customerService = new CustomerService();
     
         @Test
-        public void shouldReturnJurisdictionForZip() {
+        public void testFindById() {
              //given
             Customer expectedCustomer = Customer.builder()
                                                 .customerId("123")
@@ -95,7 +95,7 @@ This recipe consolidates general recommendations to keep in mind while writing s
         private CustomerService customerService;
     
         @Test
-        public void shouldReturnValidDateInTheFuture() {
+        public void testFindById() {
             //given
             Customer expectedCustomer = Customer.builder()
                                                 .customerId("123")
@@ -167,7 +167,7 @@ This recipe consolidates general recommendations to keep in mind while writing s
         private CustomerService CustomerService;
     
         @Test
-        public void getCarShouldReturnCarDetails() {
+        public void testFindById() {
             //given
              Customer expectedCustomer = Customer.builder()
                                                 .customerId("123")
