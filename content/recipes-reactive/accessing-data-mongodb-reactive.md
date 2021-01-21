@@ -218,5 +218,4 @@ Besides the repositories approach, there is also ReactiveMongoTemplate:
       }
    }
 ```
----
-## NOTE
+    The source code is available in: [Wells Fargo GitHub](https://)   

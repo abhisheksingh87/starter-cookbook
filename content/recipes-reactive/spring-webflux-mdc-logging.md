@@ -43,15 +43,15 @@ This recipe will walk you through logging along with context in Spring WebFlux.
          };
     }
     ```
-The helper function `put` provides the required `Function<Context, Context>` that adds the given key and value to the context or creates a new context if none exists.
-`subscriberContext` is always added as a last operation in the chain of calls. As per the Reactor documentation:
+    The helper function `put` provides the required `Function<Context, Context>` that adds the given key and value to the context or creates a new context if none exists.
+    `subscriberContext` is always added as a last operation in the chain of calls. As per the Reactor documentation:
 
- {{% note  %}}
-    Even though subscriberContext is the last piece of the chain, it is the one that gets executed first (due to its subscription time nature, and the fact that the subscription signal flows from bottom to top). 
- {{% /note  %}}
+     {{% note  %}}
+        Even though subscriberContext is the last piece of the chain, it is the one that gets executed first (due to its subscription time nature, and the fact that the subscription signal flows from bottom to top). 
+     {{% /note  %}}
  
-With the approach suggested by **Simon Basle** in this [post](https://simonbasle.github.io/2018/02/contextual-logging-with-reactor-context-and-mdc/), We will utilize
-`doOnEach` method present on all Mono and Flux instances.
+    With the approach suggested by **Simon Basle** in this [post](https://simonbasle.github.io/2018/02/contextual-logging-with-reactor-context-and-mdc/), We will utilize
+    `doOnEach` method present on all Mono and Flux instances.
 
 1. Create helper method `logOnNext` as below:
 
@@ -85,4 +85,4 @@ With the approach suggested by **Simon Basle** in this [post](https://simonbasle
            pattern:
               console: %d{dd-MM-yyyy HH:mm:ss.SSS} %magenta([%thread]) %highlight(%-5level) %logger.%M - %mdc%msg%n
     ```
-The code snippets can be found in [Wells Fargo GitHub](https://)   
+    The source code is available in: [Wells Fargo GitHub](https://)   
