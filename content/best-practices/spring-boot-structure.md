@@ -1,7 +1,7 @@
 +++
 categories = ["recipes"]
 tags = ["practices", "spring boot", "microservice", "application development"]
-title = "Organize codebase"
+title = "1.Structure Spring Boot Codebase"
 description = "A simple guide to organize codebase in a microservice"
 date = 2020-12-09
 weight = 10

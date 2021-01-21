@@ -2,7 +2,7 @@
 categories = ["recipes"]
 tags = ["reactive","spring", "reactor","spring webflux"]
 summary = "Spring WebFlux Exception Handling"
-title = "9. Spring WebFlux Exception Handling"
+title = "8. Spring WebFlux Exception Handling"
 date = 2021-01-06T14:02:27-05:00
 weight = 1
 +++
@@ -37,65 +37,62 @@ All of these have equivalents in Reactor, in the form of error-handling operator
 * **Static Fallback Value:**
   The equivalent of “Catch and return a static default value” is **onErrorReturn**. The following example shows how to use it:
 
-```java
-public Mono<ServerResponse> handleRequest(ServerRequest request) {
-    return findById(request.pathVariable("id"))
-      .onErrorReturn("No Customer Found")
-      .flatMap(s -> ServerResponse.ok()
-      .contentType(MediaType.APPLICATION_JSON)
-      .syncBody(s));
-}
-```
+    ```java
+    public Mono<ServerResponse> handleRequest(ServerRequest request) {
+        return findById(request.pathVariable("id"))
+          .onErrorReturn("No Customer Found")
+          .flatMap(s -> ServerResponse.ok()
+          .contentType(MediaType.APPLICATION_JSON)
+          .syncBody(s));
+    }
+    ```
 * **Fallback Method:**
-  If you want more than a single default value and you have an alternative (safer) way of processing your data, you can use onErrorResume. 
-  This would be the equivalent of “Catch and execute an alternative path with a fallback method”. For Example,
+If you want more than a single default value and you have an alternative (safer) way of processing your data, you can use onErrorResume. 
+This would be the equivalent of “Catch and execute an alternative path with a fallback method”. The following example shows how to use it:
 
-The following example shows how to use it:
-```java
-public Mono<ServerResponse> handleRequest(ServerRequest request) {
-    return findById(request.pathVariable("id"))
-      .flatMap(s -> ServerResponse.ok()
-      .contentType(MediaType.TEXT_PLAIN)
-      .syncBody(s))
-      .onErrorResume(e -> findByIdFallback()
-                          .flatMap(s ->; ServerResponse.ok()
-                          .contentType(MediaType.APPLICATION_JSON)
-                          .syncBody(s)));
-}
-```
+    ```java
+    public Mono<ServerResponse> handleRequest(ServerRequest request) {
+        return findById(request.pathVariable("id"))
+          .flatMap(s -> ServerResponse.ok()
+          .contentType(MediaType.TEXT_PLAIN)
+          .syncBody(s))
+          .onErrorResume(e -> findByIdFallback()
+                              .flatMap(s ->; ServerResponse.ok()
+                              .contentType(MediaType.APPLICATION_JSON)
+                              .syncBody(s)));
+    }
+    ```
 
 * **Dynamic Fallback Value:**
-
 If you do not have an alternative way of processing your data, you might want to compute a fallback value
 out of the exception you have received. This would be equivalent of "Catch and dynamically compute a fallback value".
-
 The following example shows how to use it:
 
-```java
-public Mono<ServerResponse> handleRequest(ServerRequest request) {
-    return findById(request.pathVariable("id"))
-      .flatMap(s -> ServerResponse.ok()
-      .contentType(MediaType.APPLICATION_JSON)
-          .syncBody(s))
-      .onErrorResume(e -> Mono.just("Error " + e.getMessage())
-                          .flatMap(s -> ServerResponse.ok()
-                          .contentType(MediaType.APPLICATION_JSON)
-                          .syncBody(s)));
-}
-``` 
+    ```java
+    public Mono<ServerResponse> handleRequest(ServerRequest request) {
+        return findById(request.pathVariable("id"))
+              .flatMap(s -> ServerResponse.ok()
+              .contentType(MediaType.APPLICATION_JSON)
+              .syncBody(s))
+              .onErrorResume(e -> Mono.just("Error " + e.getMessage())
+                                    .flatMap(s -> ServerResponse.ok()
+                                .contentType(MediaType.APPLICATION_JSON)
+                                .syncBody(s)));
+    }
+    ``` 
 
 * **Catch and Rethrow:**
 The final option using _onErrorResume()_ is to catch, wrap, and re-throw an error e.g. InvalidAccountException:
 
-```java
-public Mono<ServerResponse> handleRequest(ServerRequest request) {
-    return ServerResponse.ok()
-      .body(findById(request.pathVariable("id"))
-      .onErrorResume(e -> Mono.error(new InvalidAccountException(
-                                    HttpStatus.BAD_REQUEST, 
-                                    "Account is invalid", e))), Account.class);
-}
-```
+    ```java
+    public Mono<ServerResponse> handleRequest(ServerRequest request) {
+        return ServerResponse.ok()
+          .body(findById(request.pathVariable("id"))
+          .onErrorResume(e -> Mono.error(new InvalidAccountException(
+                                        HttpStatus.BAD_REQUEST, 
+                                        "Account is invalid", e))), Account.class);
+    }
+    ```
 
 ## Handling Errors at a Global Level
 
@@ -108,53 +105,55 @@ For browser clients, there is a “whitelabel” error handler that renders the 
 1. The first step to customizing this feature often involves using the existing mechanism but replacing or augmenting 
 the error contents. For that, you can add a bean of type `ErrorAttributes`.
    
-  ```java
-  @Component
-  public class ErrorAttributes extends DefaultErrorAttributes {
-  
-    @Override
-    public Map<String, Object> getErrorAttributes(ServerRequest request, ErrorAttributeOptions options) {
-      Map<String, Object> errorAttributesMap = super.getErrorAttributes(request, options);
-      Throwable throwable = getError(request);
-      if (throwable instanceof  ResponseStatusException) {
-        ResponseStatusException responseStatusException = (ResponseStatusException) throwable;
-        errorAttributesMap.put("message", responseStatusException.getMessage());
-      }
-      return errorAttributesMap;
+    ```java
+    @Component
+    public class ErrorAttributes extends DefaultErrorAttributes {
+        
+       @Override
+       public Map<String, Object> getErrorAttributes(ServerRequest request, ErrorAttributeOptions options) {
+         Map<String, Object> errorAttributesMap = super.getErrorAttributes(request, options);
+         Throwable throwable = getError(request);
+         if (throwable instanceof  ResponseStatusException) {
+           ResponseStatusException responseStatusException = (ResponseStatusException) throwable;
+           errorAttributesMap.put("message", responseStatusException.getMessage());
+         }
+         return errorAttributesMap;
+       }
     }
-  }
-  ```
+    ```
 
 1. To change the error handling behavior, you can implement `ErrorWebExceptionHandler` and register a bean definition of that type. 
 Because a WebExceptionHandler is quite low-level, Spring Boot also provides a convenient `AbstractErrorWebExceptionHandler` 
 to let you handle errors in a WebFlux functional way, as shown in the following:
    
    
-  ```java
-  @Component
-  @Order(-2)
-  public class WebExceptionHandler extends AbstractErrorWebExceptionHandler {
-  
-    public WebExceptionHandler(ErrorAttributes errorAttributes, ResourceProperties resourceProperties,
-                               ApplicationContext applicationContext, ServerCodecConfigurer codeConfigurer) {
-      super(errorAttributes, resourceProperties, applicationContext);
-      this.setMessageWriters(codeConfigurer.getWriters());
+    ```java
+    @Component
+    @Order(-2)
+    public class WebExceptionHandler extends AbstractErrorWebExceptionHandler {
+        
+       public WebExceptionHandler(ErrorAttributes errorAttributes, ResourceProperties resourceProperties,
+                                  ApplicationContext applicationContext, ServerCodecConfigurer codeConfigurer) {
+         super(errorAttributes, resourceProperties, applicationContext);
+         this.setMessageWriters(codeConfigurer.getWriters());
+       }
+       
+       @Override
+       protected RouterFunction<ServerResponse> getRoutingFunction(ErrorAttributes errorAttributes) {
+         return RouterFunctions.route(RequestPredicates.all(),this::formatErrorResponse);
+       }
+        
+       private Mono<ServerResponse> formatErrorResponse(ServerRequest request) {
+         Map<String, Object> errorAttributesMap = getErrorAttributes(request, ErrorAttributeOptions.of(ErrorAttributeOptions.Include.STACK_TRACE));
+         int status = (int) Optional.ofNullable(errorAttributesMap.get("status")).orElse(500);
+        
+         return ServerResponse
+                 .status(status)
+                 .contentType(MediaType.APPLICATION_JSON)
+                 .body((BodyInserters.fromValue(errorAttributesMap)));
+       }
     }
-  
-    @Override
-    protected RouterFunction<ServerResponse> getRoutingFunction(ErrorAttributes errorAttributes) {
-      return RouterFunctions.route(RequestPredicates.all(),this::formatErrorResponse);
-    }
-  
-    private Mono<ServerResponse> formatErrorResponse(ServerRequest request) {
-      Map<String, Object> errorAttributesMap = getErrorAttributes(request, ErrorAttributeOptions.of(ErrorAttributeOptions.Include.STACK_TRACE));
-      int status = (int) Optional.ofNullable(errorAttributesMap.get("status")).orElse(500);
-  
-      return ServerResponse
-              .status(status)
-              .contentType(MediaType.APPLICATION_JSON)
-              .body((BodyInserters.fromValue(errorAttributesMap)));
-    }
-  }
-  ```
+    ```
 We are setting the order of our error handler to -2. This is to give it a higher priority than the `DefaultErrorWebExceptionHandler` which is registered at `@Order(-1)`
+
+The code snippets can be found in Wells Fargo GitHub

@@ -2,7 +2,7 @@
 categories = ["recipes"]
 tags = ["persistence","mongodb","spring boot"]
 summary = "Configure mongodb datasource in microservice"
-title = "3. Configure MongoDB"
+title = "4. Configure MongoDB"
 date = 2020-12-09T14:02:27-05:00
 weight = 1
 
@@ -113,3 +113,4 @@ public class MongoDBConfiguration extends AbstractReactiveMongoConfiguration {
       },    
      ```
 
+The code snippets can be found in [Wells Fargo GitHub](https://)

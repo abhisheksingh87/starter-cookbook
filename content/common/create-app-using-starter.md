@@ -10,6 +10,7 @@ draft = false
 
 ## CONTEXT
 This recipe is part of a cookbook for developing a modern _cloud ready_ microservice using the **greenfield-app-starter**.  
+Please refer - recipe - [How to Structure - Spring Boot Application!](/best-practices/spring-boot-structure/).  
 Upon completion of this recipe, you'll have a _working_  [Spring Boot](https://medium.com/stuff-about-cloud-native-development/my-spring-boot-101-journal-getting-started-5183f68606cb) microservice with enabled actuator (_info,health and metrics_) endpoints.
 
 ### Prerequisite

@@ -2,7 +2,7 @@
 categories = ["recipes"]
 tags = ["reactive","spring", "functional endpoints", "reactor","spring webflux"]
 summary = "Spring WebFlux Functional Endpoints"
-title = "8. Spring WebFlux Functional Endpoints"
+title = "6. Spring WebFlux Functional Endpoints"
 date = 2021-01-06T14:02:27-05:00
 weight = 1
 +++
@@ -54,3 +54,4 @@ The **spring-test** module provides mock implementations of `ServerHttpRequest`,
 The `WebTestClient` is built on these mock request and response objects to provide support for testing WebFlux applications without an HTTP server. 
 You can use the WebTestClient for end-to-end integration tests, too.
 
+The code snippets can be found in [Wells Fargo GitHub](https://)

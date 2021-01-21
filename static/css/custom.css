@@ -172,3 +172,7 @@ body #sidebar hr {
     display: block;
     text-align: left;
 }
+
+.nameofclass{
+    color: #000;
+}
