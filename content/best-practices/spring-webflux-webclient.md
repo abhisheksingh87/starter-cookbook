@@ -124,7 +124,7 @@ using `block()` method. The `block()` method blocks the thread.
 
 1. Create Synchronous request to retrieve Customer:
     ```java
-       public User getCustomerByIdSync(final String id) {
+       public Customer getCustomerByIdSync(final String id) {
           return webClient
                         .get()
                         .uri(String.join("", "/customer/", id))
@@ -174,7 +174,7 @@ publisher when any error occurs, using a function to choose the fallback dependi
 1. There are situations where you may want to react to a _specific error code_. We can use `onStatus`
    method:
     ```java
-       public User getCustomerWithErrorHandling(final String id) {
+       public Mono<Customer> getCustomerWithErrorHandling(final String id) {
             return webClient
                         .get()
                         .uri(String.join("", "/customer-broken/", id))

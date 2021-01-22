@@ -45,13 +45,13 @@ This recipe deals with configuring persistence in the microservice.
      }
     ```
 
-1. Create new class `MongoDBConfiguration`. This class will extend `AbstractReactiveMongoConfiguration`.
-   The purpose of this class is to load MongoDB connection url and database and configure `ReactiveMongoDBTemplate`
+1. Create new class `MongoDBConfiguration`. This class will extend `AbstractMongoClientConfiguration`.
+   The purpose of this class is to load MongoDB connection url and database.
 
     ```java
     @Configuration
     @AllArgsConstructor
-    public class MongoDBConfiguration extends AbstractReactiveMongoConfiguration {
+    public class MongoDBConfiguration extends AbstractMongoClientConfiguration {
     
         private static final String CONNECTION_URL = "mongodb://%s/%s";
     

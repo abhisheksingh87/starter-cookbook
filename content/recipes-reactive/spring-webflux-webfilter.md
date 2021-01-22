@@ -78,22 +78,22 @@ This recipe will guide you through how to best pass context information between 
     public void testHeader() {
     
             Customer customer = Customer.builder().firstName("john")
-            .lastName("smith")
-            .phoneNumber("7589756789")
-            .build();
+                                                .lastName("smith")
+                                                .phoneNumber("7589756789")
+                                                .build();
     
             webTestClient.post()
-            .uri("/customer")
-            .contentType(MediaType.valueOf(MediaType.APPLICATION_JSON_VALUE))
-            .header("MDC-CUSTOMER-ID", "123")
-            .body(Mono.just(customer),Customer.class)
-            .exchange()
-            .expectStatus().isCreated()
-            .expectHeader()
-            .exists("MDC-CUSTOMER-ID")
-            .expectBody()
-            .jsonPath("$.customerId").isNotEmpty()
-            .jsonPath("$.firstName").isEqualTo("john");
+                        .uri("/customer")
+                        .contentType(MediaType.valueOf(MediaType.APPLICATION_JSON_VALUE))
+                        .header("MDC-CUSTOMER-ID", "123")
+                        .body(Mono.just(customer),Customer.class)
+                        .exchange()
+                        .expectStatus().isCreated()
+                        .expectHeader()
+                        .exists("MDC-CUSTOMER-ID")
+                        .expectBody()
+                        .jsonPath("$.customerId").isNotEmpty()
+                        .jsonPath("$.firstName").isEqualTo("john");
     }       
     ```
    The source code is available in: [Wells Fargo GitHub](https://)    

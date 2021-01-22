@@ -79,10 +79,10 @@ This recipe deals with **MongoDB** [Transactions](https://docs.mongodb.com/manua
             .build();
     
             assertThrows(MongoTransactionException.class, ()-> {
-            if (mongoTemplate.collectionExists(Customer.class)) {
-            customerRepository.save(customer1);
-            customerRepository.save(customer2);
-            }
+                if (mongoTemplate.collectionExists(Customer.class)) {
+                        customerRepository.save(customer1);
+                        customerRepository.save(customer2);
+                }
             });
     }
     ```
@@ -109,9 +109,7 @@ This recipe deals with **MongoDB** [Transactions](https://docs.mongodb.com/manua
                 protected void doInTransactionWithoutResult(TransactionStatus status) {
                     mongoTemplate.insert(customer1);
                     mongoTemplate.insert(customer2);
-                }
-    
-                ;
+                };
             });
     
             Query query = new Query().addCriteria(Criteria.where("firstName").is("mark"));
