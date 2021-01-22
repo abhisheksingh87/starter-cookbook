@@ -41,7 +41,7 @@
     <p>List of the <span class="badge">{{ len .Pages }}</span> recipe(s) tagged with <a href="#" class="label label-default">{{ .Title }}</a>&nbsp;:</p>
 </div>
 <ul class="children children-li">
-    {{ range .Pages.ByTitle }}
+    {{ range .Pages.ByWeight  }}
     <span><li>
         <a href="{{ .Permalink }}">{{ .Title }}</a> ({{ .Date.Format "02/01/2006" }})</li>
         {{- if .Description}}

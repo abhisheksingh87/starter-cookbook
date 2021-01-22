@@ -13,14 +13,14 @@ This recipe deals with **MongoDB** [Transactions](https://docs.mongodb.com/manua
 
 ### Prerequisite
 
-1. **MongoDB 4.0** and above instance is running on the environment.
+1. MongoDB 4.0 and above instance is running on the environment.
 1. CREATE APPLICATION USING THE STARTER is completed.
 
 ## Solution
 1. Add below dependency to build.gradle.
 
      ```groovy
-        implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+     implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
      ```
 1. Register `MongoTransactionManager` in Java Configuration to enable _native_ MongoDB transactions
 

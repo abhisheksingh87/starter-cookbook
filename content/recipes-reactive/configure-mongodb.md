@@ -9,7 +9,7 @@ weight = 1
 +++
 
 ## CONTEXT
-This is the second recipe in the series, for developing a modern _cloud ready_ microservice using the **greenfield-app-starter**.  
+This is the second recipe in the series, for developing a modern _cloud ready_ microservice using the **greenfield-reactive-app-starter**.  
 This recipe deals with configuring persistence in the microservice.  
 
 ### Prerequisite
@@ -28,61 +28,60 @@ This recipe deals with configuring persistence in the microservice.
 1. Navigate to the `<microservice>` directory
    
 1. Update the _database connection_ in `src/main/resources/application.yml`
-
-   ```yml
-      mongodb:
-        host:
-        database-name:
+    ```yml
+    mongodb:
+      hosts:
+      database-name:
     ```
 1. Create a new class `MongoProperties` . This class will load the MongoDB properties from `src/main/resources/application.yml`
 
- ```java
-   @ConfigurationProperties("mongo")
-   @Component
-   @Data
-   public class MongoProperties {
-      private List<String> hosts;
-      private String database;
- }
- ```
+    ```java
+    @ConfigurationProperties("mongodb")
+    @Component
+    @Data
+    public class MongoProperties {
+       private List<String> hosts;
+       private String database;
+    }
+    ```
 
 1. Create new class `MongoDBConfiguration`. This class will extend `AbstractReactiveMongoConfiguration`.
    The purpose of this class is to load MongoDB connection url and database and configure `ReactiveMongoDBTemplate`
    
- ```java
-@Configuration
-@AllArgsConstructor
-public class MongoDBConfiguration extends AbstractReactiveMongoConfiguration {
-
-    private static final String CONNECTION_URL = "mongodb://%s/%s";
-
-    private final MongoProperties mongoProperties;
-
-    @Override
-    protected String getDatabaseName() {
-        return mongoProperties.getDatabase();
+    ```java
+    @Configuration
+    @AllArgsConstructor
+    public class MongoDBConfiguration extends AbstractReactiveMongoConfiguration {
+    
+        private static final String CONNECTION_URL = "mongodb://%s/%s";
+    
+        private final MongoProperties mongoProperties;
+    
+        @Override
+        protected String getDatabaseName() {
+            return mongoProperties.getDatabase();
+        }
+    
+        @Override
+        public MongoClient reactiveMongoClient() {
+            return MongoClients.create(getMongoDBConnectionUrl());
+        }
+    
+        @Override
+        public Collection getMappingBasePackages() {
+            return Collections.singleton("com.wellsfargo.reactive.starter.greenfieldreactiveapplicationstarter");
+        }
+    
+        private String getMongoDBConnectionUrl() {
+            return String.format(CONNECTION_URL, mongoProperties.getHosts().get(0), mongoProperties.getDatabase());
+        }
+    
+        @Bean
+        public ReactiveMongoTemplate reactiveMongoTemplate() {
+            return new ReactiveMongoTemplate(reactiveMongoClient(), getDatabaseName());
+        }
     }
-
-    @Override
-    public MongoClient reactiveMongoClient() {
-        return MongoClients.create(getMongoDBConnectionUrl());
-    }
-
-    @Override
-    public Collection getMappingBasePackages() {
-        return Collections.singleton("com.wellsfargo.reactive.starter.greenfieldreactiveapplicationstarter");
-    }
-
-    private String getMongoDBConnectionUrl() {
-        return String.format(CONNECTION_URL, mongoProperties.getHosts().get(0), mongoProperties.getDatabase());
-    }
-
-    @Bean
-    public ReactiveMongoTemplate reactiveMongoTemplate() {
-        return new ReactiveMongoTemplate(reactiveMongoClient(), getDatabaseName());
-    }
-}
-```
+    ```
 
 ### Validation
 
@@ -104,13 +103,13 @@ public class MongoDBConfiguration extends AbstractReactiveMongoConfiguration {
    
    - `http://localhost:8080/actuator/beans`  
      search for _mongo_ in the browser and you should see below
-     ```json
+    ```json
       "mongo": {
          "status": "UP",
          "details": {
          "version": "4.2.0"
-         }
-      },    
-     ```
+        }
+     },    
+    ```
 
 The code snippets can be found in [Wells Fargo GitHub](https://)

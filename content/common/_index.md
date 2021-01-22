@@ -7,7 +7,7 @@ date = 2020-12-09
 weight = 10
 draft = false
 authors = ["Prashanth 'PB' Belathur", "Rohan Mukesh"]
-pre ="<i class='fa fa-spinner fa-pulse fa-1x fa-fw'></i>&nbsp;&nbsp;"
+pre ="<i class='fa fa-book'></i>&nbsp;&nbsp;"
 +++
 
 Cookbook with recipes for using the greenfield application starters to develop modern cloud native microservice in Wells Fargo.  
@@ -17,10 +17,10 @@ The cookbook and starters were created by VMware Tanzu Labs during the WellsFarg
 ## CONTEXT
 
 The following spring boot starters in Github will help Wells Fargo developers to build _non-reactive_ or _reactive_ microservices based on the business need:
-- **greenfield-app-starter** can be used for migrating a _legacy application_ to a cloud-ready microservice OR to create a non-reactive cloud-ready microservice with traditional _blocking behavior_.
+- [**greenfield-app-starter**]() can be used for migrating a _legacy application_ to a cloud-ready microservice OR to create a non-reactive cloud-ready microservice with traditional _blocking behavior_.
   
 
-- **greenfield-reactive-app-starter** for _greenfield applications_, to take advantage of the _non-blocking behavior_ which improves application performance and resiliency.
+- [**greenfield-reactive-app-starter**]() for _greenfield applications_, to take advantage of the _non-blocking behavior_ which improves application performance and resiliency.
 
 ### What is Reactive Programming ?
 

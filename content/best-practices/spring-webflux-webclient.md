@@ -13,9 +13,10 @@ This recipe walks you through how to use `WebClient` and it's best practices.
 ## Solution
 WebClient is a non-blocking, reactive client to perform HTTP requests.
 `RestTemplate` class is currently in maintenance mode and as per official [Documentation](https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/client/RestTemplate.html).
-
->As of 5.0 this class is in maintenance mode, with only minor requests for changes and bugs to be accepted going forward.
-> Please, consider using the `org.springframework.web.reactive.client.WebClient` which has a more modern API and supports sync, async, and streaming scenarios.
+{{% note  %}}
+    As of 5.0 this class is in maintenance mode, with only minor requests for changes and bugs to be accepted going forward.
+    Please, consider using the `org.springframework.web.reactive.client.WebClient` which has a more modern API and supports sync, async, and streaming scenarios.
+{{% /note  %}}
 
 ### Difference between WebClient and RestTemplate
 The main difference between the two is RestTemplate works _synchronously_ (blocking) and WebClient works _asynchronously_ (non-blocking).
@@ -68,22 +69,24 @@ There are several ways to configure the WebClient.
 
 ## WebClient Request
 
-`WebClient` supports following methods:
-* get()
-* post()
-* put()
-* patch()
-* delete()
+1. `WebClient` supports following methods:
+    * get()
+    * post()
+    * put()
+    * patch()
+    * delete()
 
-You can optionally also specify following options:
+1. You can optionally also specify following options:
 
-* Path Variables or Query Parameters with `uri()` method.
-* RequestHeaders with `headers()` method.
-* Custom cookies with `cookies()` method.
+    * Path Variables or Query Parameters with `uri()` method.
+    * RequestHeaders with `headers()` method.
+    * Custom cookies with `cookies()` method.
 
 The call to Http Endpoint is made using `retrieve()` and `exchange()`
 
-> Please do not use `exchange()` as it has been attributed to memory leaks in production code.
+{{% note  %}}
+    Please do not use exchange() as it has been attributed to memory leaks in production code.
+{{% /note  %}}
 
 ### Asynchronous Request
 
@@ -110,8 +113,9 @@ nothing happens until you `subscribe` to a `Mono` or `Flux` like below:
               .getCustomerById("1")
               .subscribe(customer -> log.info("Customer: {}", customer));  
     ```
- 
-   > Note: Even if server takes time to respond, the execution immediately continues without blocking subscribe() call.
+    {{% note  %}}
+       Even if server takes time to respond, the execution immediately continues without blocking subscribe() call. 
+    {{% /note  %}}
 
 ### Synchronous Request:
 

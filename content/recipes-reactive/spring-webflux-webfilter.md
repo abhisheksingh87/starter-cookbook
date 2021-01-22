@@ -8,23 +8,17 @@ weight = 1
 +++
 
 ## CONTEXT
-Slf4j provides MDC (Mapped Diagnostic Contexts) feature that allows you to enrich logs with contextual data.
-Example of contextual data might include but is not limited to the following:
-
-* Request Id,
-* The ID of the client initiating the request,
-* DNS name of the hardware involved in processing the request.
-
-In a microservices environment, this information is then typically passed to all services involved in handling a specific client request.
-This recipe will walk you through how to best pass context information between services as HTTP non-standard headers.
-
-## SOLUTION
 
 `WebFilter`s function much like their [servlet counterparts](https://www.oracle.com/java/technologies/filters.html), but using Spring
 and Reactor APIs. Spring WebFlux provides a `WebFilter` interface that can be implemented to filter HTTP request-response exchanges. WebFilter beans found in the application context will be automatically used to filter each exchange.
 Where the order of the filters is important they can implement Ordered or be annotated with `@Order`
 
-1. Create a new class `MdcHeaderFilter` which implements `WebFilter` interface.
+This recipe will guide you through how to best pass context information between services as HTTP non-standard headers using `WebFilters`
+
+## SOLUTION
+
+
+1. Create a new class `MDCHeaderFilter` which implements `WebFilter` interface.
 
     ```java
         @Component
@@ -74,10 +68,8 @@ Where the order of the filters is important they can implement Ordered or be ann
     } 
     ``` 
 
-    {{% note  %}}
-      The headers starting with prefix **X-** is deprecated and is discouraged. [RFC](https://tools.ietf.org/html/rfc6648)
-    {{% /note  %}}
-
+    >  The headers starting with prefix **X-** is deprecated and is discouraged. [RFC](https://tools.ietf.org/html/rfc6648)
+    
 1. We can test `WebFilter` using `WebTestClient` by sending a **POST** request and check whether we are able to retrieve
    **MDC** headers or not:
    

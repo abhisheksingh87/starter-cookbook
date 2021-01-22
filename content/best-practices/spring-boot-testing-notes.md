@@ -24,7 +24,7 @@ This recipe consolidates general recommendations to keep in mind while writing s
 
 ## Isolate the functionality to be tested by limiting the context of loaded frameworks/components.
 
-1. Often times, it is sufficient to use jUnit without loading any additional frameworks.  **You only need to annotate your test with @Test**.
+1. As a first step in creating tests, it is sufficient to use jUnit without loading any additional frameworks.  **You only need to annotate your test with @Test**.
    In the code snipped below, there is no database interactions, and CustomerRepository loads data from the classpath.
 
     ```java
@@ -41,12 +41,12 @@ This recipe consolidates general recommendations to keep in mind while writing s
                                                 .lastName("smith")
                                                 .build();
             //then
-            assertEquals(expectedJurisdiction, CustomerRepository.findById("07677"));
+            assertEquals(expectedCustomer, CustomerRepository.findById("123"));
         }
     }
     ```
 
-1. As a next step up in complexity, consider adding _mock_ frameworks, like **mockito** if you have some interactions with external resources.
+1. As a next step, consider adding _mock_ frameworks, like **mockito** if you have some interactions with external resources.
 
     ```java
     @ExtendsWith(MockitoExtension.class)
@@ -82,7 +82,7 @@ This recipe consolidates general recommendations to keep in mind while writing s
     }
     ```
 
-## Only load `slices` of functionality when [testing spring boot applications](https://spring.io/blog/2016/04/15/testing-improvements-in-spring-boot-1-4).
+## Load _slices_ of functionality when [testing spring boot applications](https://spring.io/blog/2016/04/15/testing-improvements-in-spring-boot-1-4).
 
 1.  **@SpringBootTest** annotation loads whole application, but it is better to limit Application Context only to a set of spring components that participate in test scenario, by listing them in annotation declaration.
 
