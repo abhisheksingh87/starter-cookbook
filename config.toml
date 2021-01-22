@@ -10,6 +10,7 @@ pygmentsStyle = "friendly"
 enableRobotsTXT = true
 enableGitInfo = true
 googlefonts = "https://fonts.googleapis.com/css?family=Merriweather|Fira+Mono|Droid+Sans"
+image="/images/WellsFargo.png"
 
 [params]
 themeStyle = "original"
