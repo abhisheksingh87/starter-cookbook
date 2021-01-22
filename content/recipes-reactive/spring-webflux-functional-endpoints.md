@@ -56,9 +56,24 @@ This recipe walks you through creating functional endpoints.
     Handler functions should be grouped together
     {{% /note%}}
 
-1. Unit Test Case To test Route:
-The **spring-test** module provides mock implementations of `ServerHttpRequest`, `ServerHttpResponse`, and `ServerWebExchange`. 
-The `WebTestClient` is built on these mock request and response objects to provide support for testing WebFlux applications without an HTTP server. 
-You can use the WebTestClient for end-to-end integration tests, too.
+1. Test Case: `WebTestClient` is built on these mock request and response objects to provide support for testing WebFlux applications without an HTTP server.
 
+    ```java
+    @Test
+    public void createAccount() {
+            Account account = Account.builder()
+                                    .accountNumber("918345")
+                                    .routingNumber("234518")
+                                    .accountOwner("alex")
+                                    .build();
+   
+            webTestClient.post().uri("/accounts").contentType(MediaType.valueOf(MediaType.APPLICATION_JSON_VALUE))
+                    .body(Mono.just(account),Account.class)
+                    .exchange()
+                    .expectStatus().isCreated()
+                    .expectBody()
+                    .jsonPath("$.accountId").isNotEmpty()
+                    .jsonPath("$.accountOwner").isEqualTo("alex");
+        }
+    ```
    The source code is available in: [Wells Fargo GitHub](https://)   

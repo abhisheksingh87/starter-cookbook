@@ -30,8 +30,8 @@ This recipe deals with configuring persistence in the microservice.
 1. Update the _database connection_ in `src/main/resources/application.yml`
     ```yml
     mongodb:
-      hosts:
-      database-name:
+      hosts: ${mongoDBUrl}
+      database-name: ${databaseName}
     ```
 1. Create a new class `MongoProperties` . This class will load the MongoDB properties from `src/main/resources/application.yml`
 
