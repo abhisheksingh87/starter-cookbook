@@ -1,0 +1,259 @@
+SYNTAX_VERSION 7
+
+LOGFILE "{eai#}_coherence_log"
+    DESCRIPTION "Oracle Coherence Caching "
+    LOGPATH "/var/fedex/{eainame}/logs/coherence0.log"
+    INTERVAL "1m"
+    CHSET ISO885915
+    FROM_LAST_POS
+    NO_LOGFILE_MSG
+    CLOSE_AFTER_READ
+    SEVERITY Critical
+    APPLICATION "{eainame}"
+    MSGGRP "Appl"
+
+    MSGCONDITIONS
+        DESCRIPTION "OutOfMemoryError"
+        SUPP_DUPL_COND
+            "20m" RESEND "20m"
+        CONDITION
+            TEXT "OutOfMemoryError" ICASE
+        SET
+            SEVERITY Critical
+            TEXT "Out of Memory Error. <$MSG_TEXT> (logfile: <$LOGPATH>)"
+            CUSTOM "EAI" "{eai#}"
+            HELPTEXT "Contact {eai support group name}  Support oncall {eai support Oncall Number}"
+
+        DESCRIPTION "Failed to restart services"
+        SUPP_DUPL_COND
+            "20m" RESEND "20m"
+        CONDITION
+            TEXT "Failed to restart services" ICASE
+        SET
+            SEVERITY Major
+            TEXT "There was a Failed to restart services: <$MSG_TEXT> (logfile: <$LOGPATH>)"
+            CUSTOM "EAI" "{eai#}"
+            HELPTEXT "Contact {eai support group name}  Support oncall {eai support Oncall Number}"
+
+			
+        DESCRIPTION "Cannot create New cluster"
+        SUPP_DUPL_COND
+            "20m" RESEND "20m"
+        CONDITION
+            TEXT "not allowed to create a new cluster" ICASE
+        SET
+            SEVERITY Major
+            TEXT "Cannot create New cluster  <$MSG_TEXT> (logfile: <$LOGPATH>)"
+            CUSTOM "EAI" "{eai#}"
+            HELPTEXT "Contact {eai support group name}  Support oncall {eai support Oncall Number}"
+			
+		DESCRIPTION "Missing Handshake Response"
+        SUPP_DUPL_COND
+            "20m" RESEND "20m"
+        CONDITION
+            TEXT "This service timed-out due to unanswered handshake request" ICASE
+        SET
+            SEVERITY Major
+            TEXT "Missing Handshake Response  <$MSG_TEXT> (logfile: <$LOGPATH>)"
+            CUSTOM "EAI" "{eai#}"
+            HELPTEXT "Contact {eai support group name}  Support oncall {eai support Oncall Number}"
+			
+		DESCRIPTION "Storage not Configured"
+        SUPP_DUPL_COND
+            "20m" RESEND "20m"
+        CONDITION
+            TEXT "Storage is not configured" ICASE
+        SET
+            SEVERITY Major
+            TEXT "Storage not Configured  <$MSG_TEXT> (logfile: <$LOGPATH>)"
+            CUSTOM "EAI" "{eai#}"
+            HELPTEXT "Contact {eai support group name}  Support oncall {eai support Oncall Number}"
+			
+		DESCRIPTION "Partitioned Cache ownership Error"
+        SUPP_DUPL_COND
+            "20m" RESEND "20m"
+        CONDITION
+            TEXT "that is not owned by this member; the entry will be removed" ICASE
+        SET
+            SEVERITY Major
+            TEXT "Partitioned Cache ownership Error   <$MSG_TEXT> (logfile: <$LOGPATH>)"
+            CUSTOM "EAI" "{eai#}"
+            HELPTEXT "Contact {eai support group name}  Support oncall {eai support Oncall Number}"
+					
+		DESCRIPTION "Filter evaluation Exception"
+        SUPP_DUPL_COND
+            "20m" RESEND "20m"
+        CONDITION
+            TEXT "Exception occurred during filter evaluation" ICASE
+        SET
+            SEVERITY Major
+            TEXT "Filter evaluation Exception   <$MSG_TEXT> (logfile: <$LOGPATH>)"
+            CUSTOM "EAI" "{eai#}"
+            HELPTEXT "Contact {eai support group name}  Support oncall {eai support Oncall Number}"
+			
+		DESCRIPTION "Event Transformation Exception"
+        SUPP_DUPL_COND
+            "20m" RESEND "20m"
+        CONDITION
+            TEXT "Exception occurred during event transformation" ICASE
+        SET
+            SEVERITY Major
+            TEXT "Event Transformation Exception  <$MSG_TEXT> (logfile: <$LOGPATH>)"
+            CUSTOM "EAI" "{eai#}"
+            HELPTEXT "Contact {eai support group name}  Support oncall {eai support Oncall Number}"
+			
+		DESCRIPTION "Index Rebuild Exception"
+        SUPP_DUPL_COND
+            "20m" RESEND "20m"
+        CONDITION
+            TEXT "Exception occurred during index rebuild" ICASE
+        SET
+            SEVERITY Major
+            TEXT "Index Rebuild Exception  <$MSG_TEXT> (logfile: <$LOGPATH>)"
+            CUSTOM "EAI" "{eai#}"
+            HELPTEXT "Contact {eai support group name}  Support oncall {eai support Oncall Number}"
+		
+		DESCRIPTION "Index Update Exception"
+        SUPP_DUPL_COND
+            "20m" RESEND "20m"
+        CONDITION
+            TEXT "Exception occurred during index update" ICASE
+        SET
+            SEVERITY Major
+            TEXT "Index Update Exception <$MSG_TEXT> (logfile: <$LOGPATH>)"
+            CUSTOM "EAI" "{eai#}"
+            HELPTEXT "Contact {eai support group name}  Support oncall {eai support Oncall Number}"	
+		
+		DESCRIPTION "Query Exception"
+        SUPP_DUPL_COND
+            "20m" RESEND "20m"
+        CONDITION
+            TEXT "Exception occurred during query processing" ICASE
+        SET
+            SEVERITY Major
+            TEXT "Query Exception  <$MSG_TEXT> (logfile: <$LOGPATH>)"
+            CUSTOM "EAI" "{eai#}"
+            HELPTEXT "Contact {eai support group name}  Support oncall {eai support Oncall Number}"	
+			
+		DESCRIPTION "BackingMapManager Null Exception"
+        SUPP_DUPL_COND
+            "20m" RESEND "20m"
+        CONDITION
+            TEXT "returned null for a cache" ICASE
+        SET
+            SEVERITY Major
+            TEXT "BackingMapManager Null Exception  <$MSG_TEXT> (logfile: <$LOGPATH>)"
+            CUSTOM "EAI" "{eai#}"
+            HELPTEXT "Contact {eai support group name}  Support oncall {eai support Oncall Number}"	
+			
+		DESCRIPTION "BackingMapManager Cache Instantiation Exception"
+        SUPP_DUPL_COND
+            "20m" RESEND "20m"
+        CONDITION
+            TEXT "failed to instantiate a cache" ICASE
+        SET
+            SEVERITY Major
+            TEXT "BackingMapManager Cache Instantiation Exception  <$MSG_TEXT> (logfile: <$LOGPATH>)"
+            CUSTOM "EAI" "{eai#}"
+            HELPTEXT "Contact {eai support group name}  Support oncall {eai support Oncall Number}"	
+			
+		DESCRIPTION "BackingMapManager Release Cache  Exception"
+        SUPP_DUPL_COND
+            "20m" RESEND "20m"
+        CONDITION
+            TEXT "failed to release a cache" ICASE
+        SET
+            SEVERITY Major
+            TEXT "BackingMapManager Release Cache  Exception  <$MSG_TEXT> (logfile: <$LOGPATH>)"
+            CUSTOM "EAI" "{eai#}"
+            HELPTEXT "Contact {eai support group name}  Support oncall {eai support Oncall Number}"	
+			
+		DESCRIPTION "Error while starting Cluster"
+        SUPP_DUPL_COND
+            "20m" RESEND "20m"
+        CONDITION
+            TEXT "Error while starting cluster" ICASE
+        SET
+            SEVERITY Major
+            TEXT "Error while starting cluster  <$MSG_TEXT> (logfile: <$LOGPATH>)"
+            CUSTOM "EAI" "{eai#}"
+            HELPTEXT "Contact {eai support group name}  Support oncall {eai support Oncall Number}"	
+			
+		DESCRIPTION "Error while restart Service"
+        SUPP_DUPL_COND
+            "20m" RESEND "20m"
+        CONDITION
+            TEXT "Failed to restart services" ICASE
+        SET
+            SEVERITY Major
+            TEXT "Error while restart Service  <$MSG_TEXT> (logfile: <$LOGPATH>)"
+            CUSTOM "EAI" "{eai#}"
+            HELPTEXT "Contact {eai support group name}  Support oncall {eai support Oncall Number}"	
+			
+		DESCRIPTION "Cluster heartbeat Error"
+        SUPP_DUPL_COND
+            "20m" RESEND "20m"
+        CONDITION
+            TEXT "Received cluster heartbeat from the senior" ICASE
+        SET
+            SEVERITY Major
+            TEXT "Cluster heartbeat Error  <$MSG_TEXT> (logfile: <$LOGPATH>)"
+            CUSTOM "EAI" "{eai#}"
+            HELPTEXT "Contact {eai support group name}  Support oncall {eai support Oncall Number}"	
+			
+		DESCRIPTION "Disconnected from Cluster"
+        SUPP_DUPL_COND
+            "20m" RESEND "20m"
+        CONDITION
+            TEXT "This node appears to have become disconnected from the rest of the cluster" ICASE
+        SET
+            SEVERITY Major
+            TEXT "Disconnected from Cluster  <$MSG_TEXT> (logfile: <$LOGPATH>)"
+            CUSTOM "EAI" "{eai#}"
+            HELPTEXT "Contact {eai support group name}  Support oncall {eai support Oncall Number}"				
+
+		DESCRIPTION "Received panic from senior Member"
+        SUPP_DUPL_COND
+            COUNTER_THRESHOLD 5 RESET_COUNTER_INTERVAL "10m"
+        CONDITION
+            TEXT "Received panic from senior Member" ICASE
+        SET
+            SEVERITY Critical
+            TEXT "Received panic from senior Member.  <$MSG_TEXT> (logfile: <$LOGPATH>)"
+            CUSTOM "EAI" "{eai#}"
+            HELPTEXT "Contact {eai support group name}  Support oncall {eai support Oncall Number}"
+		
+		DESCRIPTION "Unreconcilable Ownership and server name"
+        SUPP_DUPL_COND
+            COUNTER_THRESHOLD 5 RESET_COUNTER_INTERVAL "10m"
+        CONDITION
+            TEXT "Unreconcilable ownership conflict" ICASE
+        SET
+            SEVERITY Critical
+            TEXT "Unreconcilable Ownership and server name  <$MSG_TEXT> (logfile: <$LOGPATH>)"
+            CUSTOM "EAI" "{eai#}"
+            HELPTEXT "Contact {eai support group name}  Support oncall {eai support Oncall Number}"
+			
+		DESCRIPTION "Multi-way Ownership Conflict "
+        SUPP_DUPL_COND
+            COUNTER_THRESHOLD 5 RESET_COUNTER_INTERVAL "10m"
+        CONDITION
+            TEXT "Multi-way ownership conflict" ICASE
+        SET
+            SEVERITY Critical
+            TEXT "Multi-way Ownership Conflict  <$MSG_TEXT> (logfile: <$LOGPATH>)"
+            CUSTOM "EAI" "{eai#}"
+            HELPTEXT "Contact {eai support group name}  Support oncall {eai support Oncall Number}"
+			
+		DESCRIPTION "Failed to satisfy the variance"
+        SUPP_DUPL_COND
+            COUNTER_THRESHOLD 5 RESET_COUNTER_INTERVAL "10m"
+        CONDITION
+            TEXT "Failed to satisfy the variance" ICASE
+        SET
+            SEVERITY Warning
+            TEXT "There was a  Failed to satisfy the variance : <msg> (logfile: <$LOGPATH>)"
+            CUSTOM "EAI" "{eai#}"
+			AUTOACTION "send_msg_email.ksh <$MSG_ID> Warning \"{eai support mailid}\"" ACTIONNODE IP 0.0.0.0  "<$OPC_MGMTSV>" ANNOTATE ACK
+            HELPTEXT "This sends email and acks, if message does not ack, Contact {eai support group name}  Support oncall {eai support Oncall Number}"
+     

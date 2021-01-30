@@ -1,0 +1,18 @@
+.sidemenu {
+  list-style-type: none;
+  font-size: 1.2em;
+}
+
+.sidemenu li {
+  padding-top: .5em;
+  padding-bottom: .5em;
+}
+
+.sidemenu span.fa {
+  padding-right: .5em;
+}
+
+/* this seems super-redundant, but is necessary */
+card a:first-of-type {
+  line-height: 1em;
+}

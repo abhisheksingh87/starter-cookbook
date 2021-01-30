@@ -1,10 +1,10 @@
 +++
 categories = ["recipes"]
 tags = ["practices", "spring boot", "microservice", "application development", "git"]
-title = "2.Git Commit Best Practices"
+title = "Git Commit Best Practices"
 description = "Git Commit Best Practices"
-date = 2021-01-05
-weight = 10
+date = "2021-01-29T14:45:27-06:00"
+weight = 2
 draft = false
 authors = ["Rohan Mukesh"]
 +++

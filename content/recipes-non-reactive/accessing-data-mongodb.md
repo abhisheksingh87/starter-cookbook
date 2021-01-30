@@ -1,10 +1,13 @@
 +++
+draft = false
 categories = ["recipes"]
-tags = ["persistence","data-repository", "mongodb","spring boot"]
+date = "2021-01-29T14:45:27-06:00"
+lastmod = "2021-01-29"
 summary = "Accessing data in MongoDB"
-title = "5. Access Data in MongoDB"
-date = 2020-12-09T14:02:27-05:00
-weight = 1
+description = "Accessing data in MongoDB"
+tags = ["application development", "Spring", "Spring Boot", "MongoDB", "persistence"]
+title = "Accessing data in MongoDB"
+weight = 4
 +++
 
 ## CONTEXT

@@ -1,0 +1,14 @@
+{{ $scratch := newScratch }}
+{{ $scratch.Set "i" 0 }}
+{{ range .Site.Taxonomies.tags }}
+  {{ if ne ($scratch.Get "i") 9 }}
+    {{ $scratch.Add "i" 1 }}
+<div>
+  <a href="{{ .Page.Permalink }}">{{ lower .Page.Title }}</a>
+</div>
+  {{ end }}
+{{ end }}
+
+<div>
+  <a href="/tags" class="all-tags">All Tags</a>
+</div>

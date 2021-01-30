@@ -1,10 +1,10 @@
 +++
 categories = ["recipes"]
 tags = ["practices", "spring boot", "microservice", "custom spring bean validation"]
-title = "4.Custom Spring Bean Validation"
+title = "Custom Spring Bean Validation"
 description = "A guide to use custom validation"
-date = 2020-12-09
-weight = 20
+date = "2021-01-29T14:45:27-06:00"
+weight = 5
 draft = false
 authors = ["Rohan Mukesh"]
 +++

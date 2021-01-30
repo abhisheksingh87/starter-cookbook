@@ -1,10 +1,10 @@
 +++
 categories = ["recipes"]
 tags = ["practices", "spring boot", "microservice", "application development"]
-title = "1.Organize Spring Boot App"
+title = "Organize Spring Boot App"
 description = "A simple guide to organize codebase in a microservice"
-date = 2020-12-09
-weight = 10
+date = "2021-01-29T14:45:27-06:00"
+weight = 1
 draft = false
 authors = ["Rohan Mukesh"]
 +++

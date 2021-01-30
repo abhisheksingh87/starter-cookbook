@@ -2,7 +2,7 @@
 categories = ["recipes"]
 tags = ["resilience","resilience4j", "rate limiter","reactor"]
 summary = "Configure Rate Limiter"
-title = "2. Configure Rate Limiter"
+title = "Configure Rate Limiter"
 date = 2020-12-09T14:02:27-05:00
 weight = 1
 +++

@@ -1,32 +1,56 @@
 baseURL = "/"
 languageCode = "en-us"
-DefaultContentLanguage = "en"
 title = "WellsFargo Application Modernization Cookbook"
 copyright = " Wells Fargo, All Rights Reserved, Confidential"
 theme = "hugo-theme-docdock"
 publishDir = "public"
 pygmentsCodeFences = true
 pygmentsStyle = "friendly"
-enableRobotsTXT = true
 enableGitInfo = true
 googlefonts = "https://fonts.googleapis.com/css?family=Merriweather|Fira+Mono|Droid+Sans"
-image="/images/WellsFargo.png"
 
 [params]
-themeStyle = "original"
-disableHomeIcon = true
-description = "Application Modernization Cookbook"
-noCategoryLink = true
-showVisitedLinks = false
-noSearch = false
-noHomeIcon = true
-ordersectionsby = "title"
-ignoreFiles = [ "\\.adoc$" ]
-disableNavChevron = true
-menushortcutsnewtab = false
+  themeStyle = "original"
+  description = "Application Modernization Cookbook"
+  noCategoryLink = true
+  showVisitedLinks = false
+  disableSearch = false
+  disableHomeIcon = true
+  ordersectionsby = "weight"
+  ignoreFiles = [ "\\.adoc$" , "\\.docx$" ]
+  disableNavChevron = true
+  menushortcutsnewtab = false
 
 [outputs]
 home = [ "HTML", "RSS", "JSON"]
+
+[blackfriday]
+  extensions = [ "DefinitionLists", ]
+
+[[menu.shortcuts]]
+# pre = "<h3>More</h3>"
+name = "<i class='fa fa-fw fa-info'></i> About"
+identifier = "about"
+url = "/about"
+weight = 10
+
+[[menu.shortcuts]]
+name = "<i class='fab fa-fw fa-github'></i> GitHub repo"
+identifier = "ds"
+url = "https://github.wellsfargo.com/APP4067/apptx-cookbook"
+weight = 11
+
+[[menu.shortcuts]]
+name = "<i class='fa fa-fw fa-download'></i> Download"
+identifier = "download"
+url = "https://github.wellsfargo.com/APP4067/apptx-cookbook/repository/master/archive.zip"
+weight = 12
+
+[[menu.shortcuts]]
+name = "<i class='fa fa-fw fa-bullhorn'></i> Credits"
+identifier = "credits"
+url = "/credits"
+weight = 13
 
 [[menu.shortcuts]]
 pre = "<h5>&nbsp;</h5>"

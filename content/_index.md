@@ -27,3 +27,15 @@ We currently recommend following way to contribute:
 * Clone the repository locally.
 * Edit files in the browser on GitHub or any editor of your choice.
 * Create a Pull request.
+
+## Categories
+Recipes are tagged based on their content. Each recipe is assigned to one of the following categories:
+{{<children />}}
+
+## Latest Recipes
+
+{{<latest-pages />}}
+
+
+
+

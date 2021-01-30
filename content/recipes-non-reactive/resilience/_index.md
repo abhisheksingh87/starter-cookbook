@@ -7,4 +7,10 @@ pre ="<i class='fa fa-cutlery'></i>&nbsp;&nbsp;"
 
 +++ 
 
-Recipes for developing microservice using Spring Reactive framework.
+Resilience Recipes 
+
+Most recent recipes
+{{<latest-pages-section />}}
+
+All recipes in this section
+{{< children-sorted />}}

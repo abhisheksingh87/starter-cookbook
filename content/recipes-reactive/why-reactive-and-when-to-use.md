@@ -2,7 +2,7 @@
 categories = ["recipes"]
 tags = ["reactive","spring", "reactor","spring webflux"]
 summary = "Why Reactive"
-title = "2. Why Reactive"
+title = "Why Reactive"
 date = 2021-01-06T14:02:27-05:00
 weight = 1
 +++

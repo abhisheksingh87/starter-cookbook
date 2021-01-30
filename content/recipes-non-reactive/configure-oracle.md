@@ -2,9 +2,10 @@
 categories = ["recipes"]
 tags = ["persistence","hikari","database connection pool","anti patterns"]
 summary = "Configure Oracle datasource in microservice"
-title = "3. Configure Oracle"
-date = 2020-12-09T14:02:27-05:00
-weight = 2
+description = "Configure Oracle"
+title = "Configure Oracle"
+date = "2021-01-29T14:45:27-06:00"
+weight = 1
 +++
 
 ## CONTEXT

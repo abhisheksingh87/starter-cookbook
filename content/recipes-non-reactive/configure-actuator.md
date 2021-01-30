@@ -1,10 +1,13 @@
 +++
+draft = false
 categories = ["recipes"]
-tags = ["application development", "Spring", "Spring Boot", "actuator", "endpoint", "health", "health check"]
-summary = "Configure Actuators in microservice"
-title = "2. Configure Actuators"
-date = 2020-12-09T14:02:27-05:00
-weight = 1
+date = "2021-01-29T14:45:27-06:00"
+lastmod = "2021-01-29"
+summary = "Configure Actuators"
+description = "Configure Actuators"
+tags = ["application development", "Spring", "Spring Boot", "actuator"]
+title = "Configure Actuators"
+weight = 3
 +++
 
 ## CONTEXT

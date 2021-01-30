@@ -1,10 +1,13 @@
 +++
+draft = false
 categories = ["recipes"]
-tags = ["persistence","mongodb","spring boot"]
-summary = "Configure MongoDB datasource in microservice"
-title = "4. Configure MongoDB"
-date = 2020-12-09T14:02:27-05:00
-weight = 3
+date = "2021-01-29T14:45:27-06:00"
+lastmod = "2021-01-29"
+summary = "Configure MongoDB"
+description = "Configure MongoDB"
+tags = ["application development", "Spring", "Spring Boot", "MongoDB", "persistence"]
+title = "Configure MongoDB"
+weight = 2
 +++
 
 ## CONTEXT

@@ -2,9 +2,9 @@
 categories = ["recipes"]
 tags = ["persistence","mongodb","transactions","anti patterns"]
 summary = "Spring Data MongoDB Transactions"
-title = "6. MongoDB Transactions"
-date = 2020-12-09T14:02:27-05:00
-weight = 2
+title = "MongoDB Transactions"
+date = "2021-01-29T14:45:27-06:00"
+weight = 5
 +++
 
 ## CONTEXT
