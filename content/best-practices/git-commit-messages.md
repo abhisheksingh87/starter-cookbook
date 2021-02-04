@@ -1,6 +1,6 @@
 +++
 categories = ["recipes"]
-tags = ["practices", "spring boot", "microservice", "application development", "git"]
+tags = ["practices", "spring boot", "application development", "git"]
 title = "Git Commit Best Practices"
 description = "Git Commit Best Practices"
 date = "2021-01-29T14:45:27-06:00"

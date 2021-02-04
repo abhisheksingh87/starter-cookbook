@@ -12,7 +12,8 @@ This is non-exhaustive and even if a recipe is tagged with a subtag, it may not 
 If it looks like something is missing, check the search field.
 
 - [Application Development](/tags/application-development)
-  - [SDLC](/tags/sdlc)
+  - [Microservice](/tags/microservice)
+  - [starter](/tags/starter)
   - [API](/tags/api)
   - [Java](/tags/java)
       - [Spring](/tags/spring)
@@ -20,6 +21,7 @@ If it looks like something is missing, check the search field.
           - [Spring Data](/tags/spring-data)
       - [reactor (reactor)](/tags/reactor)
   - [kafka](/tags/kafka)
+  - [resilience](/tags/resilience)
   - [JavaScript/TypeScript](/tags/javascript)
 
 - [Testing](/tags/testing)

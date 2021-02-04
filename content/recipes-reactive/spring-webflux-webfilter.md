@@ -1,6 +1,6 @@
 +++
 categories = ["recipes"]
-tags = ["reactive","spring", "reactor","spring webflux", "webfilter"]
+tags = ["application development", "reactive","spring", "reactor","spring webflux", "webfilter"]
 summary = "Spring WebFlux WebFilter"
 title = "Spring WebFlux WebFilter"
 date = 2021-01-19T14:02:27-05:00

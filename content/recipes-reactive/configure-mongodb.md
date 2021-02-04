@@ -1,6 +1,6 @@
 +++
 categories = ["recipes"]
-tags = ["persistence","mongodb","spring boot"]
+tags = ["application development", "persistence","mongodb", "reactor", "spring webflux", "datasource"]
 summary = "Configure mongodb datasource in microservice"
 title = "Configure MongoDB"
 date = 2020-12-09T14:02:27-05:00

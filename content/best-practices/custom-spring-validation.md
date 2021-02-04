@@ -1,6 +1,6 @@
 +++
 categories = ["recipes"]
-tags = ["practices", "spring boot", "microservice", "custom spring bean validation"]
+tags = ["practices", "spring boot", "jsr", "bean-validation", "Spring Boot"]
 title = "Custom Spring Bean Validation"
 description = "A guide to use custom validation"
 date = "2021-01-29T14:45:27-06:00"

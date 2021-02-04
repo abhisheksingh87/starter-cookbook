@@ -1,6 +1,6 @@
 +++
 categories = ["recipes"]
-tags = ["application development", "Spring", "Spring Boot", "actuator", "endpoint", "health", "health check"]
+tags = ["application development", "spring", "reactor", "spring webflux", "actuator", "endpoint", "health", "health check"]
 summary = "Configure Actuators in microservice"
 title = "Configure Actuators"
 date = 2020-12-09T14:02:27-05:00

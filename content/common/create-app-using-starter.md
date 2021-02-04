@@ -35,7 +35,7 @@ Upon completion of this recipe, you'll have a _working_  [Spring Boot](https://m
    | JDK-version  |Java 8 or above; one of `1.8`, `1.11`, `1.12`, `1.13` or `1.14`| **1.12**
    | project-group  | `com.wellsfargo.<lob>.<business-group>.<application-group>` |  **`com.wellsfargo.consumer.lending.loan`**
 
-1. Clone the **greenfield-app-starter** from Gitlab repo `git clone <repo url>`
+1. Clone the **greenfield-app-starter** from GitHub repo `git clone <repo url>`
 ![starter app folder structure](/images/resized.jpg)
 
 1. Rename folder: `greenfield-app-starter` to `<microservice-name>`  

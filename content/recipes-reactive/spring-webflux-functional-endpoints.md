@@ -1,6 +1,6 @@
 +++
 categories = ["recipes"]
-tags = ["reactive","spring", "functional endpoints", "reactor","spring webflux"]
+tags = ["application development", "reactive","spring", "functional endpoints", "reactor","spring webflux"]
 summary = "Spring WebFlux Functional Endpoints"
 title = "Spring WebFlux Functional Endpoints"
 date = 2021-01-06T14:02:27-05:00

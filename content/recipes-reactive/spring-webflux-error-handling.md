@@ -1,6 +1,6 @@
 +++
 categories = ["recipes"]
-tags = ["reactive","spring", "reactor","spring webflux"]
+tags = ["application development", "reactive","spring", "error handling", "reactor","spring webflux"]
 summary = "Spring WebFlux Exception Handling"
 title = "Spring WebFlux Exception Handling"
 date = 2021-01-06T14:02:27-05:00

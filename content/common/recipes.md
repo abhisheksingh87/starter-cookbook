@@ -12,20 +12,16 @@ weight = 10
 
 You should be familiar with [Markdown](https://daringfireball.net/projects/markdown/syntax) and [Git](https://git-scm.com/).
 
-Hugo uses standard Markdown with the extensions provided by the [BlackFriday markdown library](https://github.com/russross/blackfriday#extensions).  There are some slight syntax differences compared to GitHub Flavored Markdown (GFM).
+Hugo uses standard Markdown with the extensions provided by the [markdown library](https://github.com/russross/blackfriday#extensions).  There are some slight syntax differences compared to GitHub Flavored Markdown (GFM).
 
-You'll want to use a programming editor that uses monospaced text and supports Unix line endings, vi on a Linux host, or even your IDE may work.
-
-You'll need a Git client of some variety and familiarity with Git is a definite plus.
-
-These instructions will assume command line use for clarity.  Feel free to adapt to your workflow.
+You may want to use a programming editor that uses monospaced text and supports Unix line endings, vi on a Linux host, or even your IDE may work.
 
 ## Contribution Guidelines
 
 ### Required
 
 - Context (who would use this and why)
-- Explanation or link to procurement/onboarding process for any products used (e.g., TSC)
+- Explanation or link to procurement/onboarding process for any products used (ex - [TSC]())
 
 ### Not Allowed
 
@@ -57,15 +53,15 @@ If the information isn't there today or can be improved, you can help us add it 
 
 ### Got it.  How can I contribute to the cookbook?
 
-Continue reading this recipe.
+Continue reading this recipe.  
 
-## Create Your Copy of the Project
+### Create Your Copy of the Project
 
 You do not need to be a member of this project to make contributions.
 
-*NOTE:* This will walk you through setting up a triangular workflow.  It is one of a few common version control workflows.  This one is well-suited for projects like the cookbook that are [innersourced](/recipes/innersource) and require changes through merge requests from other repos.  A different workflow may be more appropriate for projects of which you are a member.
+*NOTE:* This will walk you through setting up a triangular workflow.  It is one of a few common version control workflows.  This one is well-suited for projects like the cookbook that are _innersourced_ and require changes through merge requests from other repos.  A different workflow may be more appropriate for projects of which you are a member.
 
-The triangular workflow uses two separate copies of the repository that you control: one on your workstation and one in GitLab.
+The triangular workflow uses two separate copies of the repository that you control: one on your workstation and one in GitHub.
 
 ![Triangular Workflow](/images/recipes/triangular-workflow.png)
 [Image source.](https://github.blog/2015-07-29-git-2-5-including-multiple-worktrees-and-triangular-workflows/#improved-support-for-triangular-workflows)
@@ -102,7 +98,7 @@ origin	https://github.wellsfargo.com/app-ebst/wf-starter-cookbook.git (fetch)
 origin	https://github.wellsfargo.com/app-ebst/wf-starter-cookbook.git (push)
 ```
 
-This configuration will pull upstream changes from the source cookbook and push all changes (upstream plus any changes that you make) to your personal copy in GitLab.
+This configuration will pull upstream changes from the source cookbook and push all changes (upstream plus any changes that you make) to your personal copy in GitHub.
 
 ## Running Hugo
 
@@ -154,9 +150,6 @@ When you are done you can check for errors and preview your work on a local serv
 ```bash
 $ hugo serve
 ```
-
-If you run into issues running Hugo, verify that you are using the same version that is used for the production cookbook: https://github.wellsfargo.com/APP4067/apptx-cookbook/blob/master/ci/Jenkinsfile.
-
 For advanced usage, you can check out the Hugo documentation [here](https://gohugo.io/getting-started/).
 
 ## Prepare Your Changes for Submission

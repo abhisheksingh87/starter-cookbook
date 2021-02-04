@@ -4,7 +4,7 @@ tags = ["start"]
 summary = "Let's get started creating a new microservice"
 title = "Let's get started"
 date = 2020-12-09
-weight = 10
+weight = 15
 draft = false
 authors = ["Prashanth 'PB' Belathur", "Rohan Mukesh"]
 pre ="<i class='fa fa-book'></i>&nbsp;&nbsp;"
