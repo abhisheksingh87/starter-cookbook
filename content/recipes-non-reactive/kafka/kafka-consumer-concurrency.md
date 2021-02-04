@@ -4,7 +4,7 @@ tags = ["kafka","producer", "consumer", "concurrent", "spring kafka","spring boo
 summary = "Configure Multiple Consumers For Topic"
 title = "Configure Multiple Consumers For Topic"
 date = "2021-01-29T14:45:27-06:00"
-weight = 3
+weight = 2
 +++
 
 ## CONTEXT

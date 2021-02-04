@@ -4,7 +4,7 @@ tags = ["kafka","producer", "consumer", "spring kafka","spring boot"]
 summary = "Simple kafka producer and consumer"
 title = "Kafka Producer And Consumer Application"
 date = "2021-01-30T14:45:27-06:00"
-weight = 2
+weight = 1
 +++
 
 ## CONTEXT

@@ -4,7 +4,7 @@ tags = ["kafka","topics", "spring kafka","spring boot"]
 summary = "Configure Kafka Java Configuration"
 title = "Configure Kafka Using Java Configuration"
 date = "2021-01-31T14:45:27-06:00"
-weight = 1
+weight = 3
 +++
 
 ## CONTEXT
