@@ -3,7 +3,7 @@ categories = ["recipes"]
 tags = ["persistence","mongodb","transactions","anti patterns"]
 summary = "Spring Data MongoDB Transactions"
 title = "MongoDB Transactions"
-date = "2021-01-29T14:45:27-06:00"
+date = "2021-01-27T14:45:27-06:00"
 weight = 5
 +++
 
@@ -26,7 +26,6 @@ This recipe deals with **MongoDB** [Transactions](https://docs.mongodb.com/manua
 
     ```java
     @Configuration
-    @EnableMongoRepositories(basePackages = "com.baeldung.repository")
     public class MongoConfig extends AbstractMongoClientConfiguration {
     
         @Bean

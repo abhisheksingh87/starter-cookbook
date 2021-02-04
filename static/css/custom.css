@@ -47,3 +47,14 @@ h2, h3, h4, h5 {
   transition: width 0.5s ease;
   background-color: var(--MAIN-LINK-HOVER-color);
 }
+
+div.notices {
+  margin: 2rem 0;
+  position: relative; }
+
+div.notices p {
+  padding: 4px;
+  display: block;
+  font-size: 1rem;
+  margin-top: 0rem;
+  margin-bottom: 0rem; }

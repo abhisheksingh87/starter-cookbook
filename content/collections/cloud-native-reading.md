@@ -4,7 +4,7 @@ categories = ["collections"]
 tags = ["cloud"]
 summary = "Links to more cloud information"
 title = "Cloud Native Reading"
-date = 2018-09-14T09:39:38-05:00
+date = 2021-02-04T09:39:38-05:00
 +++
 
 ## Context
@@ -12,20 +12,19 @@ An abundance of information exists on cloud native application architecture.  Th
 
 ## External
 
-- [The Internet](https://www.google.com/)
 - [The Twelve-Factor App](https://12factor.net/)
 - [https://tanzu.vmware.com/cloud-native](https://pivotal.io/cloud-native)
 - [Spring Boot](https://spring.io/projects/spring-boot)
 
 ## Internal
 
-- [Cloud Strategy](http://yeehah.prod.fedex.com/yeehah/Goto?keyword=cloud%20strategy)
-- [Next Generation Architecture for Cloud Native Applications](https://apptx-cookbook.app.wtcbo1.paas.fedex.com/documents/cloud-native/)
-- [PaaS Minimums](http://yeehah.prod.fedex.com/yeehah/Goto?keyword=paas%20mins)
-- [Dojo](https://www.dojo.fedex.com/learn/)
-- [Cookbook](http://yeehah.prod.fedex.com/yeehah/Goto?keyword=cookbook)
-- [StackOverflow](http://yeehah.prod.fedex.com/yeehah/Goto?keyword=stackoverflow)
-- [Recursion](https://apptx-cookbook.app.wtcbo1.paas.fedex.com/documents/cloud-native-reading/)
+- [Cookbook](https://cookbook.apps.cic-lmr-n-01.cf.wellsfargo.net/)
+- [Circuit Breaker](https://confluence.wellsfargo.net/display/ARCHSTUDIO/Circuit+Breaker+v01.00.00)
+- [Confluence Bulkhead With MessageQueue](https://confluence.wellsfargo.net/pages/viewpage.action?spaceKey=ARCHSTUDIO&title=Bulkheading+with+Message+Queue+V01.00.00)
+- [Asynchronous Messaging](https://confluence.wellsfargo.net/display/ARCHSTUDIO/Asynchronous+Messaging+V01.00.00)
+- [Event Sourcing](https://confluence.wellsfargo.net/display/ARCHSTUDIO/Event+Sourcing+v01.00.00)
+- [CQRS](https://confluence.wellsfargo.net/display/ARCHSTUDIO/CQRS+%28Command+Query+Responsibility+Segregation%29+V01.00.00)
+- [Readiness And Health Probe](https://confluence.wellsfargo.net/display/ARCHSTUDIO/Readiness+and+Health+Probe+v01.00.00)
 
 ## Can't Find Something?
-[Ask.]()
+[Ask.] - TBD

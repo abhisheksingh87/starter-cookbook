@@ -28,7 +28,7 @@ home = [ "HTML", "RSS", "JSON"]
   extensions = [ "DefinitionLists", ]
 
 [[menu.shortcuts]]
-# pre = "<h3>More</h3>"
+pre = "<h3>More</h3>"
 name = "<i class='fa fa-fw fa-info'></i> About"
 identifier = "about"
 url = "/about"
@@ -37,13 +37,13 @@ weight = 10
 [[menu.shortcuts]]
 name = "<i class='fab fa-fw fa-github'></i> GitHub repo"
 identifier = "ds"
-url = "https://github.wellsfargo.com/APP4067/apptx-cookbook"
+url = "https://github.wellsfargo.com/app-ebst/wf-starter-cookbook"
 weight = 11
 
 [[menu.shortcuts]]
 name = "<i class='fa fa-fw fa-download'></i> Download"
 identifier = "download"
-url = "https://github.wellsfargo.com/APP4067/apptx-cookbook/repository/master/archive.zip"
+url = "https://github.wellsfargo.com/app-ebst/wf-starter-cookbook/repository/master/archive.zip"
 weight = 12
 
 [[menu.shortcuts]]
@@ -56,3 +56,16 @@ weight = 13
 pre = "<h5>&nbsp;</h5>"
 name = "<i class='fa fa-tag'></i>&nbsp;&nbsp;All Tags"
 url = "/tags/"
+weight = 14
+
+[markup]
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ""
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = true
+    style = "monokai"
+    tabWidth = 4

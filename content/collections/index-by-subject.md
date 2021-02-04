@@ -5,7 +5,7 @@ tags = ["index"]
 title = "Index By Subject"
 +++
 
-## Some Useful Tags for Clickin' on
+## Some Useful Tags 
 
 This is non-exhaustive and even if a recipe is tagged with a subtag, it may not contain the supertags.  If you click on a tag and get a 404, that means that the tag hasn't been used.
 
@@ -18,7 +18,7 @@ If it looks like something is missing, check the search field.
       - [Spring](/tags/spring)
           - [Spring Boot](/tags/spring-boot)
           - [Spring Data](/tags/spring-data)
-      - [JEE (J2EE)](/tags/jee)
+      - [reactor (reactor)](/tags/reactor)
   - [kafka](/tags/kafka)
   - [JavaScript/TypeScript](/tags/javascript)
 

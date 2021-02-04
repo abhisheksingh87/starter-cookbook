@@ -15,7 +15,7 @@ While implementing Spring REST endpoints for Spring boot applications, adding va
     
 ## Use Case:
 
-Let’s assume a use case wherein we need to validate customer location details with custom validation of fields locationId, countryCode and postCode. These three fields should accept *only numeric strings* (ex: “123")
+1. Let’s assume a use case wherein we need to validate customer location details with custom validation of fields locationId, countryCode and postCode. These three fields should accept *only numeric strings* (ex: “123")
 
    ```java
     @Getter
@@ -31,40 +31,44 @@ Let’s assume a use case wherein we need to validate customer location details 
         private String postCode;
      }
    ```
-In the above example both inbuilt (@NotBlank) and custom (@NumericString) validators are being used. @NotBlank would ensure that the value passed to city attribute is not blank however @NumericString validator would ensure that the value passed to locationId, countryCode & postCode is *a numeric string*
+    In the above example both inbuilt (@NotBlank) and custom (@NumericString) validators are being used. @NotBlank would ensure that the value passed to city attribute is not blank however @NumericString validator would ensure that the value passed to locationId, countryCode & postCode is *a numeric string*
 
 ## Setup:
  
-Add below dependency to build.gradle. The latest dependency can be checked [here](https://search.maven.org/classic/#search%7Cgav%7C1%7Cg%3A%22org.hibernate%22%20AND%20a%3A%22hibernate-validator%22)
- ```
-    compile group: 'org.hibernate', name: 'hibernate-validator', version: '4.2.0.Final'
- ```
-If we're using Spring Boot, then we need below dependency to be added, which will bring in the hibernate-validator dependency also.
- ```
-    implementation: 'org.springframework.boot:spring-boot-starter-validation:2.4.1'
- ```
+1. Add below dependency to build.gradle. The latest dependency can be checked [here](https://search.maven.org/classic/#search%7Cgav%7C1%7Cg%3A%22org.hibernate%22%20AND%20a%3A%22hibernate-validator%22)
+
+    ```groovy
+        implementation: 'org.hibernate:hibernate-validator4.2.0.Final'
+    ```    
+
+1. If we're using Spring Boot, then we need below dependency to be added, which will bring in the hibernate-validator dependency also.
+    
+    ```groovy
+     implementation: 'org.springframework.boot:spring-boot-starter-validation:2.4.1'
+    ```
 
 ## **Controller:**
 
-Lets see the REST endpoint which validates the incoming request:
+1. Create RestController like below:
 
    ```java
-      @RestController
-      @Validated  
-      public class ValidatorController {
-          @PostMapping(value="/v1/validate", produces = "application/json")
-          public ResponseEntity<String> validateCustomerLocation(@ValidCustomerLocation @RequestBody CustomerLocation customerLocation){
-              return new ResponseEntity<>(HttpStatus.ACCEPTED);
-          }
-      }
+   @RestController
+   @Validated  
+   public class ValidatorController {
+        @PostMapping(value="/v1/validate", produces = "application/json")
+        public ResponseEntity<String> validateCustomerLocation(@ValidCustomerLocation @RequestBody CustomerLocation customerLocation){
+           return new ResponseEntity<>(HttpStatus.ACCEPTED);
+        }
+   }
    ```
-Note that we have to add Spring’s @Validated annotation to the controller at class level to tell Spring to evaluate the constraint annotations on method parameters.
-The @Validated annotation is only evaluated on class level in this case, even though it’s allowed to be used on methods.
+   
+   > Note that we have to add Spring’s @Validated annotation to the controller at class level to tell Spring to evaluate the constraint annotations on method parameters.
+   The @Validated annotation is only evaluated on class level in this case, even though it’s allowed to be used on methods.
 
 ## New Custom Annotation:
 
-Creating a custom validator entails us rolling out our own annotation and using it in our model to enforce the validation rules.
-ValidCustomerLocation is a custom validator annotation for which the constraints would be validated by CustomerLocationValidator class as shown below:
+1. Creating a custom validator entails us rolling out our own annotation and using it in our model to enforce the validation rules.
+   ValidCustomerLocation is a custom validator annotation for which the constraints would be validated by CustomerLocationValidator class as shown below:
 
    ```java
       @Target({ElementType.FIELD, ElementType.PARAMETER})
@@ -77,13 +81,13 @@ ValidCustomerLocation is a custom validator annotation for which the constraints
           Class<? extends Payload>[] payload() default {};
       }
    ```
-The @Constraint annotation defined in the class is going to validate our field and message() is the error message that is returned to the client.
-The additional code is boilerplate code that conforms to Spring standards.
+    > The @Constraint annotation defined in the class is going to validate our field and message() is the error message that is returned to the client.
+      The additional code is boilerplate code that conforms to Spring standards.
 
 ## Custom Validator:
 
-The validation class (CustomerLocationValidator) implements the _ConstraintValidator_ interface and must implement the isValid() method.
-It's in this method we will define our validation rules.
+1. The validation class (CustomerLocationValidator) implements the _ConstraintValidator_ interface and must implement the isValid() method.
+    It's in this method we will define our validation rules.
 
    ```java
       public class CustomerLocationValidator implements ConstraintValidator<CustomerLocationConstraint, CustomerLocation> {
@@ -106,9 +110,9 @@ It's in this method we will define our validation rules.
         }
     }
    ```
-Attributes with @NumericString annotation would be validated by NumericStringValidator class as shown below:
+    > Attributes with @NumericString annotation would be validated by NumericStringValidator class as shown below:
 
- ```java
+    ```java
     @Target({ElementType.FIELD, ElementType.PARAMETER})
     @Retention(RetentionPolicy.RUNTIME)
     @Constraint(validatedBy = {NumericStringValidator.class})
@@ -120,10 +124,10 @@ Attributes with @NumericString annotation would be validated by NumericStringVal
     
         Class<? extends Payload>[] payload() default {};
     }
- ```
-The implementation of NumericStringValidator would override the isValid() method and check if the attributes annotated with @NumericString contains only numerals using the regular expression check:
+    ```
+1. The implementation of NumericStringValidator would override the isValid() method and check if the attributes annotated with @NumericString contains only numerals using the regular expression check:
 
- ```java
+    ```java
     public class NumericStringValidator implements ConstraintValidator<NumericString, String> {
         @Override
         public boolean isValid(String str, ConstraintValidatorContext constraintValidatorContext) {
@@ -131,45 +135,44 @@ The implementation of NumericStringValidator would override the isValid() method
             return false;
         }
     }
-```
-## Unit Testing:
-
-
-
+    ```
 ## Test:
 
-Clone the codebase, build and run the CustomvalidatorApplication class. The application runs on default port 8080. Once it is up and running perform the below two tests:
+1. Clone the codebase, build and run the CustomvalidatorApplication class. The application runs on default port 8080. Once it is up and running perform the below two tests:
 
-### 1. Valid request:
+### Valid request:
 
-Endpoint URL: localhost:8080/v1/validate
-  ```json    
-      {
-        "locationId":"aa",
-        "countryCode":"sns",
-        "postCode":"ss"
-      }
- ```
-**Response**:
+1. Endpoint URL: localhost:8080/v1/validate:
 
-Status: HTTP response code 202 Accepted
+    ```json
+    {
+       "locationId":"aa",
+       "countryCode":"sns",
+       "postCode":"ss"
+    }
+    ```
 
-### 2. Invalid request:
+1. **Response**:
 
-Endpoint URL: localhost:8080/v1/validate
+    Status: HTTP response code 202 Accepted
 
- ```json
-     {
+### Invalid request:
+
+1. Endpoint URL: localhost:8080/v1/validate
+
+    ```json
+    {
       "locationId":"locationId",
       "countryCode":"countryCode",
       "postCode":"postCode"
-     }
- ```   
+    }
+    ```   
 
 ### Response:
 
-Status: HTTP response code 400 Bad Request
- ```json
+1. Status: HTTP response code 400 Bad Request
+
+    ```json
     {
       "errorCode": "400 BAD_REQUEST",
       "errorMessage": "Validation Errors",
@@ -212,5 +215,5 @@ Status: HTTP response code 400 Bad Request
         }
       ]
     }
-```
-The source code is available at [wf github](https://)
+    ```
+    The source code is available at [wf github](https://)
