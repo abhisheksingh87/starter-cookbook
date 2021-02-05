@@ -216,4 +216,4 @@ While implementing Spring REST endpoints for Spring boot applications, adding va
       ]
     }
     ```
-    The source code is available at [wf github](https://)
+    The source code is available at [wf github](https://github.wellsfargo.com/wf-greenfield-spring-boot-custom-validator)

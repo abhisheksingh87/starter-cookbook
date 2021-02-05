@@ -96,4 +96,4 @@ This recipe will guide you through how to best pass context information between 
                         .jsonPath("$.firstName").isEqualTo("john");
     }       
     ```
-   The source code is available in: [Wells Fargo GitHub](https://)    
+The source code is available at: [WF GitHub](https://github.wellsfargo.com/app-ebst/wf-reactive-project-starter)

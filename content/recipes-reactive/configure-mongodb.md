@@ -112,4 +112,4 @@ This recipe deals with configuring persistence in the microservice.
      },    
     ```
 
-The code snippets can be found in [Wells Fargo GitHub](https://)
+The source code is available at: [WF GitHub](https://github.wellsfargo.com/app-ebst/wf-reactive-project-starter)

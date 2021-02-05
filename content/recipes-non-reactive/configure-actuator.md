@@ -155,4 +155,5 @@ All **JMX** endpoints can be disabled by:
 1. By using `spring.profiles.active=local` Spring will look for a file **application-local.yml** and will try to load
    configurations. We can specify the management endpoints that we need for development/production by following this approach.  
 
+The source code is available at: [WF GitHub](https://github.wellsfargo.com/app-ebst/wf-reactive-project-starter)
 

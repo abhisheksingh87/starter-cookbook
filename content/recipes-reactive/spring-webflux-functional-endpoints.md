@@ -76,4 +76,4 @@ This recipe walks you through creating functional endpoints.
                     .jsonPath("$.accountOwner").isEqualTo("alex");
         }
     ```
-   The source code is available in: [Wells Fargo GitHub](https://)   
+The source code is available at: [WF GitHub](https://github.wellsfargo.com/app-ebst/wf-reactive-project-starter)

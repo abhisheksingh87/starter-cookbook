@@ -137,4 +137,3 @@ Using Junit5 and Spring's TestContext framework to create MongoDB repository Int
     }
 ```
 ---
-## NOTE

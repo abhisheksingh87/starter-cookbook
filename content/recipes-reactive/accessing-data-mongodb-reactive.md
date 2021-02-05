@@ -43,16 +43,11 @@ MongoDB is a NoSQL document store. In this example, you store `Customer` objects
 
 The convenient **@ToString()** method prints out the details about a customer.
 
----
- **NOTE**
-
-1. MongoDB stores data in collections. Spring Data MongoDB maps the **Customer** class
+{{%notice note%}} MongoDB stores data in collections. Spring Data MongoDB maps the **Customer** class
 into a collection called **customer**. If you want to change the name of the collection, you
-can use Spring Data MongoDB's
-[@Document](https://docs.spring.io/spring-data/data-mongodb/docs/current/api/org/springframework/data/mongodb/core/mapping/Document.html)
-annotation on the class.
+can use Spring Data MongoDB's [@Document](https://docs.spring.io/spring-data/data-mongodb/docs/current/api/org/springframework/data/mongodb/core/mapping/Document.html)
+annotation on the class.{{%/notice%}}
 
----
 
 ## Create Queries
 
@@ -61,17 +56,15 @@ annotation on the class.
 Spring Data MongoDB focuses on storing data in MongoDB. _ReactiveMongoRepository_ interface inherits
 from _ReactiveCrudRepository_ and adds new query methods:
 
- ```java
-   import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
+```java
+public interface AccountRepository extends ReactiveMongoRepository<Account, String> {
 
-   public interface AccountRepository extends ReactiveMongoRepository<Account, String> {
-   
-      Mono<Account> findByAccountOwner(String accountOwner);
-   
-      @Query("{ 'accountNumber': ?0, 'routingNumber': ?1}")
-      Mono<Account> findByAccountNumberAndRoutingNumber(Long accountNumber, Long routingNumber);
-   }
- ```
+    Mono<Account> findByAccountOwner(String accountOwner);
+
+    @Query("{ 'accountNumber': ?0, 'routingNumber': ?1}")
+    Mono<Account> findByAccountNumberAndRoutingNumber(Long accountNumber, Long routingNumber);
+}
+```
 Using the ReactiveMongoRepository, we can query by example.
 
 ### ReactiveMongoTemplate
@@ -79,30 +72,30 @@ Using the ReactiveMongoRepository, we can query by example.
 Besides the repositories approach, there is also ReactiveMongoTemplate:
 
 ```java
-      @Service
-      @AllArgsConstructor
-      public class AccountTemplateOperations {
-   
-      private final ReactiveMongoTemplate template;
-   
-      public Mono<Account> findById(String id) {
-         return template.findById(id, Account.class);
-      }
-   
-      public Flux<Account> findAll() {
-         return template.findAll(Account.class);
-      }
-   
-      public Mono<Account> save(Mono<Account> account) {
-         return template.save(account);
-      }
-   
-      public Flux<Account> findByFirstNameAndLastName(String firstName, String lastName) {
-         Query query = new Query();
-         query.addCriteria(Criteria.where("firstName").is(firstName).and("lastName").is(lastName));
-         return template.find(query, Account.class);
-      }
-   }
+@Service
+@AllArgsConstructor
+public class AccountTemplateOperations {
+
+    private final ReactiveMongoTemplate template;
+
+    public Mono<Account> findById(String id) {
+        return template.findById(id, Account.class);
+    }
+
+    public Flux<Account> findAll() {
+        return template.findAll(Account.class);
+    }
+
+    public Mono<Account> save(Mono<Account> account) {
+        return template.save(account);
+    }
+
+    public Flux<Account> findByFirstNameAndLastName(String firstName, String lastName) {
+        Query query = new Query();
+        query.addCriteria(Criteria.where("firstName").is(firstName).and("lastName").is(lastName));
+        return template.find(query, Account.class);
+    }
+}
 ```
 
 ## Testing
@@ -116,106 +109,107 @@ Besides the repositories approach, there is also ReactiveMongoTemplate:
    about the set of events that will eventually happen upon subscription. Example below
 
 ```java
-   @ExtendWith(SpringExtension.class)
-   @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT, classes = GreenfieldReactiveApplication.class)
-   public class AccountRepositoryTest {
-   
-      @Autowired
-      private AccountMongoRepository repository;
-   
-      @Test
-      public void testFindById() {
-         //given
-         Account account = repository.save(new Account(null, 918345L, 234518L, "alex"))
-                 .block();
-   
-         //when
-         Mono<Account> createdAccount = repository.findById(account.getId());
-   
-         //then
-         StepVerifier
-                 .create(createdAccount)
-                 .assertNext(acc -> {
+@ExtendWith(SpringExtension.class)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT, classes = GreenfieldReactiveApplication.class)
+public class AccountRepositoryTest {
+
+    @Autowired
+    private AccountMongoRepository repository;
+
+    @Test
+    public void testFindById() {
+        //given
+        Account account = repository.save(new Account(null, 918345L, 234518L, "alex"))
+                .block();
+
+        //when
+        Mono<Account> createdAccount = repository.findById(account.getId());
+
+        //then
+        StepVerifier
+                .create(createdAccount)
+                .assertNext(acc -> {
                     assertThat("alex").isEqualTo(acc.getAccountOwner());
                     assertThat(234518L).isEqualTo(acc.getRoutingNumber());
                     assertThat(acc.getId()).isNotNull();
-                 })
-                 .expectComplete()
-                 .verify();
-   
-      }
-   
-      @Test
-      public void testSave() {
-         Mono<Account> accountMono = repository.save(new Account(null, 918345L, 234518L, "alex"));
-   
-         StepVerifier
-                 .create(accountMono)
-                 .assertNext(account -> assertThat(account.getId()).isNotNull())
-                 .expectComplete()
-                 .verify();
-      }
-   
-      @Test
-      public void testFindByAccountOwner() {
-         //given
-         Account account = repository.save(new Account(null, 918345L, 234518L, "ron"))
-                 .block();
-   
-         //when
-         Mono<Account> createdAccount = repository.findByAccountOwner(account.getAccountOwner());
-   
-         //then
-         StepVerifier
-                 .create(createdAccount)
-                 .assertNext(acc -> {
+                })
+                .expectComplete()
+                .verify();
+
+    }
+
+    @Test
+    public void testSave() {
+        Mono<Account> accountMono = repository.save(new Account(null, 918345L, 234518L, "alex"));
+
+        StepVerifier
+                .create(accountMono)
+                .assertNext(account -> assertThat(account.getId()).isNotNull())
+                .expectComplete()
+                .verify();
+    }
+
+    @Test
+    public void testFindByAccountOwner() {
+        //given
+        Account account = repository.save(new Account(null, 918345L, 234518L, "ron"))
+                .block();
+
+        //when
+        Mono<Account> createdAccount = repository.findByAccountOwner(account.getAccountOwner());
+
+        //then
+        StepVerifier
+                .create(createdAccount)
+                .assertNext(acc -> {
                     assertThat("ron").isEqualTo(acc.getAccountOwner());
                     assertThat(234518L).isEqualTo(acc.getRoutingNumber());
                     assertThat(acc.getId()).isNotNull();
-                 })
-                 .expectComplete()
-                 .verify();
-      }
-   
-      @Test
-      public void testFindByAccountNumberAndRoutingNumber() {
-         //given
-         Account account = repository.save(new Account(null, 918345L, 235189L, "john"))
-                 .block();
-   
-         //when
-         Mono<Account> createdAccount = repository.findByAccountNumberAndRoutingNumber(account.getAccountNumber(), account.getRoutingNumber());
-   
-         //then
-         StepVerifier
-                 .create(createdAccount)
-                 .assertNext(acc -> {
+                })
+                .expectComplete()
+                .verify();
+    }
+
+    @Test
+    public void testFindByAccountNumberAndRoutingNumber() {
+        //given
+        Account account = repository.save(new Account(null, 918345L, 235189L, "john"))
+                .block();
+
+        //when
+        Mono<Account> createdAccount = repository.findByAccountNumberAndRoutingNumber(account.getAccountNumber(), account.getRoutingNumber());
+
+        //then
+        StepVerifier
+                .create(createdAccount)
+                .assertNext(acc -> {
                     assertThat("john").isEqualTo(acc.getAccountOwner());
                     assertThat(235189L).isEqualTo(acc.getRoutingNumber());
                     assertThat(acc.getId()).isNotNull();
-                 })
-                 .expectComplete()
-                 .verify();
-      }
-   
-      @Test
-      public void testFindAll() {
-         //given
-         repository.save(new Account(null, 918345L, 234518L, "mike"))
-                 .block();
-         ExampleMatcher matcher = ExampleMatcher.matching().withMatcher("accountOwner", startsWith());
-         Example<Account> example = Example.of(new Account(null, 918345L, 234518L, "mike"), matcher);
-   
-         //when
-         Flux<Account> accountFlux = repository.findAll(example);
-   
-         //then
-         StepVerifier
-                 .create(accountFlux)
-                 .assertNext(account -> assertThat("mike").isEqualTo(account.getAccountOwner()))
-                 .expectComplete()
-                 .verify();
-      }
-   }
+                })
+                .expectComplete()
+                .verify();
+    }
+
+    @Test
+    public void testFindAll() {
+        //given
+        repository.save(new Account(null, 918345L, 234518L, "mike"))
+                .block();
+        ExampleMatcher matcher = ExampleMatcher.matching().withMatcher("accountOwner", startsWith());
+        Example<Account> example = Example.of(new Account(null, 918345L, 234518L, "mike"), matcher);
+
+        //when
+        Flux<Account> accountFlux = repository.findAll(example);
+
+        //then
+        StepVerifier
+                .create(accountFlux)
+                .assertNext(account -> assertThat("mike").isEqualTo(account.getAccountOwner()))
+                .expectComplete()
+                .verify();
+    }
+}
 ```
-    The source code is available at: [Wells Fargo GitHub]()   
+
+The source code is available at: [WF GitHub](https://github.wellsfargo.com/app-ebst/wf-reactive-project-starter)

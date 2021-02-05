@@ -88,3 +88,5 @@ Circuit Breaker has three states:
 **@CircuitBreaker** annotation is the annotation that will invoke the circuit breaker when anything goes wrong in the application. 
 This annotation takes two parameters, first being the **service name** which is also mentioned in the configuration, the second being the **fallback** method name which is optional.
 To check, if the circuit breaker actually goes into the open state or other for that matter, you need to have the said(as mentioned in the application.yaml file) failed requests.
+
+The source code is available at: [WF GitHub](https://github.wellsfargo.com/app-ebst/wf-reactive-project-starter)
