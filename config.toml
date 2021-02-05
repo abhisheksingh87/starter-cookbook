@@ -35,7 +35,7 @@ url = "/about"
 weight = 10
 
 [[menu.shortcuts]]
-name = "<i class='fab fa-fw fa-github'></i> GitHub repo"
+name = "<i class='fa fa-github'></i> GitHub repo"
 identifier = "ds"
 url = "https://github.wellsfargo.com/app-ebst/wf-starter-cookbook"
 weight = 11

@@ -5,7 +5,7 @@ description = "How to Add a New Recipe to the Cookbook"
 date = "2021-01-29T14:45:27-06:00"
 tags = ["Hugo", "Markdown", "meta"]
 title = "Adding and Updating Recipes"
-weight = 10
+weight = 15
 +++
 
 ## First Things First
