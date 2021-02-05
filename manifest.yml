@@ -1,0 +1,7 @@
+---
+applications:
+- name: cookbook
+  memory: 32M
+  buildpacks: ["staticfile_buildpack"]
+  env:
+    FORCE_HTTPS: true
