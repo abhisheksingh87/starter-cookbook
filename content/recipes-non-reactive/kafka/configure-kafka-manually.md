@@ -149,6 +149,6 @@ This recipe walks you through the process of how to configure Kafka Topics, Prod
          * **VALUE_DESERIALIZER_CLASS_CONFIG** - DeSerializer class to be used for the value. We are using `JsonDeSerializer` values.
          * Additional Properties for the consumer to be configured can be found in [ConsumerConfig](https://kafka.apache.org/26/javadoc/org/apache/kafka/clients/consumer/ConsumerConfig.html)
 
-    The source code can be found in [WF Github]
+    The source code can be found in [WF Github](http://hop.hosting.wellsfargo.com/kafka-starter)
     
 

@@ -3,7 +3,6 @@ summary = "About the Cookbook"
 description = "About This Page"
 title = "About the Cookbook"
 date = 2021-02-04T11:28:18-06:00
-draft = true
 +++
 
 The Application Modernization Cookbook is a collection of patterns and techniques that facilitate the modernization of applications.

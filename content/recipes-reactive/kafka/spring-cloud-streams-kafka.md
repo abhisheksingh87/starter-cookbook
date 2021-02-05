@@ -216,4 +216,4 @@ the record as: partition id, offset etc.
     [container-0-C-1] c.w.c.e.s.c.s.service.CustomerListener   : Received customer: Customer(customerId=267b68c9-f0fc-49e7-826f-f2bc5e36d0f2, firstName=alex, lastName=smith, social=180-00-000, income=100000). Partition: 0. Offset: 2
     ```
 
-The source code is available at: [WF Github]()
+The source code is available at: [WF Github](http://hop.hosting.wellsfargo.com/spring-cloud-stream-kafka)

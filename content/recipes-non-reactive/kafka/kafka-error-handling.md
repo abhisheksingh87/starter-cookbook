@@ -130,4 +130,4 @@ Spring-Kafka provides two types of error handler:
           spring.deserializer.value.delegate.class: org.springframework.kafka.support.serializer.JsonDeserializer
     ```    
     
-        The source code can be found in [WF Github]()
+    The source code can be found in [WF Github](http://hop.hosting.wellsfargo.com/kafka-starter)

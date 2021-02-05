@@ -6,6 +6,7 @@ theme = "hugo-theme-docdock"
 publishDir = "public"
 pygmentsCodeFences = true
 pygmentsStyle = "friendly"
+enableRobotsTXT = true
 enableGitInfo = true
 googlefonts = "https://fonts.googleapis.com/css?family=Merriweather|Fira+Mono|Droid+Sans"
 

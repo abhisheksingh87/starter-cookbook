@@ -174,4 +174,4 @@ This recipe walks you through the process of how to create kafka producer and co
         }
     }
     ```
-    The source code can be found in [WF Github]()
+    The source code can be found in [WF Github](http://hop.hosting.wellsfargo.com/kafka-starter)

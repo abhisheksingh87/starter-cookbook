@@ -21,9 +21,9 @@ The following spring boot starters in Github will help Wells Fargo developers to
   
 - [**greenfield-reactive-app-starter**](https://github.wellsfargo.com/app-ebst/wf-reactive-project-starter) for _greenfield applications_, to take advantage of the _non-blocking behavior_ which improves application performance and resiliency.
 
-- [**greenfield-app-kafka-starter**]() for _greenfield applications_, which will use kafka as a messaging platform for a non-reactive cloud-ready microservice.
+- [**greenfield-app-kafka-starter**](http://hop.hosting.wellsfargo.com/kafka-starter) for _greenfield applications_, which will use kafka as a messaging platform for a non-reactive cloud-ready microservice.
 
-- [**greenfield-app-kafka-reactor-starter**]() for _greenfield application_, which will use kafka as a messaging platform for reactive cloud-ready microservice.
+- [**greenfield-app-kafka-reactor-starter**](http://hop.hosting.wellsfargo.com/spring-cloud-stream-fun) for _greenfield application_, which will use kafka as a messaging platform for reactive cloud-ready microservice.
 
 ### What is Reactive Programming ?
 

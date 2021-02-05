@@ -162,4 +162,4 @@ Based on the type of functional strategy used, input and output bindings are aut
     [container-0-C-1] e.s.c.s.e.e.CardStatusUpdateEventHandler : Consumed Card Details: CreditCardDto(id=65e40f71-20ba-4073-bd30-5b6113c820a4, cardType=VISA, customerIncome=100000, amountLimit=null, customerId=367363c2-d8a8-43a4-beca-6ed7ff77590b, cardStatus=CARD_VERIFYING)
     ```
 
-The source code is available at: [WF Github]()
+The source code is available at: [WF Github](http://hop.hosting.wellsfargo.com/spring-cloud-stream-fun)

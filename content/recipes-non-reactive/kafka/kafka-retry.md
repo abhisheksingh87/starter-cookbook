@@ -70,4 +70,4 @@ Using the Spring-Retry template you can set the number of _retries_ and _backoff
     }
    ```
     
-   The source code can be found in [WF Github]()
+   The source code can be found in [WF Github](http://hop.hosting.wellsfargo.com/kafka-starter)
