@@ -1,6 +1,6 @@
 +++
 categories = ["recipes"]
-tags = ["persistence","mongodb","transactions","anti patterns"]
+tags = ["application development", "persistence","mongodb","transactions","anti patterns"]
 summary = "Spring Data MongoDB Transactions"
 title = "MongoDB Transactions"
 date = "2021-01-27T14:45:27-06:00"

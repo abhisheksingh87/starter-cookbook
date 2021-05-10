@@ -1,6 +1,6 @@
 +++
 categories = ["recipes"]
-tags = ["application development", "persistence","data-repository", "reactor", "mongodb","spring webflux"]
+tags = ["application development", "tracing","data-repository", "reactor", "mongodb","spring webflux"]
 summary = "Accessing mongodb data reactively"
 title = "Access Data in MongoDB"
 date = 2020-12-09T14:02:27-05:00

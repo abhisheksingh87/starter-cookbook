@@ -1,6 +1,6 @@
 +++
 categories = ["recipes"]
-tags = ["resilience","resilience4j", "circuitbreaker","reactor"]
+tags = ["application development", "resilience","resilience4j", "circuitbreaker","reactor"]
 summary = "Configure Circuit Breaker"
 title = "Configure Circuit Breaker"
 date = 2020-12-09T14:02:27-05:00

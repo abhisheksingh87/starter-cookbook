@@ -28,5 +28,6 @@ If it looks like something is missing, check the search field.
 
 - [Operations](/tags/operations)
   - [logging](/tags/logging)
+  - [tracing](/tags/tracing)   
 
 

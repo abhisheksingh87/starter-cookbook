@@ -1,6 +1,6 @@
 +++
 categories = ["recipes"]
-tags = ["reactive","spring", "reactor","spring webflux", "webclient"]
+tags = ["application development", "reactive","spring", "reactor","spring webflux", "webclient"]
 summary = "Spring WebClient"
 title = "Spring WebClient"
 date = "2021-01-29T14:45:27-06:00"

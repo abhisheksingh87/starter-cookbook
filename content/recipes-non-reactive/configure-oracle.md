@@ -1,6 +1,6 @@
 +++
 categories = ["recipes"]
-tags = ["persistence","hikari","database connection pool","anti patterns"]
+tags = ["application development", "persistence","hikari","database connection pool","anti patterns"]
 summary = "Configure Oracle datasource in microservice"
 description = "Configure Oracle"
 title = "Configure Oracle"

@@ -1,6 +1,6 @@
 +++
 categories = ["recipes"]
-tags = ["kafka","topics", "Error handling", "spring kafka","spring boot"]
+tags = ["application development", "kafka","topics", "Error handling", "spring kafka","spring boot"]
 summary = "Kafka Error Handling"
 title = "Kafka Error Handling"
 date = "2021-02-01T14:45:27-06:00"

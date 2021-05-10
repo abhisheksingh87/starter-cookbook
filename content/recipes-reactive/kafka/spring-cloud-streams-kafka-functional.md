@@ -1,6 +1,6 @@
 +++
 categories = ["recipes"]
-tags = ["kafka","topics", "functional", "reactor", "spring cloud stream", "spring kafka","spring webflux"]
+tags = ["application development", "kafka","topics", "functional", "reactor", "spring cloud stream", "spring kafka","spring webflux"]
 summary = "Spring Cloud Streams functional and reactive"
 title = "Spring Cloud Streams functional and reactive"
 date = "2021-02-04T09:50:27-06:00"

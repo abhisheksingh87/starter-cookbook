@@ -2,7 +2,7 @@
 date = "2021-01-29T14:45:27-06:00"
 title = "Spring Boot Testing best practices"
 summary = "Testing strategies recommendations."
-tags = ["database", "datasource", "hibernate", "spring-data", "spring", "spring-boot", "testing", "junit"]
+tags = ["application development", "database", "datasource", "hibernate", "spring-data", "spring", "spring-boot", "testing", "junit"]
 taxonomy = ["TEST-DRIVEN-DEVELOPMENT"]
 weight = 4
 +++
