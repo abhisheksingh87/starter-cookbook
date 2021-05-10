@@ -5,6 +5,7 @@ summary = "Kafka Error Handling"
 title = "Kafka Error Handling"
 date = "2021-02-01T14:45:27-06:00"
 weight = 4
+type="kafka"
 +++
 
 ## CONTEXT

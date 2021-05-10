@@ -5,6 +5,7 @@ summary = "Configure Rate Limiter"
 title = "Configure Rate Limiter"
 date = 2020-12-09T14:02:27-05:00
 weight = 3
+type="resiliency"
 +++
 
 ## CONTEXT

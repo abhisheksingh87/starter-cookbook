@@ -4,7 +4,8 @@ tags = ["kafka","topics", "functional", "reactor", "spring cloud stream", "sprin
 summary = "Spring Cloud Streams functional and reactive"
 title = "Spring Cloud Streams functional and reactive"
 date = "2021-02-04T09:50:27-06:00"
-weight = 2
+weight = 102
+type="kafka-recipes"
 +++
 
 ## CONTEXT

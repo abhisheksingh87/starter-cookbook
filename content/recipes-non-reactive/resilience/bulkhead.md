@@ -5,6 +5,7 @@ summary = "Configure BulkHead"
 title = "Configure BulkHead"
 date = 2020-12-09T14:02:27-05:00
 weight = 2
+type="resiliency"
 +++
 
 ## CONTEXT

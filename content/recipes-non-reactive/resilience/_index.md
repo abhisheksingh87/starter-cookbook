@@ -9,8 +9,4 @@ pre ="<i class='fa fa-cutlery'></i>&nbsp;&nbsp;"
 
 Resilience Recipes 
 
-Most recent recipes
-{{<latest-pages-section />}}
-
-All recipes in this section
-{{< children-sorted />}}
+{{< sub-pages name="recipe(s)" type="resiliency" />}}

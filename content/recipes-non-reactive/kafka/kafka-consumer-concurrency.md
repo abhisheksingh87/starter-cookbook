@@ -5,6 +5,7 @@ summary = "Configure Multiple Consumers For Topic"
 title = "Configure Multiple Consumers For Topic"
 date = "2021-01-29T14:45:27-06:00"
 weight = 2
+type="kafka"
 +++
 
 ## CONTEXT

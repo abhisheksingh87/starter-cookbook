@@ -4,7 +4,8 @@ tags = ["kafka","topics", "spring cloud stream", "spring kafka","spring boot"]
 summary = "Spring Cloud Streams Kafka"
 title = "Spring Cloud Streams Kafka"
 date = "2021-02-04T09:45:27-06:00"
-weight = 1
+weight = 101
+type="kafka"
 +++
 
 ## CONTEXT

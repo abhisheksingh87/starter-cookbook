@@ -8,8 +8,5 @@ pre ="<i class='fa fa-cutlery'></i>&nbsp;&nbsp;"
 +++ 
 
 Recipes for developing microservice using Spring Kafka framework.
-Most recent recipes
-{{<latest-pages-section />}}
+{{< sub-pages name="kafka-recipe(s)" type="kafka" />}}
 
-All recipes in this section
-{{< children-sorted />}}

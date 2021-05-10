@@ -5,6 +5,7 @@ summary = "Kafka Consumer Retry"
 title = "Kafka Consumer Retry"
 date = "2021-02-03T11:18:27-06:00"
 weight = 4
+type="kafka"
 +++
 
 ## CONTEXT

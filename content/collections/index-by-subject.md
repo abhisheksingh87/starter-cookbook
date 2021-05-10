@@ -15,7 +15,6 @@ If it looks like something is missing, check the search field.
   - [Application Development](/tags/application-development)
   - [Microservice](/tags/microservice)
   - [Starter](/tags/starter)
-  - [API](/tags/api)
   - [Java](/tags/java)
       - [Spring](/tags/spring)
           - [Spring Boot](/tags/spring-boot)
@@ -24,27 +23,10 @@ If it looks like something is missing, check the search field.
       - [reactor (reactor)](/tags/reactor)
   - [kafka](/tags/kafka)
   - [resilience](/tags/resilience)
-  - [JavaScript/TypeScript](/tags/javascript)
 
 - [Testing](/tags/testing)
 
-- [Security](/tags/security)
-  - [authentication](/tags/authentication)
-  - [authorization](/tags/authorization)
-
-- [CI/CD](/tags/ci-cd)
-      - [CI](/tags/ci)
-      - [CD](/tags/cd)
-
 - [Operations](/tags/operations)
   - [logging](/tags/logging)
-  - [monitoring](/tags/monitoring)
-  - [reliability](/tags/reliability)
-  - [troubleshooting](/tags/troubleshooting)
-  
-- [Application Runtime](/tags/application-runtime)
-  - [IaaS](/tags/iaas)
-  - [PaaS](/tags/paas)
-      - [PCF](/tags/pcf)
-  - [containerization](/tags/containerization)
+
 
