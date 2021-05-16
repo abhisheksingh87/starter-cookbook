@@ -1,7 +1,7 @@
 +++
 date = "2021-05-13T14:02:27-05:00"
-title = "Spring Cloud Sleuth Open Tracing"
-summary = "Spring cloud Sleuth Otel tracing."
+title = "Spring Cloud Sleuth Open Telemetry"
+summary = "Spring cloud Sleuth Otel Telemetry."
 tags = ["application development", "logging", "open telemetry", "sleuth", "spring-cloud"]
 weight = 7
 +++

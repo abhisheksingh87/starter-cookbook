@@ -4,7 +4,7 @@ tags = ["application development", "blocking","reactor","spring webflux"]
 summary = "Detect blocking calls in Reactive code"
 title = "Detect blocking calls in Reactive code"
 date ="2021-05-12T14:02:26-05:00"
-weight = 8
+weight = 9
 +++
 
 ## CONTEXT
